@@ -2,35 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/partners.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/realizations/grid.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tags.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/thumbnail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/co-robimy/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/kim-jestesmy/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/kontakt/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/Logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/AllerDisplay_Std_Rg.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_Bd.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_BdIt.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_It.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_Lt.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_LtIt.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_Rg.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/thumbnail.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/comingsoon_04" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kamil\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -59,14 +47,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\co-robimy" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\kim-jestesmy" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\kontakt" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\styles" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\packages\impress\src\components" />
     </key>
   </component>
@@ -101,7 +91,9 @@
       <workItem from="1608053151003" duration="3969000" />
       <workItem from="1608284232453" duration="20024000" />
       <workItem from="1609246678067" duration="273000" />
-      <workItem from="1609246965887" duration="9869000" />
+      <workItem from="1609246965887" duration="10476000" />
+      <workItem from="1609352417066" duration="595000" />
+      <workItem from="1610208363378" duration="37010000" />
     </task>
     <servers />
   </component>

@@ -1,11 +1,10 @@
-import Button from "../components/button";
 import Layout from "../components/layout";
+import Arrow from "../components/arrow";
 
 export default function Home() {
   return (
     <Layout>
-      <Button name="Social Media" isGhost={false}/>
-      <Button name="Prowadzenie bloga" isGhost={true}/>
+
     </Layout>
   )
 }
