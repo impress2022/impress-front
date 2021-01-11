@@ -1,4 +1,4 @@
-import Thumbnail from "../thumbnail";
+import Thumbnail from "./thumbnail";
 
 export default function Grid(props) {
   const thumbnails = []
@@ -9,7 +9,7 @@ export default function Grid(props) {
 
   return (
     <>
-      <div>
+      <div className="h-full lg:flex lg:flex-row lg:flex-wrap lg:justify-between xl:justify-start">
         {thumbnails}
       </div>
     </>

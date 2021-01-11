@@ -1,6 +1,6 @@
 export default function Arrow(props) {
   return (
-    <div className="relative col-span-2 md:w-25 md:h-25">
+    <div className="relative col-span-2 lg:col-span-1 md:w-25 md:h-25">
       <a href={props.link} className="absolute flex items-center justify-center top-0 left-0 w-20 h-20 md:w-25 md:h-25 bg-red z-10 transform hover:translate-x-4 hover:-translate-y-4 transition duration-150 ease-out">
         <div>
           <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">

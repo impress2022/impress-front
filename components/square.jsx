@@ -1,4 +1,6 @@
-const Square = (props) => {
+import classNames from 'classnames';
+
+const Square = ({children, size, color, custom, customWrapper}) => {
   const sizes = [
     '22px',
     '57px',
@@ -7,12 +9,18 @@ const Square = (props) => {
     '345px'
   ]
 
+  let squareClasses = classNames({})
+
+  squareClasses += ' fill-' + color
+  squareClasses += ' ' + custom
+
   return (
-    <>
-      <svg width={sizes[props.size]} height={sizes[props.size]}>
-        <rect width={sizes[props.size]} height={sizes[props.size]} className={"fill-" + props.color} />
+    <div className={customWrapper}>
+      <svg width={sizes[size]} height={sizes[size]}>
+        <rect width={sizes[size]} height={sizes[size]} className={squareClasses} />
       </svg>
-    </>
+      { children }
+    </div>
   )
 }
 

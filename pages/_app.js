@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
 
 MyApp.getInitialProps = async (appContext) => {
   // calls page's `getInitialProps` and fills `appProps.pageProps`
-  const res = await fetch(process.env.API_URL + '/wp/v2/pages/105')
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/wp/v2/pages/105')
   const data = await res.json()
 
   const appProps = await App.getInitialProps(appContext);

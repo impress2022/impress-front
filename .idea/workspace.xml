@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/fonts/AllerDisplay_Std_Rg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_Bd.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_BdIt.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_It.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_Lt.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_LtIt.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/Aller_Std_Rg.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/arrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/arrow.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/thumbnail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/realizations/grid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/grid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/square.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/square.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tags.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tags.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +53,7 @@
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\kim-jestesmy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\realizations" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\styles" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
@@ -93,7 +93,8 @@
       <workItem from="1609246678067" duration="273000" />
       <workItem from="1609246965887" duration="10476000" />
       <workItem from="1609352417066" duration="595000" />
-      <workItem from="1610208363378" duration="37010000" />
+      <workItem from="1610208363378" duration="37083000" />
+      <workItem from="1610365562892" duration="27682000" />
     </task>
     <servers />
   </component>

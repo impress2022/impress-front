@@ -2,7 +2,7 @@ import Layout from "../../components/layout";
 
 export async function getServerSideProps(context) {
   const { slug } = context.query;
-  const res = await fetch(process.env.API_URL + `/wp/v2/posts?slug=${slug}`)
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${slug}`)
   const data = await res.json()
 
   if (!data) {

@@ -9,7 +9,7 @@ export default function Tags(props) {
 
   return (
     <>
-      <div className="inline-flex">
+      <div className="flex flex-wrap">
         {tags}
       </div>
     </>
