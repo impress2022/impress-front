@@ -5,7 +5,8 @@ import Grid from "../../components/realizations/grid";
 import Head from "next/head";
 import Text from "../../components/typography/text";
 import Logos from "../../components/common/logos";
-import Square from "../../components/square";
+import SquareGrid from "../../components/common/squareGrid";
+import Link from "next/link";
 
 export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/wp/v2/pages/7')
@@ -68,23 +69,26 @@ export default function Realizations(props) {
   }
 
   const grid = (
-    <div className="-mt-80 py-80 bg-green">
+    <div className="-mt-80 py-80 md:py-96 md:-mt-96 lg:py-136 lg:-mt-136 bg-green">
       <div className="my-20 container mx-auto">
         <Logos/>
       </div>
     </div>
   )
 
-  const squares = (
-    <div className="absolute -top-14.375 left-0 right-0 container mx-auto">
-      <Square size="2" color="grey" customWrapper="hidden lg:block"/>
-      <Square size="3" color="blue" custom="" customWrapper="absolute">
+  const squares =
+  <SquareGrid colors={['grey', 'blue', 'green', 'red']}>
+    <Link href="/kontakt">
+      <div className="cursor-pointer">
         <Text size="h3" custom="absolute left-10 top-10 z-10">Zobacz, co możemy Ci zaproponować</Text>
-      </Square>
-      <Square size="2" color="green" customWrapper="hidden lg:block"/>
-      <Square size="1" color="red" customWrapper="hidden lg:block"/>
-    </div>
-  )
+        <svg className="absolute left-10 top-40 z-10" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z" fill="#202222"/>
+          <path d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z" fill="#202222"/>
+          <path d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z" fill="#202222"/>
+        </svg>
+      </div>
+    </Link>
+  </SquareGrid>
 
   return (
     <>
@@ -94,7 +98,7 @@ export default function Realizations(props) {
       <Layout fluid={grid} squares={squares}>
         <div className="mb-12 md:mb-24 lg:mb-36 lg:mb- mt-8r md:mt-7.5r">
           <Text size="h2" custom="mb-8">{props.data.acf.header_title}</Text>
-          <Text size="body-18" custom="md:text-1.5 md:leading-11 lg:text-1.75 lg:leading-3r">{props.data.acf.header_description}</Text>
+          <Text size="body-18" custom="md:text-1.5 md:leading-11 lg:max-w-803 lg:text-1.75 lg:leading-3r">{props.data.acf.header_description}</Text>
         </div>
         <div>
           <div className="mb-7.5r md:mb-8r lg:mb-48">

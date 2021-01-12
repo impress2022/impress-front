@@ -10,9 +10,9 @@ function Nav() {
   const [menuToggle, setMenuToggle] = useState(false);
 
   let menuClasses = classNames({
-    'transition-all duration-500 ease-in-out z-20 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 lg:pt-28 xl:pt-32 2xl:pt-20 flex': true,
+    'transition-all duration-500 ease-in-out z-20 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 md:pt-28 lg:pt-52 flex': true,
     'left-full': !menuToggle,
-    'left-7 md:left-2/4 xl:left-l58': menuToggle
+    'left-7 md:left-2/4 lg:left-l58': menuToggle
   })
 
   let leftBarClasses = classNames({
@@ -22,7 +22,7 @@ function Nav() {
   })
 
   return (
-    <div className="h-20 mx-7 md:mx-15">
+    <div className="h-20 lg:h-nav mx-7 md:mx-15">
       <nav className="flex justify-between items-center h-full">
         <div>
           <Link href="/"><a><img src="/images/Logo.svg" alt="Impress"/></a></Link>
@@ -30,7 +30,7 @@ function Nav() {
         <Hamburger menuToggle={menuToggle} setMenuToggle={setMenuToggle}/>
         <div className={menuClasses}>
           <div className={leftBarClasses}></div>
-          <div className="social-media mx-8 md:mx-12 lg:mx-24">
+          <div className="social-media mx-8 md:mx-12 lg:mx-28">
             <Social/>
           </div>
           <div className="navigation">

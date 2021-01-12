@@ -1,16 +1,20 @@
-@media (min-width: 1024px) and (max-width: 1536px) {
+body {
+    overflow-x: hidden;
+}
+
+@media (min-width: 876px) and (max-width: 1380px) {
     .realization-thumbnail:nth-child(odd) {
         margin-top: 60px;
     }
 }
 
-@media (min-width: 1280px) {
-    .realization-thumbnail:nth-child(odd) {
-        margin-right: 75px;
-    }
-}
+/*@media (min-width: 876px) {*/
+/*    .realization-thumbnail:nth-child(odd) {*/
+/*        margin-right: 75px;*/
+/*    }*/
+/*}*/
 
-@media (min-width: 1536px) {
+@media (min-width: 1380px) {
     .realization-thumbnail:nth-child(3n+1) {
         margin-right: 75px;
     }

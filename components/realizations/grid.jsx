@@ -9,7 +9,7 @@ export default function Grid(props) {
 
   return (
     <>
-      <div className="h-full lg:flex lg:flex-row lg:flex-wrap lg:justify-between xl:justify-start">
+      <div className="h-full md:flex md:flex-row md:flex-wrap md:justify-between">
         {thumbnails}
       </div>
     </>
