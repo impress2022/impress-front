@@ -18,7 +18,7 @@ export default function Footer() {
   })
 
   let linksClasses = classNames({
-    'text-0.75 cursor-pointer text-white leading-4.5 md:leading-5 font-extralight font-inter text-lighter-grey': true,
+    'text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey': true,
   })
 
   let navItems = []
@@ -61,7 +61,7 @@ export default function Footer() {
                <p className="text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">Porozmawiajmy</p>
              </div>
            </div>
-           <div className="md:flex">
+           <div className="md:flex lg:mb-10">
              <div className="my-8 md:my-0 mb-10 md:mr-20 lg:mr-28">
                <Link href="/">
                  <a>

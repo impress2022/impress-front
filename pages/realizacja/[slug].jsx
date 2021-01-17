@@ -26,7 +26,7 @@ const Post = (props) => {
 
   return (
     <Layout>
-      <h1>kontakt</h1>
+      <h1>{props.data[0].acf.header_title}</h1>
     </Layout>
   )
 }

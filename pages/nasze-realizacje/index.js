@@ -69,7 +69,7 @@ export default function Realizations(props) {
   }
 
   const grid = (
-    <div className="-mt-80 py-80 md:py-96 md:-mt-96 lg:py-136 lg:-mt-136 bg-green">
+    <div className="-mt-80 py-80 md:py-96 lg:py-132 lg:-mt-104 bg-green">
       <div className="my-20 container mx-auto">
         <Logos/>
       </div>
@@ -96,11 +96,11 @@ export default function Realizations(props) {
         <title>Realizacje - Impress</title>
       </Head>
       <Layout fluid={grid} squares={squares}>
-        <div className="mb-12 md:mb-24 lg:mb-36 lg:mb- mt-8r md:mt-7.5r">
+        <header className="mb-12 md:mb-24 lg:mb-36 lg:mb- mt-8r md:mt-7.5r">
           <Text size="h2" custom="mb-8">{props.data.acf.header_title}</Text>
           <Text size="body-18" custom="md:text-1.5 md:leading-11 lg:max-w-803 lg:text-1.75 lg:leading-3r">{props.data.acf.header_description}</Text>
-        </div>
-        <div>
+        </header>
+        <main>
           <div className="mb-7.5r md:mb-8r lg:mb-48">
             <Tags filter={filter} setFilter={setFilter} tags={props.tags}/>
           </div>
@@ -110,7 +110,7 @@ export default function Realizations(props) {
           {realizations.length === 0 &&
             <h2>Czegoś takiego jeszcze nie mamy. <b className="underline">Spotkajmy się</b> aby o tym porozmawiać.</h2>
           }
-        </div>
+        </main>
       </Layout>
       </>
   )

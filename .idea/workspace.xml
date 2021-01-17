@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/arrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/arrow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/button.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/common/logos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/logos.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/realizations/grid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/grid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/number.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/number.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/square.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/square.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/typography/text.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/typography/text.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/useWindowSize.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useWindowSize.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
@@ -39,10 +40,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/realizations" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kamil\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\Kamil\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\203.5981.135\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -50,18 +52,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\realizations" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\home" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\co-robimy" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\kim-jestesmy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\home" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\realizations" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\styles" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -100,11 +102,16 @@
       <workItem from="1610208363378" duration="37083000" />
       <workItem from="1610365562892" duration="27682000" />
       <workItem from="1610405798739" duration="220000" />
-      <workItem from="1610454625568" duration="19451000" />
+      <workItem from="1610454625568" duration="21095000" />
+      <workItem from="1610548957173" duration="40162000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
