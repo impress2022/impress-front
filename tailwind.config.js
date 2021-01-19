@@ -7,6 +7,8 @@ module.exports = {
       "./components/**/*.jsx",
       "**/*.html",
       "**/*.svg",
+      "**/*.woff2",
+      "**/*.woff",
     ],
     options: {
       safelist: [

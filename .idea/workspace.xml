@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="" />
+    <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/AllerDisplay_Std_Rg.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/Aller_Std_Bd.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/Aller_Std_BdIt.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/Aller_Std_It.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/Aller_Std_Lt.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/Aller_Std_LtIt.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/Aller_Std_Rg.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +35,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/fonts" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kamil\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -35,18 +47,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\realizations" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\home" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\home" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\realizations" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\styles" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -89,7 +101,7 @@
       <workItem from="1610548957173" duration="50669000" />
       <workItem from="1610905323441" duration="306000" />
       <workItem from="1610969089366" duration="1515000" />
-      <workItem from="1611041119815" duration="6411000" />
+      <workItem from="1611041119815" duration="9334000" />
     </task>
     <servers />
   </component>
