@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/square.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/square.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +91,7 @@
       <workItem from="1610548957173" duration="50669000" />
       <workItem from="1610905323441" duration="306000" />
       <workItem from="1610969089366" duration="1515000" />
-      <workItem from="1611041119815" duration="5431000" />
+      <workItem from="1611041119815" duration="5953000" />
     </task>
     <servers />
   </component>
