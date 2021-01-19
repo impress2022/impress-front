@@ -10,6 +10,7 @@ import FeaturedRealizations from "../components/home/featuredRealizations";
 import Square from "../components/square";
 import Link from "next/link";
 import SingleSquare from "../components/common/singleSquare";
+import Card from "../components/common/card";
 
 export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69");
@@ -34,9 +35,59 @@ export async function getServerSideProps(context) {
 export default function Home(props) {
   let content = props.data.acf;
   const window = useWindowSize();
-  console.log(content);
+
+  const fluid = (
+    <section className="relative md:mt-200 lg:mt-250">
+      <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0"></div>
+      <div className="mx-10 mt-7.5r relative top-0 z-10 md:grid md:grid-cols-12 md:container md:mx-auto">
+        <div className="md:col-span-3 lottie-card">
+          <Card
+            title="Public Relations"
+            elements={["PR", "Media relations", "Monitoring mediów", "CSR"]}
+            lottie="pr"
+            color="dark-green"
+          />
+        </div>
+        <div className="md:col-span-3 lottie-card">
+          <Card
+            title="Social Media"
+            elements={["Facebook", "Instagram", "YouTube", "LinkedIn"]}
+            lottie="social"
+            color="blue"
+          />
+        </div>
+        <div className="md:col-span-3 lottie-card">
+          <Card
+            title="Marketing"
+            elements={[
+              "Doradztwo strategiczne",
+              "Copywriting",
+              "Blogi i mailingi",
+              "Kampanie reklamowe",
+            ]}
+            lottie="marketing"
+            color="red"
+          />
+        </div>
+        <div className="md:col-span-3 lottie-card">
+          <Card
+            title="Public Relations"
+            elements={[
+              "Identyfikacja wizualna",
+              "Branding",
+              "Logo",
+              "Projekty",
+            ]}
+            lottie="design"
+            color="grey-hover"
+          />
+        </div>
+      </div>
+    </section>
+  );
+
   return (
-    <Layout>
+    <Layout fluid={fluid}>
       <section className="md:relative mt-20 md:mt-12 lg:mt-0 mb-12 md:mb-s-mar leading-0.875 md:grid md:grid-cols-12">
         <div className="mb-10 md:col-span-5 md:mt-16 lg:mt-s-mar">
           <Text

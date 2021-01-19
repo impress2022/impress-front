@@ -24,6 +24,7 @@ module.exports = {
       colors: {
         grey: "#202222",
         green: "#C7D300",
+        "dark-green": "#A8B200",
         red: "#CC3366",
         blue: "#3580CC",
         white: "#FFFFFF",
@@ -57,7 +58,7 @@ module.exports = {
         btn: "3.75rem",
       },
       inset: {
-        "initial": 'initial',
+        initial: "initial",
         n15: "-1rem",
         "7.5": "7.5rem",
         "-15": "-15rem",
@@ -110,6 +111,8 @@ module.exports = {
         caseInsetActive: "-20px 20px 0px 0px rgba(126,126,126,0.85)",
         caseInsetMobile: "-5px 5px 0px 0px rgba(149,149,149,0.85)",
         caseInsetActiveMobile: "-10px 10px 0px 0px rgba(126,126,126,0.85)",
+        cardShadow: "0px 0px 0px 0px rgba(0,0,0,0.45)",
+        cardShadowActive: "-15px 15px 0px 0px rgba(0,0,0,0.45)",
       },
       textColor: {
         primary: "#202222",
@@ -123,6 +126,8 @@ module.exports = {
         "-104": "-26rem",
         "s-mar": "200px",
         "150": "150px",
+        "200": "200px",
+        "250": "250px",
       },
       width: {
         "25": "6.25rem",
@@ -143,6 +148,9 @@ module.exports = {
         "l-320": "320px",
         "l-511": "511px",
         "l-805": "805px",
+        "l-118": "118px",
+        "l-160": "160px",
+        "l-255": "255px",
       },
       height: {
         "25": "6.25rem",
@@ -164,6 +172,11 @@ module.exports = {
         "l-320": "320px",
         "l-511": "511px",
         "l-805": "805px",
+        "l-118": "118px",
+        "l-160": "160px",
+        "l-255": "255px",
+        "80p": "80%",
+        "500": "500px",
       },
       maxHeight: {
         "480": "480px",
