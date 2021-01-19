@@ -1,5 +1,30 @@
 module.exports = {
-  purge: ["./pages/**/*.js", "./components/**/*.js"],
+  purge: {
+    content: [
+      "./pages/**/*.js",
+      "./components/**/*.js",
+      "./pages/**/*.jsx",
+      "./components/**/*.jsx",
+      "**/*.html",
+    ],
+    options: {
+      safelist: [
+        "fill-green",
+        "dark-green",
+        "fill-red",
+        "fill-grey",
+        "fill-blue",
+        "bg-grey",
+        "bg-green",
+        "bg-dark-green",
+        "bg-red",
+        "bg-blue",
+        "bg-white",
+        "bg-customGrey",
+        "bg-grey-hover",
+      ],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {

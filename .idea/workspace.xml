@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/lottie/homeHero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/lottie/homeHero.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/square.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/square.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +39,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\realizations" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\home" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\images" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\home" />
@@ -96,6 +93,7 @@
       <workItem from="1610548957173" duration="50669000" />
       <workItem from="1610905323441" duration="306000" />
       <workItem from="1610969089366" duration="1515000" />
+      <workItem from="1611041119815" duration="5431000" />
     </task>
     <servers />
   </component>
