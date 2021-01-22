@@ -9,17 +9,22 @@ import SquareGrid from "../../components/common/squareGrid";
 import Link from "next/link";
 
 export async function getServerSideProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/wp/v2/pages/7')
-  const data = await res.json()
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7");
+  const data = await res.json();
 
-  const realizations = await fetch(process.env.NEXT_PUBLIC_API_URL + '/wp/v2/posts?filter[cat]=3')
-  const dataRealizations = await realizations.json()
+  const realizations = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3"
+  );
+  const dataRealizations = await realizations.json();
 
-  const resPosts = await fetch(process.env.NEXT_PUBLIC_API_URL + '/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3');
-  const dataPosts = await resPosts.json()
+  const resPosts = await fetch(
+    process.env.NEXT_PUBLIC_API_URL +
+      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3"
+  );
+  const dataPosts = await resPosts.json();
 
-  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + '/wp/v2/tags');
-  const dataTags = await resTags.json()
+  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags");
+  const dataTags = await resTags.json();
 
   dataTags.unshift({
     id: 999,
@@ -42,9 +47,9 @@ export async function getServerSideProps(context) {
   if (!data) {
     return {
       props: {
-        notFound: true
+        notFound: true,
       },
-    }
+    };
   }
 
   return {
@@ -53,42 +58,61 @@ export async function getServerSideProps(context) {
       tags: dataTags,
       realizations: dataRealizations,
       dict: dataPosts,
-      notFound: false
+      notFound: false,
     },
-  }
+  };
 }
 
 export default function Realizations(props) {
-  let realizations = props.realizations
+  let realizations = props.realizations;
   const [filter, setFilter] = useState(999);
 
   if (filter !== 999) {
     realizations = realizations.filter((item, index) => {
-        return props.dict[index].tags.includes(filter);
-    })
+      return props.dict[index].tags.includes(filter);
+    });
   }
 
   const grid = (
     <div className="-mt-80 py-80 md:py-96 lg:py-132 lg:-mt-104 bg-green">
       <div className="my-20 container mx-auto">
-        <Logos/>
+        <Logos />
       </div>
     </div>
-  )
+  );
 
-  const squares =
-  <SquareGrid colors={['grey', 'blue', 'green', 'red']}>
-    <Link href="/kontakt">
-      <div className="cursor-pointer">
-        <Text size="h3" custom="absolute left-10 top-10 z-10">Zobacz, co możemy Ci zaproponować</Text>
-        <svg className="absolute left-10 top-40 z-10" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z" fill="#202222"/>
-          <path d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z" fill="#202222"/>
-          <path d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z" fill="#202222"/>
-        </svg>
-      </div>
-    </Link>
-  </SquareGrid>
+  const squares = (
+    <SquareGrid colors={["grey", "blue", "green", "red"]}>
+      <Link href="/kontakt">
+        <div className="cursor-pointer">
+          <Text size="h3" custom="absolute left-10 top-10 z-10">
+            Zobacz, co możemy Ci zaproponować
+          </Text>
+          <svg
+            className="absolute left-10 top-40 z-10"
+            width="34"
+            height="34"
+            viewBox="0 0 34 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z"
+              fill="#202222"
+            />
+            <path
+              d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z"
+              fill="#202222"
+            />
+            <path
+              d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z"
+              fill="#202222"
+            />
+          </svg>
+        </div>
+      </Link>
+    </SquareGrid>
+  );
 
   return (
     <>
@@ -97,21 +121,29 @@ export default function Realizations(props) {
       </Head>
       <Layout fluid={grid} squares={squares}>
         <header className="mb-12 md:mb-24 lg:mb-36 lg:mb- mt-8r md:mt-7.5r">
-          <Text size="h2" custom="mb-8">{props.data.acf.header_title}</Text>
-          <Text size="body-18" custom="md:text-1.5 md:leading-11 lg:max-w-803 lg:text-1.75 lg:leading-3r">{props.data.acf.header_description}</Text>
+          <Text size="h2" custom="mb-8">
+            {props.data.acf.header_title}
+          </Text>
+          <Text
+            size="body-18"
+            custom="md:text-1.5 md:leading-11 lg:max-w-803 lg:text-1.75 lg:leading-3r"
+          >
+            {props.data.acf.header_description}
+          </Text>
         </header>
         <main>
           <div className="mb-7.5r md:mb-8r lg:mb-48">
-            <Tags filter={filter} setFilter={setFilter} tags={props.tags}/>
+            <Tags filter={filter} setFilter={setFilter} tags={props.tags} />
           </div>
-          {realizations.length > 0 &&
-            <Grid realizations={realizations}/>
-          }
-          {realizations.length === 0 &&
-            <h2>Czegoś takiego jeszcze nie mamy. <b className="underline">Spotkajmy się</b> aby o tym porozmawiać.</h2>
-          }
+          {realizations.length > 0 && <Grid realizations={realizations} />}
+          {realizations.length === 0 && (
+            <h2>
+              Takiej realizacji jeszcze nie mamy, ale ogarniemy.
+              <b className="underline">Spotkajmy się,</b> porozmawiajmy.
+            </h2>
+          )}
         </main>
       </Layout>
-      </>
-  )
+    </>
+  );
 }

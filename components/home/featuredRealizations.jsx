@@ -20,7 +20,7 @@ function getZIndex(index) {
 }
 
 export default function FeaturedRealizations(props) {
-  let directions = ["top-left", "top-right", "bottom-left", "bottom-right"];
+  let directions = ["top-left", "top-right", "bottom-right", "bottom-left"];
 
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
@@ -91,12 +91,16 @@ export default function FeaturedRealizations(props) {
               }}
               className="shadow-caseInsetActiveMobile lg:relative lg:first:translate-y-0 lg:shadow-none md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
             >
-              <Image
-                src={e.acf.teaser.teaser_photo.url}
-                alt={e.acf.teaser.teaser_photo.alt}
-                width={700}
-                height={700}
-              />
+              <Link href={"/realizacja/" + e.post_name}>
+                <a>
+                  <Image
+                    src={e.acf.teaser.teaser_photo.url}
+                    alt={e.acf.teaser.teaser_photo.alt}
+                    width={700}
+                    height={700}
+                  />
+                </a>
+              </Link>
             </div>
           </div>
         ))}
