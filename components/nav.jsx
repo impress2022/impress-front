@@ -49,8 +49,8 @@ function Nav() {
   }, [menuHide]); // Empty array ensures that effect is only run on mount
 
   return (
-    <div className="sticky bg-white top-0 transition-transform ease-in h-20 lg:h-nav mx-7 md:mx-15" style={{
-      transform: menuHide ? "translateY(-5rem)" : "translateY(0)"
+    <div className="sticky bg-white top-0 z-50 transition-transform ease-in h-20 lg:h-nav mx-7 md:mx-15" style={{
+      transform: menuHide ? "translateY(-80px)" : "translateY(0)"
     }}>
       <nav className="flex justify-between items-center h-full">
         <div>
