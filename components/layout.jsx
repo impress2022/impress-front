@@ -12,10 +12,10 @@ export default function Layout({
     <div>
       <Nav />
       {titleSection && (
-        <section className="container mx-auto">{titleSection}</section>
+        <section className="container mx-auto px-4">{titleSection}</section>
       )}
       {fluidPhoto && <section>{fluidPhoto}</section>}
-      <main className="container mx-auto">{children}</main>
+      <main className="container mx-auto px-4">{children}</main>
       {fluid && <section>{fluid}</section>}
       {squares && <section className="relative">{squares}</section>}
       <Footer />

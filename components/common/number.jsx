@@ -12,7 +12,7 @@ export default function Number({ children, direction }) {
   });
 
   return (
-    <div className="relative w-x2 h-x2 hidden lg:block">
+    <div className="absolute w-x2 h-x2 hidden lg:block">
       <Square sizeClasses="w-x2 h-x2" color="blue" />
       <Text
         size="h2"

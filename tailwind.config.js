@@ -135,6 +135,7 @@ module.exports = {
         "7.25": "7.25rem",
         "104": "26rem",
         "132": "34rem",
+        "-690": "-690px",
       },
       boxShadow: {
         menuInset: "-300px 4px 0px 0px rgba(52,52,52,1)",
