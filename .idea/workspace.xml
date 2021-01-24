@@ -4,9 +4,7 @@
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/common/number.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/number.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/square.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/square.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -34,7 +34,7 @@ module.exports = {
       sm: "320px",
       // => @media (min-width: 640px) { ... }
 
-      // 'md': '768px',
+      // 'md': '876px',
       // => @media (min-width: 768px) { ... }
 
       md: "876px",
@@ -112,6 +112,7 @@ module.exports = {
       translate: {
         o1: "0.1rem",
         xs1: "22px",
+        "137": "137px",
       },
       lineHeight: {
         "0.875": "0.875",
