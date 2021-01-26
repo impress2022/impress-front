@@ -37,11 +37,13 @@ module.exports = {
       // 'md': '876px',
       // => @media (min-width: 768px) { ... }
 
-      md: "876px",
+      md: "768px",
       // => @media (min-width: 1024px) { ... }
 
-      lg: "1380px",
+      lg: "1280px",
       // => @media (min-width: 1280px) { ... }
+
+      xl: "1620px",
     },
     extend: {
       fontFamily: {
@@ -113,6 +115,7 @@ module.exports = {
         o1: "0.1rem",
         xs1: "22px",
         "137": "137px",
+        "5p": "5%",
       },
       lineHeight: {
         "0.875": "0.875",
@@ -130,6 +133,7 @@ module.exports = {
       },
       padding: {
         "4.5": "4.5rem",
+        "15": "3.75rem",
         "12.5": "12.5rem",
         "20": "20rem",
         "5.25": "5.25rem",
@@ -183,9 +187,10 @@ module.exports = {
         x5: "230px",
         x6: "240px",
         x7: "345px",
-        "l-320": "320px",
-        "l-511": "511px",
-        "l-805": "805px",
+        "l-320": "60vh",
+        "l-511": "42vh",
+        "l-805": "80vh",
+        "xl-80": "75vh",
         "l-118": "118px",
         "l-160": "160px",
         "l-255": "255px",
@@ -208,9 +213,10 @@ module.exports = {
         x5: "230px",
         x6: "240px",
         x7: "345px",
-        "l-320": "320px",
-        "l-511": "511px",
-        "l-805": "805px",
+        "l-320": "60vh",
+        "l-511": "42vh",
+        "l-805": "80vh",
+        "xl-80": "75vh",
         "l-118": "118px",
         "l-160": "160px",
         "l-255": "255px",
@@ -235,6 +241,9 @@ module.exports = {
       letterSpacing: {
         hero: "-2px",
         desc: "1%",
+      },
+      flex: {
+        "50": "1 1 50%",
       },
     },
   },

@@ -20,15 +20,16 @@ export default function HomeTeaserMobile(props) {
   }
 
   return (
-    <div className="md:flex md:flex-row-reverse md:mb-36">
+    <div className="md:flex md:flex-row-reverse md:mb-36 md:items-center md:justify-center">
       <div>
-        <div className="shadow-caseInsetActiveMobile lg:shadow-none w-320 h-320 md:w-438 md:h-438 lg:w-690 lg:h-690">
+        <div className="shadow-caseInsetActiveMobile lg:shadow-none md:max-w-screen-sm">
           <Link href={"/realizacja/" + el.post_name}>
-            <a>
+            <a className="block-important">
               <Image
                 src={el.teaser.teaser_photo.url}
-                width={700}
-                height={700}
+                width={el.teaser.teaser_photo.width}
+                height={el.teaser.teaser_photo.height}
+                className="block-important"
               />
             </a>
           </Link>
@@ -42,7 +43,7 @@ export default function HomeTeaserMobile(props) {
             </Text>
           </a>
         </Link>
-        <Text size="h2" custom="mb-8">
+        <Text size="h2" custom="mb-8 md:max-w-sm">
           {el.teaser.teaser_subtitle}
         </Text>
         <div className="ml-10 md:ml-16 mb-7.5r hashtags-home">{hashtags}</div>

@@ -30,7 +30,7 @@ export default function Footer() {
     c++;
     navItems.push(
       <li
-        className="mb-4 md:mb-0 md:mr-4 lg:mr-5 md:flex md:items-center"
+        className="mb-4 md:mb-0 md:mr-2 lg:mr-5 md:flex md:items-center"
         key={c}
       >
         <Link href={"/" + value.navigation_link[0].post_name}>
@@ -56,9 +56,9 @@ export default function Footer() {
   }
 
   return (
-    <>
+    <footer>
       <div className="w-screen bg-grey">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-8 md:grid-cols-12 py-36">
             <Arrow href="/kontakt" />
             <div className="md:hidden"></div>
@@ -100,7 +100,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-row justify-between md:w-full">
               <ul className="md:flex lg:min-w-387">{navItems}</ul>
-              <div className="hidden md:w-px md:h-5 md:block md:bg-lighter-grey md:flex md:md:items-center"></div>
+              <div className="hidden md:h-full md:w-px md:block md:bg-lighter-grey md:flex md:md:items-center"></div>
               <div className="text-right flex flex-col justify-between md:flex-row lg:w-full">
                 <ul className="md:flex">{navSecondaryItems}</ul>
                 <p className="text-0.75 leading-4.5 mb-4 md:mb-0 text-light-grey font-inter font-extralight md:ml-4 lg:ml-auto md:flex md:items-center">
@@ -111,6 +111,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </>
+    </footer>
   );
 }

@@ -15,7 +15,7 @@ export default function HomeHero(props) {
   };
 
   let lottieClasses = classNames({
-    "w-l-320 h-l-320 md:w-l-511 md:h-l-511 lg:w-l-805 lg:h-l-805": true,
+    "md:w-l-511 md:h-l-511 lg:w-l-805 lg:h-l-805 xl:w-xl-80 xl:h-xl-80": true,
   });
 
   lottieClasses += " " + props.custom;

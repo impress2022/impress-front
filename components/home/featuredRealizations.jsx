@@ -44,9 +44,14 @@ export default function FeaturedRealizations(props) {
       <div
         className="md:sticky md:top-1/3"
         style={{
-          top: currentStepIndex === props.realizations.length - 1 ? "0" : ((windowSize.height - 690)/2) + "px",
+          top:
+            currentStepIndex === props.realizations.length - 1
+              ? "0"
+              : (windowSize.height - 690) / 2 + "px",
           paddingTop:
-            currentStepIndex === props.realizations.length - 1 ? ((windowSize.height - 690)/2) + "px" : "",
+            currentStepIndex === props.realizations.length - 1
+              ? (windowSize.height - 690) / 2 + "px"
+              : "",
         }}
       >
         <Number direction={directions[currentStepIndex]}>
@@ -85,10 +90,10 @@ export default function FeaturedRealizations(props) {
                     : currentStepIndex > idx
                     ? "polygon(0 0, 100% 0, 100% 0, 0 0)"
                     : "",
-                transform:
-                  currentStepIndex === idx
-                    ? "translateY(-20px)"
-                    : "translateY(-" + currentProgress * 20 + "px)",
+                // transform:
+                //   currentStepIndex === idx
+                //     ? "translateY(-20px)"
+                //     : "translateY(-" + currentProgress * 20 + "px)",
                 zIndex: getZIndex(idx),
               }}
               className="shadow-caseInsetActiveMobile lg:relative lg:first:translate-y-0 lg:shadow-none md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
@@ -126,7 +131,7 @@ export default function FeaturedRealizations(props) {
                 className="mt-9 md:mt-12 md:mr-10 lg:mt-0"
                 style={{
                   paddingTop:
-                    idx === props.realizations.length - 1 ? "200px" : '150px',
+                    idx === props.realizations.length - 1 ? "200px" : "150px",
                 }}
               >
                 <Link href={"/realizacja/" + e.post_name}>
