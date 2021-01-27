@@ -82,35 +82,36 @@ export default function Realizations(props) {
   );
 
   const squares = (
-    <SquareGrid colors={["grey", "blue", "green", "red"]}>
-      <Link href="/kontakt">
-        <div className="cursor-pointer">
-          <Text size="h3" custom="absolute left-10 top-10 z-10">
-            Zobacz, co możemy Ci zaproponować
-          </Text>
-          <svg
-            className="absolute left-10 top-40 z-10"
-            width="34"
-            height="34"
-            viewBox="0 0 34 34"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z"
-              fill="#202222"
-            />
-            <path
-              d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z"
-              fill="#202222"
-            />
-            <path
-              d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z"
-              fill="#202222"
-            />
-          </svg>
-        </div>
-      </Link>
+    <SquareGrid colors={["grey", "blue", "green", "red"]} href={"/kontakt"}>
+      <div className="cursor-pointer">
+        <Text
+          size="h3"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 z-10"
+        >
+          Zobacz, co możemy Ci zaproponować
+        </Text>
+        <svg
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10"
+          width="34"
+          height="34"
+          viewBox="0 0 34 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z"
+            fill="#202222"
+          />
+          <path
+            d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z"
+            fill="#202222"
+          />
+          <path
+            d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z"
+            fill="#202222"
+          />
+        </svg>
+      </div>
     </SquareGrid>
   );
 
@@ -120,7 +121,7 @@ export default function Realizations(props) {
         <title>Realizacje - Impress</title>
       </Head>
       <Layout fluid={grid} squares={squares}>
-        <header className="mb-12 md:mb-24 lg:mb-36 lg:mb- mt-8r md:mt-7.5r">
+        <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-8r lg:mt-16 xl:mt-8r md:mt-7.5r">
           <Text size="h2" custom="mb-8">
             {props.data.acf.header_title}
           </Text>
@@ -132,15 +133,18 @@ export default function Realizations(props) {
           </Text>
         </header>
         <main>
-          <div className="mb-7.5r md:mb-8r lg:mb-48">
+          <div className="mb-7.5r md:mb-8r lg:mb-16 xl:mb-48">
             <Tags filter={filter} setFilter={setFilter} tags={props.tags} />
           </div>
           {realizations.length > 0 && <Grid realizations={realizations} />}
           {realizations.length === 0 && (
-            <h2>
-              Takiej realizacji jeszcze nie mamy, ale ogarniemy.
+            <Text
+              size="h2"
+              custom="min-h-screen md:text-center lg:text-left md:min-h-60"
+            >
+              Takiej realizacji jeszcze nie mamy, ale ogarniemy. <br />
               <b className="underline">Spotkajmy się,</b> porozmawiajmy.
-            </h2>
+            </Text>
           )}
         </main>
       </Layout>

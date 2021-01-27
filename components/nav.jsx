@@ -45,6 +45,9 @@ function Nav() {
         scrollOffsetY.current = window.pageYOffset;
       }
 
+      document.querySelector("body").style.overflowY = "scroll";
+      document.querySelector("body").style.paddingRight = "0";
+
       // Add event listener
       window.addEventListener("scroll", handleScroll, { passive: true });
 

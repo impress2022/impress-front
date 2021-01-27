@@ -177,6 +177,7 @@ module.exports = {
         "405": "405px",
         "438": "438px",
         "400": "400px",
+        "500": "500px",
         "690": "690px",
         xs1: "22px",
         xs2: "57px",
@@ -238,12 +239,16 @@ module.exports = {
       minWidth: {
         "387": "387px",
       },
+      minHeight: {
+        "60": "60vh",
+      },
       letterSpacing: {
         hero: "-2px",
         desc: "1%",
       },
       flex: {
         "50": "1 1 50%",
+        "30": "1 1 30%",
       },
     },
   },
