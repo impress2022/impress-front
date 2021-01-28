@@ -1,7 +1,9 @@
 import classNames from "classnames";
 
 const Square = ({ children, sizeClasses, color, custom, customWrapper }) => {
-  let squareClasses = classNames({});
+  let squareClasses = classNames({
+      'transition ease-in': true,
+  });
 
   squareClasses += ` fill-${color}`;
   squareClasses += " " + sizeClasses;

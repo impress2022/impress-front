@@ -1,24 +1,26 @@
 import Nav from "./nav";
 import Footer from "./footer";
 
-export default function Layout({ children, fluid, squares}) {
+export default function Layout({
+  children,
+  fluid,
+  fluidPhoto,
+  titleSection,
+  squares,
+}) {
   return (
     <div>
-      <Nav/>
-      <main className="container mx-auto">
-        {children}
-      </main>
-      {fluid &&
-        <section>
-          {fluid}
+      <Nav />
+      {titleSection && (
+        <section className="container mx-auto px-4 md:px-8">
+          {titleSection}
         </section>
-      }
-      {squares &&
-        <section className="relative">
-          {squares}
-        </section>
-      }
-      <Footer/>
+      )}
+      {fluidPhoto && <section>{fluidPhoto}</section>}
+      <main className="container mx-auto px-4">{children}</main>
+      {fluid && <section>{fluid}</section>}
+      {squares && <section className="relative">{squares}</section>}
+      <Footer />
     </div>
-  )
+  );
 }

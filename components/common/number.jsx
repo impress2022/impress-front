@@ -5,14 +5,15 @@ import classNames from "classnames";
 export default function Number({ children, direction }) {
   let squareClasses = classNames({
     absolute: true,
-    "-top-1.375 -left-1.375": direction === "top-left",
-    "-bottom-1.375 -left-1.375": direction === "bottom-left",
-    "-top-1.375 -right-1.375": direction === "top-right",
-    "-bottom-1.375 -right-1.375": direction === "bottom-right",
+      "transition-transform transform -top-1.375 -left-1.375": true,
+    "translate-x-0 translate-y-0": direction === "top-left",
+    "translate-x-0 translate-y-137": direction === "bottom-left",
+    "translate-x-137 translate-y-0": direction === "top-right",
+    "translate-x-137 translate-y-137": direction === "bottom-right",
   });
 
   return (
-    <div className="relative w-x2 h-x2 hidden lg:block">
+    <div className="absolute w-x2 h-x2 hidden lg:block">
       <Square sizeClasses="w-x2 h-x2" color="blue" />
       <Text
         size="h2"

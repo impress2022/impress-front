@@ -5,6 +5,7 @@ import Link from "next/link";
 import Text from "../typography/text";
 import React, { useState } from "react";
 import { Scrollama, Step } from "react-scrollama";
+import useWindowSize from "../../hooks/useWindowSize";
 
 function getZIndex(index) {
   switch (index) {
@@ -20,10 +21,11 @@ function getZIndex(index) {
 }
 
 export default function FeaturedRealizations(props) {
-  let directions = ["top-left", "top-right", "bottom-left", "bottom-right"];
+  let directions = ["top-left", "top-right", "bottom-right", "bottom-left"];
 
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
+  const windowSize = useWindowSize();
 
   // This callback fires when a Step hits the offset threshold. It receives the
   // data prop of the step, which in this demo stores the index of the step.
@@ -40,11 +42,16 @@ export default function FeaturedRealizations(props) {
   return (
     <div className="lg:pb-96" style={{ paddingBottom: "90vh" }}>
       <div
-        className="md:sticky md:top-1/3 lg:top-100"
+        className="md:sticky md:top-1/3"
         style={{
-          top: currentStepIndex === props.realizations.length - 1 ? "0" : "",
+          top:
+            currentStepIndex === props.realizations.length - 1
+              ? "0"
+              : (windowSize.height - 690) / 2 + "px",
           paddingTop:
-            currentStepIndex === props.realizations.length - 1 ? "100px" : "",
+            currentStepIndex === props.realizations.length - 1
+              ? (windowSize.height - 690) / 2 + "px"
+              : "",
         }}
       >
         <Number direction={directions[currentStepIndex]}>
@@ -83,26 +90,30 @@ export default function FeaturedRealizations(props) {
                     : currentStepIndex > idx
                     ? "polygon(0 0, 100% 0, 100% 0, 0 0)"
                     : "",
-                transform:
-                  currentStepIndex === idx
-                    ? "translateY(-20px)"
-                    : "translateY(-" + currentProgress * 20 + "px)",
+                // transform:
+                //   currentStepIndex === idx
+                //     ? "translateY(-20px)"
+                //     : "translateY(-" + currentProgress * 20 + "px)",
                 zIndex: getZIndex(idx),
               }}
               className="shadow-caseInsetActiveMobile lg:relative lg:first:translate-y-0 lg:shadow-none md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
             >
-              <Image
-                src={e.acf.teaser.teaser_photo.url}
-                alt={e.acf.teaser.teaser_photo.alt}
-                width={700}
-                height={700}
-              />
+              <Link href={"/realizacja/" + e.post_name}>
+                <a>
+                  <Image
+                    src={e.acf.teaser.teaser_photo.url}
+                    alt={e.acf.teaser.teaser_photo.alt}
+                    width={700}
+                    height={700}
+                  />
+                </a>
+              </Link>
             </div>
           </div>
         ))}
       </div>
       <Scrollama
-        offset="0.3"
+        offset="0.1"
         onStepEnter={onStepEnter}
         onStepProgress={onStepProgress}
         progress={true}
@@ -111,7 +122,7 @@ export default function FeaturedRealizations(props) {
           <Step data={idx} key={idx}>
             <div
               style={{
-                height: idx === props.realizations.length - 1 ? "10vh" : "",
+                height: idx === props.realizations.length - 1 ? "5vh" : "",
                 marginBottom: idx === props.realizations.length - 1 ? "0" : "",
               }}
               className="md:mb-36 md:max-w-365 md:h-screen lg:ml-150 lg:mt-150"
@@ -120,7 +131,7 @@ export default function FeaturedRealizations(props) {
                 className="mt-9 md:mt-12 md:mr-10 lg:mt-0"
                 style={{
                   paddingTop:
-                    idx === props.realizations.length - 1 ? "200px" : "",
+                    idx === props.realizations.length - 1 ? "200px" : "150px",
                 }}
               >
                 <Link href={"/realizacja/" + e.post_name}>

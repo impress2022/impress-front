@@ -8,6 +8,7 @@ import Hamburger from "../hamburger";
  * @param title - plan text
  * @param elements - plain array of texts
  * @param lottie - takes values such as "pr", "design", "marketing", "social"
+ * @param lottie - takes values such as "blue"
  */
 export default function Card({ title, elements, lottie, color }) {
   let [isLottiePlaying, setLottiePlaying] = useState(false);
@@ -20,19 +21,21 @@ export default function Card({ title, elements, lottie, color }) {
   return (
     <div
       onMouseEnter={() => setLottiePlaying(true)}
+      onTouchStart={() => setLottiePlaying(true)}
       onMouseLeave={() => setLottiePlaying(false)}
+      onTouchEnd={() => setLottiePlaying(false)}
       className={wrapperClasses}
     >
       <div className="md:w-full md:flex md:justify-center">
         <CardLottie isLottiePlaying={isLottiePlaying} lottie={lottie} />
       </div>
       {/*60px*/}
-      <header className="mb-8 md:ml-5">
+      <header className="mb-8 md:ml-5 lg:ml-10">
         <Text size="h3" color="white">
           {title}
         </Text>
       </header>
-      <div className="mb-14 md:ml-5 md:group-hover:ml-5">
+      <div className="mb-14 md:ml-5 md:group-hover:ml-5 lg:ml-10">
         {elements.map((el, idx) => (
           <Text
             key={idx}
@@ -40,7 +43,7 @@ export default function Card({ title, elements, lottie, color }) {
             color="white"
             custom="text-center md:text-left"
           >
-            {el}
+            {el.card_item}
           </Text>
         ))}
       </div>

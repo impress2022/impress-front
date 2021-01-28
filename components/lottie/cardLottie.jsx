@@ -23,7 +23,7 @@ export default function CardLottie({ lottie, isLottiePlaying, custom }) {
   };
 
   let lottieClasses = classNames({
-    "w-l-118 h-l-118 md:w-l-160 md:h-l-160 lg:w-l-255 lg:h-l-255 my-14": true,
+    "w-l-118 h-l-118 md:w-l-160 md:h-l-160 lg:w-l-255 lg:h-l-255 my-14 pointer-events-none": true,
   });
 
   if (custom) {
