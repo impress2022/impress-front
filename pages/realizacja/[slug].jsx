@@ -99,7 +99,7 @@ const Post = (props) => {
             {page.goals.map((el, index) => (
               <div
                 key={index}
-                className="mt-15 md:col-span-4 md:max-w-16.25 lg:max-w-26.875"
+                className="mt-15 md:col-span-4 md:max-w-14 lg:max-w-26.875"
               >
                 <Goal squareCount={index + 1}>
                   <Text
@@ -114,7 +114,7 @@ const Post = (props) => {
           </div>
         </section>
         <section>
-          <Gallery photos={page.gallery} />
+          <Gallery photos={page.gallery} data={page.gallery_break} />
         </section>
       </Layout>
     </>

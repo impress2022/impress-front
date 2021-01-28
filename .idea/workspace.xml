@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/squareGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/squareGrid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/gallery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/realizations/grid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/grid.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +106,7 @@
       <workItem from="1610905323441" duration="306000" />
       <workItem from="1610969089366" duration="1515000" />
       <workItem from="1611041119815" duration="29754000" />
-      <workItem from="1611742007633" duration="11296000" />
+      <workItem from="1611742007633" duration="35989000" />
     </task>
     <servers />
   </component>

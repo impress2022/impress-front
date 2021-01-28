@@ -1,7 +1,15 @@
-export default function GalleryBreak() {
+import LesserSlider from "./lesserSlider";
+import Challenges from "./challenges";
+import Summary from "./summary";
+
+export default function GalleryBreak({ data }) {
   return (
-    <div>
-      <h1>Break</h1>
+    <div className="md:flex-100 xl:my-20">
+      <div>
+        <Summary text={data.summary} />
+        <LesserSlider slides={data.slider} />
+        <Challenges challenges={data.challenges} />
+      </div>
     </div>
   );
 }

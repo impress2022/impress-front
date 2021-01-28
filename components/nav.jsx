@@ -12,6 +12,7 @@ function Nav() {
   const scrollOffsetY = useRef(0);
 
   let logoClassess = classNames({
+    "transition-opacity duration-200 ease-in": true,
     "opacity-0 md:opacity-100": menuToggle,
     "opacity-100": !menuToggle,
   });
