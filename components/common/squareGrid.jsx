@@ -9,7 +9,10 @@ export default function SquareGrid({ children, colors, href }) {
           color={colors[0]}
           customWrapper="hidden md:block md:relative md:bottom-0 md:left-0"
         />
-        <a href={href}>
+        <a
+          href={href}
+          className="hover:shadow-buttonBg transition duration-200 ease-linear z-10"
+        >
           <Square
             sizeClasses="w-x6 h-x6 md:w-x4 md:h-x4 lg:w-x7 lg:h-x7"
             color={colors[1]}

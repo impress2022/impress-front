@@ -143,3 +143,11 @@ body {
 .block-important > div {
     display: block !important;
 }
+
+.social-icon {
+    transition: ease-in 200ms;
+}
+.social-icon:hover {
+    -webkit-filter: brightness(0.5) invert(1);
+    filter: brightness(0.5) invert(1);
+}
