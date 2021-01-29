@@ -6,6 +6,10 @@ import Goal from "../../components/case-study/goal";
 import Head from "next/head";
 import React from "react";
 import Gallery from "../../components/case-study/gallery";
+import Slider from "../../components/case-study/slider";
+import useWindowSize from "../../hooks/useWindowSize";
+import Square from "../../components/square";
+import SquareGrid from "../../components/common/squareGrid";
 
 export async function getServerSideProps(context) {
   const { slug } = context.query;
@@ -32,6 +36,7 @@ export async function getServerSideProps(context) {
 
 const Post = (props) => {
   const page = props.data[0].acf;
+  const windowSize = useWindowSize();
   console.log(page);
 
   let hashtags = [];
@@ -71,12 +76,77 @@ const Post = (props) => {
     </div>
   );
 
+  const fluidSlider = (
+    <section className="pl-8 md:pl-16 lg:pl-24 my-7.5r mb-500 md:my-8r md:mb-500 xl:mb-700 xl:my-s-mar relative">
+      <div className="absolute bg-green right-0 top-0 h-full w-1/4 md:w-1/3 lg:w-1/2">
+        <Square
+          sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"
+          color="blue"
+          customWrapper="hidden md:block md:transform md:rotate-180 md:origin-top-left"
+        />
+      </div>
+      <div className="mb-16 lg:mb-24">
+        {windowSize.width < 768 && (
+          <Text size="h2">
+            Efekty, które <br /> zaowocowały
+          </Text>
+        )}
+        {windowSize.width >= 768 && (
+          <Text size="h2">Efekty, które zaowocowały</Text>
+        )}
+      </div>
+      <Slider data={page.slider_efects} />
+    </section>
+  );
+
+  const squares = (
+    <SquareGrid colors={["grey", "green", "green", "red"]} href={"/kontakt"}>
+      <div className="cursor-pointer">
+        <p className="tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller absolute w-64 md:w-500 left-10 md:left-16 lg:left-1/2 top-10 md:top-5 z-10">
+          Następny projekt
+        </p>
+        <Text
+          size="h1"
+          custom="absolute w-64 md:w-500 left-10 md:left-16 md:top-12 lg:left-1/2 top-20 z-10"
+        >
+          Hotel Klimek
+        </Text>
+        <svg
+          className="absolute left-16 md:left-8 md:left-1/3 top-44 md:top-36 lg:left-48 lg:top-1/2 md:top-32 z-10"
+          width="34"
+          height="34"
+          viewBox="0 0 34 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z"
+            fill="#202222"
+          />
+          <path
+            d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z"
+            fill="#202222"
+          />
+          <path
+            d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z"
+            fill="#202222"
+          />
+        </svg>
+      </div>
+    </SquareGrid>
+  );
+
   return (
     <>
       <Head>
         <title>{page.header_title} - Impress</title>
       </Head>
-      <Layout titleSection={titleSection} fluidPhoto={fluidPhoto}>
+      <Layout
+        titleSection={titleSection}
+        fluidPhoto={fluidPhoto}
+        fluid={fluidSlider}
+        squares={squares}
+      >
         <section className="md:flex">
           <div className="mt-2.625 md:flex-1 md:max-w-sm lg:max-w-690">
             <p className={textHeaderClasses}>{page.company_date}</p>
