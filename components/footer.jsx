@@ -18,7 +18,7 @@ export default function Footer() {
   });
 
   let linksClasses = classNames({
-    "text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey": true,
+    "text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey hover:text-white transition-color duration-200 ease-linear": true,
   });
 
   let navItems = [];
@@ -45,7 +45,7 @@ export default function Footer() {
     c++;
     navSecondaryItems.push(
       <li
-        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center"
+        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center hover:text-white transition-color duration-200 ease-linear"
         key={c}
       >
         <Link href={"/" + value.footer_navigation_link[0].post_name}>
@@ -60,7 +60,7 @@ export default function Footer() {
       <div className="w-screen bg-grey">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-8 md:grid-cols-12 py-36">
-            <Arrow href="/kontakt" />
+            <Arrow link="/kontakt" />
             <div className="md:hidden"></div>
             <div className="col-span-5 h-20 md:h-25 lg:ml-12 flex flex-col justify-center">
               <p className="text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">

@@ -28,6 +28,7 @@ export default function Social(props) {
             alt={el.social_media_object.social_media_object_icon.alt}
             width={22}
             height={22}
+            className="social-icon"
           />
         </div>
       </a>

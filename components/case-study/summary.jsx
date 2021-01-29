@@ -3,7 +3,7 @@ import Text from "../typography/text";
 
 export default function Summary({ text }) {
   return (
-    <div className="my-150 md:grid md:grid-cols-12 relative">
+    <div className="my-150 md:grid md:grid-cols-12 relative xl:my-80 xl:mt-64">
       <Square
         sizeClasses="w-xs5 h-xs5 md:w-x3 md:h-x3 lg:w-x5 lg:h-x5"
         customWrapper="w-xs5 h-xs5 md:w-x3 md:h-x3 lg:w-x5 lg:h-x5 relative md:col-span-2"

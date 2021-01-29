@@ -3,7 +3,7 @@ import Hamburger from "./hamburger";
 import { useEffect, useState, useRef } from "react";
 import classNames from "classnames";
 import Social from "./social";
-import Details from "./contact/details";
+import Details from "./kontakt/details";
 import NavMenu from "./navMenu";
 
 function Nav() {

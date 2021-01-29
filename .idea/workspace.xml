@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/gallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/arrow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/arrow.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/challenges.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/challenges.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/summary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/summary.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/squareGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/squareGrid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/contact/details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/kontakt/details.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +110,7 @@
       <workItem from="1610905323441" duration="306000" />
       <workItem from="1610969089366" duration="1515000" />
       <workItem from="1611041119815" duration="29754000" />
-      <workItem from="1611742007633" duration="35989000" />
+      <workItem from="1611742007633" duration="41740000" />
     </task>
     <servers />
   </component>
