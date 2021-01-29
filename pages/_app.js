@@ -1,4 +1,5 @@
 import "tailwindcss/tailwind.css";
+import "swiper/swiper.min.css";
 import "../styles/common.css";
 import App from "next/app";
 import { MenuContext } from "../hooks/useMenu";

@@ -2,7 +2,6 @@ import Text from "../typography/text";
 import Square from "../square";
 
 export default function Challenges({ challenges }) {
-  console.log(challenges);
   return (
     <div className="w-full my-7.5r md:my-80 md:mt-44 lg:flex lg:flex-row-reverse lg:items-center lg:justify-end lg:mt-700 lg:mb-500">
       <div className="mb-10 md:mb-7.5r lg:ml-24">
