@@ -6,9 +6,9 @@ export default function GalleryBreak({ data }) {
   return (
     <div className="md:flex-100 xl:my-20 overflow-hidden">
       <div>
-        <Summary text={data.summary} />
-        <LesserSlider slides={data.slider} />
-        <Challenges challenges={data.challenges} />
+        {data.summary.length > 0 && <Summary text={data.summary} />}
+        {data.slider && <LesserSlider slides={data.slider} />}
+        {data.challenges && <Challenges challenges={data.challenges} />}
       </div>
     </div>
   );

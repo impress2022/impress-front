@@ -3,15 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/challenges.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/challenges.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/gallery.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/typography/text.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/typography/text.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/case-study/lesserSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/lesserSlider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +107,7 @@
       <workItem from="1610969089366" duration="1515000" />
       <workItem from="1611041119815" duration="29754000" />
       <workItem from="1611742007633" duration="41740000" />
+      <workItem from="1612003396846" duration="7832000" />
     </task>
     <servers />
   </component>

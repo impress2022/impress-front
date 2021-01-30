@@ -18,6 +18,13 @@ export async function getServerSideProps(context) {
   );
   const data = await res.json();
 
+  const allPostsIds = await fetch(
+    process.env.NEXT_PUBLIC_API_URL +
+      `/wp/v2/posts?_fields=id,title,slug&orderby=id&order=asc&filter[cat]=3`
+  );
+
+  const allPostsIdsData = await allPostsIds.json();
+
   if (!data) {
     return {
       props: {
@@ -29,6 +36,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      posts: allPostsIdsData,
       notFound: false,
     },
   };
@@ -37,7 +45,11 @@ export async function getServerSideProps(context) {
 const Post = (props) => {
   const page = props.data[0].acf;
   const windowSize = useWindowSize();
-  console.log(page);
+
+  const pageId = props.data[0].id;
+  let index = props.posts.findIndex((el) => el.id === pageId);
+  const nextPage =
+    props.posts[index === props.posts.length - 1 ? 0 : index + 1];
 
   let hashtags = [];
 
@@ -67,17 +79,17 @@ const Post = (props) => {
   const fluidPhoto = (
     <div className="flex justify-center relative">
       <Image
-        src={page.main_image.url}
+        src={page.main_image.sizes["twentytwenty-fullscreen"]}
         alt={page.main_image.alt}
-        height={page.main_image.height}
-        width={page.main_image.width}
+        width={page.main_image.sizes["twentytwenty-fullscreen-width"]}
+        height={page.main_image.sizes["twentytwenty-fullscreen-height"]}
         className="shadow-caseInset"
       />
     </div>
   );
 
-  const fluidSlider = (
-    <section className="pl-8 md:pl-16 lg:pl-24 my-7.5r mb-500 md:my-8r md:mb-500 xl:mb-700 xl:my-s-mar relative">
+  const fluidSlider = page.slider_efects && (
+    <section className="pl-8 md:pl-16 lg:pl-24 mt-7.5r md:mt-8r mb-500 md:mb-500 xl:mb-700 xl:my-s-mar relative">
       <div className="absolute bg-green right-0 top-0 h-full w-1/4 md:w-1/3 lg:w-1/2">
         <Square
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"
@@ -100,7 +112,10 @@ const Post = (props) => {
   );
 
   const squares = (
-    <SquareGrid colors={["grey", "green", "green", "red"]} href={"/kontakt"}>
+    <SquareGrid
+      colors={["grey", "green", "green", "red"]}
+      href={`/realizacja/${nextPage.slug}`}
+    >
       <div className="cursor-pointer">
         <p className="tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller absolute w-64 md:w-500 left-10 md:left-16 lg:left-1/2 top-10 md:top-5 z-10">
           Następny projekt
@@ -109,7 +124,7 @@ const Post = (props) => {
           size="h1"
           custom="absolute w-64 md:w-500 left-10 md:left-16 md:top-12 lg:left-1/2 top-20 z-10"
         >
-          Hotel Klimek
+          {nextPage.title.rendered}
         </Text>
         <svg
           className="absolute left-16 md:left-8 md:left-1/3 top-44 md:top-36 lg:left-48 lg:top-1/2 md:top-32 z-10"
@@ -136,6 +151,10 @@ const Post = (props) => {
     </SquareGrid>
   );
 
+  let contClassess = classNames({
+    "mb-500 md:mb-500 xl:mb-700": !fluidSlider,
+  });
+
   return (
     <>
       <Head>
@@ -147,45 +166,49 @@ const Post = (props) => {
         fluid={fluidSlider}
         squares={squares}
       >
-        <section className="md:flex">
-          <div className="mt-2.625 md:flex-1 md:max-w-sm lg:max-w-690">
-            <p className={textHeaderClasses}>{page.company_date}</p>
-            <Text size="body-18" custom="md:text-1.5 md:leading-2.625">
-              {page.company_desc}
-            </Text>
-          </div>
-          <div className="mt-2.625 md:flex-1 md:ml-20 md:max-w-screen-sm lg:max-w-460">
-            <p className={textHeaderClasses}>Zakres działań</p>
-            <div className="text-1.125 leading-8 font-bold font-aller">
-              {hashtags}
+        <div className={contClassess}>
+          <section className="md:flex">
+            <div className="mt-2.625 md:flex-1 md:max-w-sm lg:max-w-690">
+              <p className={textHeaderClasses}>{page.company_date}</p>
+              <Text size="body-18" custom="md:text-1.5 md:leading-2.625">
+                {page.company_desc}
+              </Text>
             </div>
-          </div>
-        </section>
-        <section className="mt-7.5r md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-s-mar">
-          <Text size="h2" custom="mb-20 md:mb-8 lg:mb-20">
-            Cele, które postanowiliśmy osiągnąć
-          </Text>
-          <div className="md:grid md:grid-cols-12">
-            {page.goals.map((el, index) => (
-              <div
-                key={index}
-                className="mt-15 md:col-span-4 md:max-w-14 lg:max-w-26.875"
-              >
-                <Goal squareCount={index + 1}>
-                  <Text
-                    size="body-16"
-                    custom="mt-10 lg:text-1.125 lg:leading-8"
-                  >
-                    {el.goal}
-                  </Text>
-                </Goal>
+            <div className="mt-2.625 md:flex-1 md:ml-20 md:max-w-screen-sm lg:max-w-460">
+              <p className={textHeaderClasses}>Zakres działań</p>
+              <div className="text-1.125 leading-8 font-bold font-aller">
+                {hashtags}
               </div>
-            ))}
-          </div>
-        </section>
-        <section>
-          <Gallery photos={page.gallery} data={page.gallery_break} />
-        </section>
+            </div>
+          </section>
+          <section className="mt-7.5r md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 xl:mb-0">
+            <Text size="h2" custom="mb-20 md:mb-8 lg:mb-20">
+              Cele, które postanowiliśmy osiągnąć
+            </Text>
+            <div className="md:grid md:grid-cols-12">
+              {page.goals.map((el, index) => (
+                <div
+                  key={index}
+                  className="mt-15 md:col-span-4 md:max-w-14 lg:max-w-26.875"
+                >
+                  <Goal squareCount={index + 1}>
+                    <Text
+                      size="body-16"
+                      custom="mt-10 lg:text-1.125 lg:leading-8"
+                    >
+                      {el.goal}
+                    </Text>
+                  </Goal>
+                </div>
+              ))}
+            </div>
+          </section>
+          {page.gallery.length > 2 && (
+            <section className="xl:my-s-mar">
+              <Gallery photos={page.gallery} data={page.gallery_break} />
+            </section>
+          )}
+        </div>
       </Layout>
     </>
   );
