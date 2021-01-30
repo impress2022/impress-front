@@ -19,7 +19,15 @@ export default function Gallery({ photos, data }) {
   }
 
   for (const el of photos) {
-    if (c === middleIndex) {
+    if (c === middleIndex && data.summary.length > 0) {
+      if (smallCount % 2 === 1) {
+        gallery.push(
+          <div
+            className="hidden md:block md:flex-40 md:min-w-387 xl:min-w-0 xl:max-w-555 md:h-1"
+            key={photos.length}
+          />
+        );
+      }
       gallery.push(<GalleryBreak key="gallery-break" data={data} />);
     }
 
