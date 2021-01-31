@@ -12,7 +12,7 @@ export default function Layout({
     <div>
       <Nav />
       {titleSection && (
-        <section className="container mx-auto px-4 md:px-8">
+        <section className="container mx-auto px-4 md:px-8 relative">
           {titleSection}
         </section>
       )}

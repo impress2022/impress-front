@@ -6,7 +6,6 @@ import Head from "next/head";
 import Text from "../../components/typography/text";
 import Logos from "../../components/common/logos";
 import SquareGrid from "../../components/common/squareGrid";
-import Link from "next/link";
 
 export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7");

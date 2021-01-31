@@ -1,0 +1,37 @@
+import Text from "../typography/text";
+import Image from "next/image";
+import useWindowSize from "../../hooks/useWindowSize";
+
+export default function SubpageHero({ data }) {
+  const windowSize = useWindowSize();
+  return (
+    <header className="hero-section-header mt-7.5r md:flex md:items-center lg:grid lg:grid-cols-12">
+      <div className="mb-8 lg:mb-36 md:col-span-7 xl:col-span-5 md:mr-12">
+        <p className="hidden lg:block tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller">
+          {data.subtitle}
+        </p>
+        <Text size="h2">{data.title}</Text>
+      </div>
+      <div className="lg:absolute lg:right-0">
+        <div className="block-important shadow-dark md:shadow-dark-wide lg:col-span-5 xl:col-span-7 z-10 relative md:min-w-35">
+          <Image
+            src={data.photo.sizes["post-thumbnail"]}
+            width={data.photo.sizes["post-thumbnail-width"]}
+            height={data.photo.sizes["post-thumbnail-height"]}
+            alt={data.photo.alt}
+          />
+        </div>
+        {data.lesser_photo && windowSize.width >= 1280 && (
+          <div className="lg:w-1/2 lg:float-right lg:mt-16 block-important shadow-dark md:shadow-dark-wide">
+            <Image
+              src={data.lesser_photo.sizes["medium"]}
+              width={data.lesser_photo.sizes["medium-width"]}
+              height={data.lesser_photo.sizes["medium-height"]}
+              alt={data.lesser_photo.alt}
+            />
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
