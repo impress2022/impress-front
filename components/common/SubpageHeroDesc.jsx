@@ -26,6 +26,7 @@ export default function SubpageHero({ data }) {
           <div className="hidden md:block block-important shadow-dark-wide md:min-w-1/4">
             {data.photo && (
               <Image
+                quality={100}
                 src={data.photo.sizes["medium"]}
                 width={data.photo.sizes["medium-width"]}
                 height={data.photo.sizes["medium-height"]}

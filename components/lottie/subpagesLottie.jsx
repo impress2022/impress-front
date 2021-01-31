@@ -14,8 +14,9 @@ export default function SubpagesLottie({ lottie, custom }) {
   };
 
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
+    loop: false,
+    autoplay: false,
+    isStopped: true,
     animationData: lotties[lottie],
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -23,7 +24,6 @@ export default function SubpagesLottie({ lottie, custom }) {
   };
 
   let lottieClasses = classNames({
-    // "w-l-118 h-l-118 md:w-l-160 md:h-l-160 lg:w-l-255 lg:h-l-255 my-14 pointer-events-none": true,
     "bg-grey-hover": lottie === "design",
     "bg-red": lottie === "marketing",
     "bg-dark-green": lottie === "pr",

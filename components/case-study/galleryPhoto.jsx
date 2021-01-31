@@ -21,6 +21,7 @@ export default function GalleryPhoto({ photo, index }) {
       <div className={imageContainerclasses}>
         {photo.gallery_full_width && (
           <Image
+            quality={100}
             src={photo.gallery_image.sizes["twentytwenty-fullscreen"]}
             alt={photo.gallery_image.alt}
             width={photo.gallery_image.sizes["twentytwenty-fullscreen-width"]}
@@ -29,6 +30,7 @@ export default function GalleryPhoto({ photo, index }) {
         )}
         {!photo.gallery_full_width && (
           <Image
+            quality={100}
             src={photo.gallery_image.sizes["post-thumbnail"]}
             alt={photo.gallery_image.alt}
             width={photo.gallery_image.sizes["post-thumbnail-width"]}

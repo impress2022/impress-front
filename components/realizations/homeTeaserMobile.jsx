@@ -26,6 +26,7 @@ export default function HomeTeaserMobile(props) {
           <Link href={"/realizacja/" + el.post_name}>
             <a className="block-important">
               <Image
+                quality={100}
                 src={el.teaser.teaser_photo.url}
                 width={el.teaser.teaser_photo.width}
                 height={el.teaser.teaser_photo.height}

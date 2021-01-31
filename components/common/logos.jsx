@@ -8,7 +8,9 @@ export default function Logos(props) {
   let c = 0;
   for (const el of menu.logos) {
     c++;
-    logos.push(<Image key={c} src={el.logo.url} width={83} height={83} />);
+    logos.push(
+      <Image quality={100} key={c} src={el.logo.url} width={83} height={83} />
+    );
   }
 
   return (

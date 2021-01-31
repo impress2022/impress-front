@@ -4,7 +4,10 @@ import SubpagesLottie from "../lottie/subpagesLottie";
 
 export default function Activity({ activity }) {
   return (
-    <div className="activity mt-s-mar lg:mt-500 xl:mt-s-mar md:w-45p flex flex-col-reverse justify-end lg:w-full lg:flex-row lg:items-center lg:h-100vh">
+    <div
+      id={activity.activity_animation}
+      className="activity mt-s-mar lg:mt-500 xl:mt-s-mar md:w-45p flex flex-col-reverse justify-end lg:w-full lg:flex-row lg:items-center lg:h-100vh"
+    >
       <div className="lg:max-w-40 lg:mr-200">
         <div className="my-12">
           <Text size="h2" custom="mb-8">
@@ -31,6 +34,7 @@ export default function Activity({ activity }) {
         </div>
         <div className="block-important shadow-dark md:shadow-dark-wide">
           <Image
+            quality={100}
             src={activity.activity_image.sizes["post-thumbnail"]}
             width={activity.activity_image.sizes["post-thumbnail-width"]}
             height={activity.activity_image.sizes["post-thumbnail-height"]}

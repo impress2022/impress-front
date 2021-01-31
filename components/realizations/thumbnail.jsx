@@ -14,6 +14,7 @@ export default function Thumbnail(props) {
         <div className="group md:flex md:flex-col lg:block cursor-pointer">
           <div className="shadow-caseInsetMobile block-important lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive transform group-hover:translate-x-2.5 group-hover:-translate-y-2.5 md:w-320 md:h-320 xl:w-400 xl:h-400 transition duration-300 ease-linear">
             <Image
+              quality={100}
               src={photo.url}
               alt={photo.alt}
               width={photo.width}
