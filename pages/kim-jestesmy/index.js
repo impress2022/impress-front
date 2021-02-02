@@ -64,7 +64,7 @@ export default function About(props) {
           Zobacz nasze realizacje
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"

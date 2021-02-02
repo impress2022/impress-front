@@ -1,26 +1,26 @@
 html {
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #A8B200 #111111;
+    /*scrollbar-width: thin;*/
+    /*scrollbar-color: #A8B200 #111111;*/
 }
 
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
+/*::-webkit-scrollbar {*/
+    /*width: 12px;*/
+    /*height: 6px;*/
+/*}*/
 
-::-webkit-scrollbar-track {
-    background: #111111;
-}
+/*::-webkit-scrollbar-track {*/
+/*    background: #111111;*/
+/*}*/
 
-::-webkit-scrollbar-thumb {
-    background: #A8B200;
-    border-radius: 8px;
-}
+/*::-webkit-scrollbar-thumb {*/
+/*    background: #A8B200;*/
+/*    border-radius: 8px;*/
+/*}*/
 
-::-webkit-scrollbar-thumb:hover {
-    background: #C7D300;
-}
+/*::-webkit-scrollbar-thumb:hover {*/
+/*    background: #C7D300;*/
+/*}*/
 
 body {
     overflow-x: hidden;

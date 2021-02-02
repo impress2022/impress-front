@@ -3,21 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/lesserSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/lesserSlider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/co-robimy/activity.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/co-robimy/activity.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/SubpageHero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/SubpageHero.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/SubpageHeroDesc.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/SubpageHeroDesc.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/common/logos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/logos.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/singleSquare.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/singleSquare.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/squareGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/squareGrid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hamburger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hamburger.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/lottie/subpagesLottie.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/lottie/subpagesLottie.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/realizations/homeTeaserMobile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/homeTeaserMobile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/co-robimy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/co-robimy/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/kim-jestesmy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/kim-jestesmy/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +120,7 @@
       <workItem from="1611742007633" duration="41740000" />
       <workItem from="1612003396846" duration="13858000" />
       <workItem from="1612033378040" duration="3262000" />
-      <workItem from="1612091912297" duration="18244000" />
+      <workItem from="1612091912297" duration="31052000" />
     </task>
     <servers />
   </component>

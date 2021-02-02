@@ -18,7 +18,7 @@ function Nav() {
   });
 
   let menuClasses = classNames({
-    "transition-all duration-500 ease-in-out z-20 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 md:pt-28 lg:pt-36 flex": true,
+    "transition-all duration-500 ease-in-out z-50 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 md:pt-28 lg:pt-36 flex": true,
     "left-full": !menuToggle,
     // "transform translate-x-full": !menuToggle,
     "left-7 md:left-2/4 lg:left-l58": menuToggle,
@@ -59,6 +59,23 @@ function Nav() {
 
   return (
     <>
+      <div className={menuClasses}>
+        <Hamburger
+          menuToggle={menuToggle}
+          setMenuToggle={setMenuToggle}
+          custom="fixed right-57px top-26px md:right-20 lg:top-9 z-60"
+          active={!menuToggle}
+          activeText={!menuToggle}
+        />
+        <div className={leftBarClasses} />
+        <div className="social-media mx-8 md:mx-12 lg:mx-28">
+          <Social />
+        </div>
+        <div className="navigation flex flex-col justify-between">
+          <NavMenu />
+          <Details />
+        </div>
+      </div>
       <div
         className="sticky bg-white top-0 z-40 transition-transform ease-in h-20 lg:h-nav px-7 md:px-15"
         style={{
@@ -72,19 +89,13 @@ function Nav() {
                 <img src="/images/Logo.svg" alt="Impress" />
               </a>
             </Link>
-            <Hamburger menuToggle={menuToggle} setMenuToggle={setMenuToggle} />
+            <Hamburger
+              menuToggle={menuToggle}
+              setMenuToggle={setMenuToggle}
+              active={menuToggle}
+            />
           </div>
         </nav>
-      </div>
-      <div className={menuClasses}>
-        <div className={leftBarClasses} />
-        <div className="social-media mx-8 md:mx-12 lg:mx-28">
-          <Social />
-        </div>
-        <div className="navigation flex flex-col justify-between">
-          <NavMenu />
-          <Details />
-        </div>
       </div>
     </>
   );

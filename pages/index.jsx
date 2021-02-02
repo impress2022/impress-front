@@ -11,6 +11,7 @@ import Head from "next/head";
 import Link from "next/link";
 import SingleSquare from "../components/common/singleSquare";
 import Card from "../components/common/card";
+import Pulse from "react-reveal/Pulse";
 
 export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69");
@@ -41,7 +42,7 @@ export default function Home(props) {
   const window = useWindowSize();
 
   const fluid = (
-    <section className="relative md:mt-200 lg:mt-250">
+    <section className="relative md:mt-300">
       <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0"></div>
       <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:grid md:grid-cols-12 md:container md:mx-auto">
         {content.fourth_section.map((item, index) => (
@@ -72,12 +73,14 @@ export default function Home(props) {
             >
               {content.first_section_slogan}
             </Text>
-            <Text
-              size="h1"
-              custom="mb-5 text-center md:text-left px-8 md:px-0 md:pr-8 lg:pr-16 lg:text-4.375 lg:leading-5 lg:tracking-hero"
-            >
-              {content.first_section_header}
-            </Text>
+            <Pulse>
+              <Text
+                size="h1"
+                custom="mb-5 text-center md:text-left px-8 md:px-0 md:pr-8 lg:pr-16 lg:text-4.375 lg:leading-5 lg:tracking-hero"
+              >
+                {content.first_section_header}
+              </Text>
+            </Pulse>
             <Text
               size="body-18"
               custom="text-center md:text-left md:pr-12 lg:pr-16 lg:text-1.5 lg:leading-2.625 lg:tracking-desc"
@@ -85,11 +88,11 @@ export default function Home(props) {
               {content.first_section_description}
             </Text>
           </div>
-          <HomeHero custom="md:flex-50 lg:flex-none md:col-span-5" />
-          <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:bottom-0 md:left-0" />
+          {/*<HomeHero custom="md:flex-50 lg:flex-none md:col-span-5" />*/}
+          <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:bottom-0 md:left-0 animate-bounce-slow" />
         </section>
         <section className="md:mb-s-mar">
-          <div className="my-20 container mx-auto">
+          <div className="my-20 lg:my-400 container mx-auto">
             <Logos />
           </div>
         </section>
@@ -103,17 +106,18 @@ export default function Home(props) {
           {window.width >= 1380 && (
             <FeaturedRealizations realizations={content.realizations} />
           )}
-          <div className="lg:mt-32">
+          <div>
             <SingleSquare>Zobacz, mamy ich trochę więcej</SingleSquare>
           </div>
         </section>
-        <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:mb-7.5r">
+        <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:mt-s-mar lg:mt-300">
           <header className="md:col-span-4">
             <Text size="h2" custom="md:text-left lg:text-center">
               {content.third_section_header}
             </Text>
           </header>
-          <div className="md:col-span-8">
+          <div className="hidden md:block lg:hidden"></div>
+          <div className="md:col-span-7 lg:md:col-span-8">
             <div className="md:mb-8">
               <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
                 {content.third_section_description}

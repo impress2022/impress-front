@@ -27,8 +27,6 @@ export default function FeaturedRealizations(props) {
   const [currentProgress, setCurrentProgress] = useState(0);
   const windowSize = useWindowSize();
 
-  // This callback fires when a Step hits the offset threshold. It receives the
-  // data prop of the step, which in this demo stores the index of the step.
   const onStepEnter = ({ data }) => {
     setCurrentStepIndex(data);
   };
@@ -96,7 +94,7 @@ export default function FeaturedRealizations(props) {
                 //     : "translateY(-" + currentProgress * 20 + "px)",
                 zIndex: getZIndex(idx),
               }}
-              className="shadow-caseInsetActiveMobile lg:relative lg:first:translate-y-0 lg:shadow-none md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
+              className="shadow-caseInsetActiveMobile lg:relative lg:first:translate-y-0 lg:shadow-caseInset md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
             >
               <Link href={"/realizacja/" + e.post_name}>
                 <a>

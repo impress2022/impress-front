@@ -2,7 +2,6 @@ import Text from "../typography/text";
 import CardLottie from "../lottie/cardLottie";
 import classNames from "classnames";
 import { useState } from "react";
-import Hamburger from "../hamburger";
 
 /**
  * @param title - plan text
@@ -30,7 +29,7 @@ export default function Card({ title, elements, lottie, color }) {
         <CardLottie isLottiePlaying={isLottiePlaying} lottie={lottie} />
       </div>
       {/*60px*/}
-      <header className="mb-8 md:ml-5 lg:ml-10">
+      <header className="mb-8 md:mb-4 lg:mb-8 md:ml-5 lg:ml-10">
         <Text size="h3" color="white">
           {title}
         </Text>
@@ -41,19 +40,25 @@ export default function Card({ title, elements, lottie, color }) {
             key={idx}
             size="body-16"
             color="white"
-            custom="text-center md:text-left"
+            custom="text-center md:text-left md:leading-6 lg:leading-8"
           >
             {el.card_item}
           </Text>
         ))}
       </div>
-      <div className="hidden md:group-hover:block">
+      <div
+        className="w-full flex justify-end opacity-0 transition-opacity duration-200 ease-linear"
+        style={{
+          opacity: isLottiePlaying ? "100" : "0",
+        }}
+      >
         <svg
           width="60"
           height="60"
           viewBox="0 0 60 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="transform md:-translate-x-1/4 md:-translate-y-2/3 lg:translate-x-0 lg:translate-y-0 m-4 md:m-0 lg:mr-4 lg:mb-0"
         >
           <path d="M17.6778 14H45.6778V18H17.6778V14Z" fill="white" />
           <path

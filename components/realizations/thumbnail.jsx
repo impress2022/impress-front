@@ -12,7 +12,7 @@ export default function Thumbnail(props) {
     <div className="realization-thumbnail lg:max-h-480 mb-12 md:mb-0 lg:mb-14">
       <Link href={href}>
         <div className="group md:flex md:flex-col lg:block cursor-pointer">
-          <div className="shadow-caseInsetMobile block-important lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive transform group-hover:translate-x-2.5 group-hover:-translate-y-2.5 md:w-320 md:h-320 xl:w-400 xl:h-400 transition duration-300 ease-linear">
+          <div className="shadow-caseInsetMobile block-important lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive transform group-hover:translate-x-2.5 group-hover:-translate-y-2.5 md:w-320 md:h-320 xl:w-400 xl:h-400 transition duration-200 ease-linear">
             <Image
               quality={100}
               src={photo.url}

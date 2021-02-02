@@ -14,22 +14,36 @@ export default function Hamburger(props) {
     "transform translate-x-0.5 origin-bottom-left -rotate-45": props.menuToggle,
   });
 
+  let buttonClasses = classNames({
+    "flex justify-center items-center focus:outline-none": true,
+    "transition duration-100 ease-linear opacity-0": props.active,
+  });
+
+  buttonClasses += " " + props.custom;
+
   return (
     <>
       <button
-        className="relative flex justify-center items-center z-50 focus:outline-none"
+        className={buttonClasses}
         onClick={() => {
           props.setMenuToggle(!props.menuToggle);
           if (!props.menuToggle) {
             document.querySelector("body").style.overflowY = "hidden";
-            document.querySelector("body").style.paddingRight = "6px";
+            document.querySelector("body").style.paddingRight = "20px";
           } else {
             document.querySelector("body").style.overflowY = "scroll";
             document.querySelector("body").style.paddingRight = "0";
           }
         }}
       >
-        <b className="hidden md:block md:mr-8 uppercase text-primary">Menu</b>
+        <b
+          className="hidden md:block md:mr-8 uppercase text-primary"
+          style={{
+            opacity: props.activeText ? "0" : "100",
+          }}
+        >
+          Menu
+        </b>
         <svg
           width="32"
           height="28"

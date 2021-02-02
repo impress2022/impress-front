@@ -20,16 +20,16 @@ export default function HomeTeaserMobile(props) {
   }
 
   return (
-    <div className="md:flex md:flex-row-reverse md:mb-36 md:items-center md:justify-center">
-      <div>
-        <div className="shadow-caseInsetActiveMobile lg:shadow-none md:max-w-screen-sm">
+    <div className="md:flex md:flex-row-reverse md:mb-36 md:justify-between lg:justify-around">
+      <div className="">
+        <div className="shadow-caseInset h-320 w-320 md:h-400 md:w-400 lg:h-438 lg:w-438 relative">
           <Link href={"/realizacja/" + el.post_name}>
             <a className="block-important">
               <Image
                 quality={100}
-                src={el.teaser.teaser_photo.url}
-                width={el.teaser.teaser_photo.width}
-                height={el.teaser.teaser_photo.height}
+                src={el.teaser.teaser_photo.sizes["post-thumbnail"]}
+                layout="fill"
+                objectFit="cover"
                 className="block-important"
               />
             </a>

@@ -93,6 +93,7 @@ module.exports = {
       },
       inset: {
         initial: "initial",
+        "3.75": "3.75rem",
         n15: "-1rem",
         "7.5": "7.5rem",
         "-15": "-15rem",
@@ -104,6 +105,8 @@ module.exports = {
         xs1: "22px",
         "100": "100px",
         "200": "200px",
+        "26px": "26px",
+        "57px": "57px",
       },
       spacing: {
         l58: "58%",
@@ -293,6 +296,7 @@ module.exports = {
         "1/4": "25vw",
         "345": "345px",
         "387": "387px",
+        "70vw": "70vw",
       },
       minHeight: {
         "40": "40vh",
@@ -318,6 +322,19 @@ module.exports = {
       },
       borderColor: {
         grey: "#202222",
+      },
+      animation: {
+        "bounce-slow": "bounce 2s linear infinite",
+        "bounce-slow-diag": "bounce-arrow-diag 2s linear infinite",
+      },
+      keyframes: {
+        "bounce-arrow-diag": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0)" },
+          "50%": { transform: "translate3d(10px, -10px, 0)" },
+        },
+      },
+      zIndex: {
+        "60": "60",
       },
     },
   },
