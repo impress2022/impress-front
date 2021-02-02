@@ -97,7 +97,14 @@ export default function FeaturedRealizations(props) {
               className="shadow-caseInsetActiveMobile lg:relative lg:first:translate-y-0 lg:shadow-caseInset md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
             >
               <Link href={"/realizacja/" + e.post_name}>
-                <a>
+                <a
+                // style={{
+                //   transform:
+                //     currentStepIndex === idx
+                //       ? "translateY(-20px)"
+                //       : "translateY(-" + currentProgress * 20 + "px)",
+                // }}
+                >
                   <Image
                     quality={100}
                     src={e.acf.teaser.teaser_photo.url}

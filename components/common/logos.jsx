@@ -11,10 +11,9 @@ export default function Logos(props) {
   for (const el of menu.logos) {
     c++;
     logos.push(
-      <Slide bottom>
+      <Slide bottom key={c}>
         <Image
           quality={100}
-          key={c}
           src={el.logo.url}
           width={200}
           height={200}

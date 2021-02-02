@@ -12,6 +12,7 @@ import Link from "next/link";
 import SingleSquare from "../components/common/singleSquare";
 import Card from "../components/common/card";
 import Pulse from "react-reveal/Pulse";
+import Slide from "react-reveal/Slide";
 
 export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69");
@@ -47,12 +48,16 @@ export default function Home(props) {
       <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:grid md:grid-cols-12 md:container md:mx-auto">
         {content.fourth_section.map((item, index) => (
           <div key={index} className="md:col-span-3 lottie-card">
-            <Card
-              title={item.card_header}
-              elements={item.card_items}
-              lottie={items[index]}
-              color={colors[index]}
-            />
+            <Link href={"/co-robimy#" + items[index]}>
+              <a>
+                <Card
+                  title={item.card_header}
+                  elements={item.card_items}
+                  lottie={items[index]}
+                  color={colors[index]}
+                />
+              </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -110,28 +115,30 @@ export default function Home(props) {
             <SingleSquare>Zobacz, mamy ich trochę więcej</SingleSquare>
           </div>
         </section>
-        <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:mt-s-mar lg:mt-300">
-          <header className="md:col-span-4">
-            <Text size="h2" custom="md:text-left lg:text-center">
-              {content.third_section_header}
-            </Text>
-          </header>
-          <div className="hidden md:block lg:hidden"></div>
-          <div className="md:col-span-7 lg:md:col-span-8">
-            <div className="md:mb-8">
-              <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
-                {content.third_section_description}
+        <Slide left>
+          <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:mt-s-mar lg:mt-300">
+            <header className="md:col-span-4">
+              <Text size="h2" custom="md:text-left lg:text-center">
+                {content.third_section_header}
               </Text>
+            </header>
+            <div className="hidden md:block lg:hidden" />
+            <div className="md:col-span-7 lg:md:col-span-8">
+              <div className="md:mb-8">
+                <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
+                  {content.third_section_description}
+                </Text>
+              </div>
+              <div>
+                <Link href="/co-robimy/">
+                  <a>
+                    <Text size="body-bold-18">Poznaj szczegóły oferty</Text>
+                  </a>
+                </Link>
+              </div>
             </div>
-            <div>
-              <Link href="/co-robimy/">
-                <a>
-                  <Text size="body-bold-18">Poznaj szczegóły oferty</Text>
-                </a>
-              </Link>
-            </div>
-          </div>
-        </section>
+          </section>
+        </Slide>
       </Layout>
     </>
   );
