@@ -16,7 +16,7 @@ export default function Hamburger(props) {
 
   let buttonClasses = classNames({
     "flex justify-center items-center focus:outline-none": true,
-    "transition duration-100 ease-linear opacity-0": props.active,
+    "transition duration-100 ease-linear hidden": props.active,
   });
 
   buttonClasses += " " + props.custom;
@@ -36,14 +36,7 @@ export default function Hamburger(props) {
           }
         }}
       >
-        <b
-          className="hidden md:block md:mr-8 uppercase text-primary"
-          style={{
-            opacity: props.activeText ? "0" : "100",
-          }}
-        >
-          Menu
-        </b>
+        <b className="hidden md:block md:mr-8 uppercase text-primary">Menu</b>
         <svg
           width="32"
           height="28"

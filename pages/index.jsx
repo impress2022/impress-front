@@ -88,7 +88,7 @@ export default function Home(props) {
               {content.first_section_description}
             </Text>
           </div>
-          {/*<HomeHero custom="md:flex-50 lg:flex-none md:col-span-5" />*/}
+          <HomeHero custom="md:flex-50 lg:flex-none md:col-span-5" />
           <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:bottom-0 md:left-0 animate-bounce-slow" />
         </section>
         <section className="md:mb-s-mar">
