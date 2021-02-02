@@ -21,7 +21,13 @@ export default function Card({ title, elements, lottie, color }) {
   });
 
   let wrapperClasses = classNames({
-    "w-full h-full md:h-500 lg:h-690 flex flex-col items-center md:items-start group cursor-pointer transition md:duration-300 md:ease-in-out md:shadow-cardShadow md:hover:shadow-cardShadowActive": true,
+    "w-full h-full md:h-500 lg:h-690 flex flex-col items-center md:items-start group cursor-pointer transition md:duration-300 md:ease-in-out md:shadow-cardShadow md:hover:shadow-cardShadowActive relative": true,
+  });
+
+  const arrowClasses = classNames({
+    "hidden absolute bottom-2 right-2 lg:bottom-4 lg:right-4": true,
+    "md:block": isLottiePlaying,
+    "md:hidden": !isLottiePlaying,
   });
 
   wrapperClasses += " bg-" + color;
@@ -66,7 +72,7 @@ export default function Card({ title, elements, lottie, color }) {
           viewBox="0 0 60 60"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="transform md:-translate-x-1/4 md:-translate-y-2/3 lg:translate-x-0 lg:translate-y-0 m-4 md:m-0 lg:mr-4 lg:mb-0"
+          className={arrowClasses}
         >
           <path d="M17.6778 14H45.6778V18H17.6778V14Z" fill="white" />
           <path

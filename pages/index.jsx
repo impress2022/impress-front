@@ -44,7 +44,7 @@ export default function Home(props) {
 
   const fluid = (
     <section className="relative md:mt-300">
-      <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0"></div>
+      <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0" />
       <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:grid md:grid-cols-12 md:container md:mx-auto">
         {content.fourth_section.map((item, index) => (
           <div key={index} className="md:col-span-3 lottie-card">

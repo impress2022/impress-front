@@ -296,6 +296,7 @@ module.exports = {
         "1/4": "25vw",
         "345": "345px",
         "387": "387px",
+        "60vw": "60vw",
         "70vw": "70vw",
       },
       minHeight: {

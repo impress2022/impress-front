@@ -15,7 +15,7 @@ export default function SingleSquare({ children }) {
             <div className="cursor-pointer">
               <Text
                 size="h3"
-                custom="absolute left-10 md:left-24 lg:left-7.5 top-10 md:top-16 lg:top-7.5 z-10 min-w-70vw"
+                custom="absolute left-10 md:left-24 lg:left-7.5 top-10 md:top-16 lg:top-7.5 z-10 min-w-60vw"
               >
                 {children}
               </Text>

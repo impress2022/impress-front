@@ -29,10 +29,8 @@ export default function Hamburger(props) {
           props.setMenuToggle(!props.menuToggle);
           if (!props.menuToggle) {
             document.querySelector("body").style.overflowY = "hidden";
-            document.querySelector("body").style.paddingRight = "20px";
           } else {
             document.querySelector("body").style.overflowY = "scroll";
-            document.querySelector("body").style.paddingRight = "0";
           }
         }}
       >

@@ -6,14 +6,14 @@ export default function SubpageHero({ data }) {
   const windowSize = useWindowSize();
   return (
     <header className="hero-section-header mt-7.5r md:flex md:items-center lg:grid lg:grid-cols-12">
-      <div className="mb-8 lg:mb-36 md:col-span-7 xl:col-span-5 md:mr-12">
+      <div className="mb-8 lg:mb-36 md:col-span-7 lg:col-span-6 xl:col-span-5 md:mr-12">
         <p className="max-w-90 tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller">
           {data.subtitle}
         </p>
         <Text size="h2">{data.title}</Text>
       </div>
       <div className="lg:absolute lg:right-0">
-        <div className="block-important shadow-dark md:shadow-dark-wide lg:col-span-5 xl:col-span-7 z-10 relative md:min-w-35">
+        <div className="block-important shadow-dark md:shadow-dark-wide lg:col-span-5 xl:col-span-7 z-10 relative md:min-w-35 lg:max-w-25 xl:max-w-50">
           <Image
             quality={100}
             src={data.photo.sizes["post-thumbnail"]}

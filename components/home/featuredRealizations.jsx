@@ -6,6 +6,7 @@ import Text from "../typography/text";
 import React, { useState } from "react";
 import { Scrollama, Step } from "react-scrollama";
 import useWindowSize from "../../hooks/useWindowSize";
+import classNames from "classnames";
 
 function getZIndex(index) {
   switch (index) {
@@ -34,6 +35,94 @@ export default function FeaturedRealizations(props) {
   const onStepProgress = ({ progress }) => {
     setCurrentProgress(progress);
   };
+
+  const images = props.realizations.map((e, idx) => (
+    <div key={idx} className="md:absolute md:right-0">
+      <div
+        style={{
+          clipPath:
+            currentStepIndex === idx
+              ? currentStepIndex === props.realizations.length - 1
+                ? ""
+                : "polygon(0 0, 100% 0, 100% " +
+                  (100 - currentProgress * 100) +
+                  "%, 0 " +
+                  (100 - currentProgress * 100) +
+                  "%)"
+              : currentStepIndex > idx
+              ? "polygon(0 0, 100% 0, 100% 0, 0 0)"
+              : "",
+
+          // transform:
+          //   currentStepIndex === idx && currentStepIndex !== 0
+          //     ? "translateY(-20px)"
+          //     : "translateY(-" + currentProgress * 20 + "px)",
+          zIndex: getZIndex(idx),
+        }}
+        className="lg:relative lg:first:translate-y-0 lg:shadow-caseInset md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
+      >
+        <Link href={"/realizacja/" + e.post_name}>
+          <a>
+            <Image
+              quality={100}
+              src={e.acf.teaser.teaser_photo.url}
+              alt={e.acf.teaser.teaser_photo.alt}
+              width={700}
+              height={700}
+              className={"transition-home-image transition-home-image-" + idx}
+            />
+          </a>
+        </Link>
+        <style jsx global>{`
+          .transition-home-image {
+            transform: translateY(0);
+          }
+
+          .transition-home-image-0 {
+            ${currentStepIndex === 0
+              ? "transform: translateY(-" +
+                currentProgress * 20 +
+                "px) !important"
+              : "transform: translateY(0px)"};
+          }
+
+          .transition-home-image-1 {
+            ${currentStepIndex === 0
+              ? "transform: translateY(" +
+                (1 - currentProgress) * 20 +
+                "px) !important"
+              : currentStepIndex === 1
+              ? "transform: translateY(-" +
+                currentProgress * 20 +
+                "px) !important"
+              : ""};
+          }
+
+          .transition-home-image-2 {
+            ${currentStepIndex === 1
+              ? "transform: translateY(" +
+                (1 - currentProgress) * 20 +
+                "px) !important"
+              : currentStepIndex === 2
+              ? "transform: translateY(-" +
+                currentProgress * 20 +
+                "px) !important"
+              : ""};
+          }
+
+          .transition-home-image-3 {
+            ${currentStepIndex === 2
+              ? "transform: translateY(" +
+                (1 - currentProgress) * 20 +
+                "px) !important"
+              : ""};
+          }
+        `}</style>
+      </div>
+    </div>
+  ));
+
+  console.log(currentStepIndex);
 
   // clip-path: polygon(0 0, 100% 0, 100% 64%, 0 63%);
 
@@ -72,51 +161,7 @@ export default function FeaturedRealizations(props) {
             ))}
           </div>
         </Number>
-        {props.realizations.map((e, idx) => (
-          <div key={idx} className="md:absolute md:right-0">
-            <div
-              style={{
-                clipPath:
-                  currentStepIndex === idx
-                    ? currentStepIndex === props.realizations.length - 1
-                      ? ""
-                      : "polygon(0 0, 100% 0, 100% " +
-                        (100 - currentProgress * 100) +
-                        "%, 0 " +
-                        (100 - currentProgress * 100) +
-                        "%)"
-                    : currentStepIndex > idx
-                    ? "polygon(0 0, 100% 0, 100% 0, 0 0)"
-                    : "",
-                // transform:
-                //   currentStepIndex === idx
-                //     ? "translateY(-20px)"
-                //     : "translateY(-" + currentProgress * 20 + "px)",
-                zIndex: getZIndex(idx),
-              }}
-              className="shadow-caseInsetActiveMobile lg:relative lg:first:translate-y-0 lg:shadow-caseInset md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
-            >
-              <Link href={"/realizacja/" + e.post_name}>
-                <a
-                // style={{
-                //   transform:
-                //     currentStepIndex === idx
-                //       ? "translateY(-20px)"
-                //       : "translateY(-" + currentProgress * 20 + "px)",
-                // }}
-                >
-                  <Image
-                    quality={100}
-                    src={e.acf.teaser.teaser_photo.url}
-                    alt={e.acf.teaser.teaser_photo.alt}
-                    width={700}
-                    height={700}
-                  />
-                </a>
-              </Link>
-            </div>
-          </div>
-        ))}
+        {images}
       </div>
       <Scrollama
         offset="0.1"
