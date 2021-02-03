@@ -40,10 +40,14 @@ module.exports = {
       md: "768px",
       // => @media (min-width: 1024px) { ... }
 
+      md2: "876px",
+
       lg: "1280px",
       // => @media (min-width: 1280px) { ... }
 
       xl: "1620px",
+
+      "2xl": "2501px",
     },
     extend: {
       fontFamily: {
@@ -171,6 +175,9 @@ module.exports = {
         challenges:
           "-30px 0px 0px 0px rgba(199,211,0,1), 30px 0px 0px 0px rgba(199,211,0,1)",
         "challenges-li": "-6px 0px 0px 0px rgba(220,232,35,1)",
+        "1px-grey": "0px 2px 0px 0px rgba(32,34,34,1)",
+        "1px-white": "0px -2px 0px 0px rgba(255,255,255,1)",
+        "1px-red": "0px 2px 0px 0px rgba(204,51,102,1)",
       },
       textColor: {
         primary: "#202222",
@@ -267,6 +274,11 @@ module.exports = {
         "80p": "80%",
         "500": "500px",
         "100vh": "100vh",
+        "50vh": "50vh",
+        "30vh": "30vh",
+        "80px": "80px",
+        "148px": "148px",
+        "230px": "230px",
       },
       maxHeight: {
         "480": "480px",
@@ -293,9 +305,11 @@ module.exports = {
       },
       minWidth: {
         "35": "35vw",
+        "1/3": "33vw",
         "1/4": "25vw",
         "345": "345px",
         "387": "387px",
+        "42": "42vw",
         "60vw": "60vw",
         "70vw": "70vw",
       },
@@ -336,6 +350,9 @@ module.exports = {
       },
       zIndex: {
         "60": "60",
+      },
+      scale: {
+        "200": "2",
       },
     },
   },

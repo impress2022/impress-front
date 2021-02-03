@@ -11,7 +11,7 @@ export default function SquareGrid({ children, colors, href }) {
           <Square
             sizeClasses="md:w-x3 md:h-x3 lg:w-x5 lg:h-x5"
             color={colors[0]}
-            customWrapper="hidden md:block md:relative md:bottom-0 md:left-0"
+            customWrapper="shadow-1px-grey hidden md:block md:relative md:bottom-0 md:left-0"
           />
         </Slide>
         <a
@@ -39,7 +39,7 @@ export default function SquareGrid({ children, colors, href }) {
           <Square
             sizeClasses="md:w-x3 md:h-x3 lg:w-x5 lg:h-x5"
             color={colors[3]}
-            customWrapper="hidden md:block"
+            customWrapper="hidden md:block h-full"
           />
         </Rotate>
       </div>

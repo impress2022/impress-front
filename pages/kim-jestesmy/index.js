@@ -107,7 +107,7 @@ export default function About(props) {
     });
 
     lotties.push(
-      <Link href={"/co-robimy#" + key}>
+      <Link key={key} href={"/co-robimy#" + key}>
         <a>
           <div className={lottieClasses}>
             <SubpagesLottie
@@ -161,11 +161,11 @@ export default function About(props) {
           >
             {page.subpage_content}
           </Text>
-          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 ">
             {lotties}
           </div>
         </div>
-        <div className="xl:mt-300">
+        <div className="lg:mt-300">
           <div className="md:max-w-50 lg:max-w-803 mb-24 xl:mb-150">
             <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
               {page.subpage_mini_gallery.gallery_text}

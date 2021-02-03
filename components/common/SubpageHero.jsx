@@ -12,18 +12,18 @@ export default function SubpageHero({ data }) {
         </p>
         <Text size="h2">{data.title}</Text>
       </div>
-      <div className="lg:absolute lg:right-0">
-        <div className="block-important shadow-dark md:shadow-dark-wide lg:col-span-5 xl:col-span-7 z-10 relative md:min-w-35 lg:max-w-25 xl:max-w-50">
+      <div className="lg:absolute lg:right-0 h-320 md:min-h-40 lg:h-l-320">
+        <div className="block-important shadow-dark md:shadow-dark-wide lg:col-span-5 xl:col-span-7 z-10 relative h-full md:min-w-1/3 lg:min-w-42">
           <Image
             quality={100}
             src={data.photo.sizes["post-thumbnail"]}
-            width={data.photo.sizes["post-thumbnail-width"]}
-            height={data.photo.sizes["post-thumbnail-height"]}
+            layout="fill"
+            objectFit="cover"
             alt={data.photo.alt}
           />
         </div>
         {data.lesser_photo && windowSize.width >= 1280 && (
-          <div className="lg:w-1/2 lg:float-right lg:mt-16 block-important shadow-dark md:shadow-dark-wide">
+          <div className="lg:w-1/2 h-auto lg:float-right lg:mt-16 block-important shadow-dark md:shadow-dark-wide">
             <Image
               quality={100}
               src={data.lesser_photo.sizes["medium"]}

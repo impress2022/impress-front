@@ -29,8 +29,12 @@ export default function Activity({ activity }) {
         </div>
       </div>
       <div className="relative">
-        <div className="absolute top-0 right-0 transform -translate-y-full w-1/4 md:w-1/3 lg:w-2/5">
-          <SubpagesLottie lottie={activity.activity_animation} />
+        <div className="absolute top-0 right-0 transform -translate-y-full h-80px md:h-148px lg:h-230px w-1/4 md:w-2/5 lg:w-2/5">
+          <SubpagesLottie
+            lottie={activity.activity_animation}
+            custom="h-full w-full p-4 md:p-8"
+            innerCustom="md:transform md:scale-125 lg:scale-200"
+          />
         </div>
         <div className="block-important shadow-dark md:shadow-dark-wide">
           <Image

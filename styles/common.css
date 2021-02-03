@@ -67,11 +67,11 @@ body {
     }
 }
 
-@media (min-width: 1200px) {
-    .hero-section-header {
-        align-items: flex-start;
-    }
-}
+/*@media (min-width: 1200px) {*/
+/*    .hero-section-header {*/
+/*        align-items: flex-start;*/
+/*    }*/
+/*}*/
 
 @media (min-width: 1280px) {
     .realization-thumbnail:nth-child(3n+1) {
