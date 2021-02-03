@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/SubpageHeroDesc.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/SubpageHeroDesc.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hamburger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hamburger.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
