@@ -20,10 +20,10 @@ export default function HomeTeaserMobile(props) {
   }
 
   return (
-    <div className="md:flex md:flex-row-reverse md:mb-36 md:justify-between lg:justify-around">
-      <div className="">
+    <div className="flex flex-col items-center md:flex-row-reverse md:mb-36 md:justify-between lg:justify-around">
+      <div>
         <div className="shadow-caseInset h-320 w-320 md:h-400 md:w-400 lg:h-438 lg:w-438 relative">
-          <Link href={"/realizacja/" + el.post_name}>
+          <Link href={"/realizacja/" + props.element.post_name}>
             <a className="block-important">
               <Image
                 quality={100}

@@ -122,8 +122,6 @@ export default function FeaturedRealizations(props) {
     </div>
   ));
 
-  console.log(currentStepIndex);
-
   // clip-path: polygon(0 0, 100% 0, 100% 64%, 0 63%);
 
   return (

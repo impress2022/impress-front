@@ -6,7 +6,7 @@ export default function SubpageHero({ data }) {
   const windowSize = useWindowSize();
   return (
     <header className="hero-section-header mt-7.5r md:flex md:items-center lg:grid lg:grid-cols-12">
-      <div className="mb-8 lg:mb-36 md:col-span-7 lg:col-span-6 xl:col-span-5 md:mr-12">
+      <div className="mb-8 lg:mb-36 md:col-span-7 lg:col-span-5 md:mr-12">
         <p className="max-w-90 tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller">
           {data.subtitle}
         </p>

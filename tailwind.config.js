@@ -33,21 +33,12 @@ module.exports = {
     screens: {
       sm: "320px",
       // => @media (min-width: 640px) { ... }
-
       // 'md': '876px',
       // => @media (min-width: 768px) { ... }
-
       md: "768px",
       // => @media (min-width: 1024px) { ... }
-
-      md2: "876px",
-
       lg: "1280px",
       // => @media (min-width: 1280px) { ... }
-
-      xl: "1620px",
-
-      "2xl": "2501px",
     },
     extend: {
       fontFamily: {
@@ -309,7 +300,7 @@ module.exports = {
         "1/4": "25vw",
         "345": "345px",
         "387": "387px",
-        "42": "42vw",
+        "42": "41.6vw",
         "60vw": "60vw",
         "70vw": "70vw",
       },

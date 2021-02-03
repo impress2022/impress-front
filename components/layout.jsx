@@ -12,12 +12,12 @@ export default function Layout({
     <div>
       <Nav />
       {titleSection && (
-        <section className="container mx-auto px-4 md:px-8 relative">
+        <section className="lg:container mx-7 md:mx-16 lg:mx-auto relative">
           {titleSection}
         </section>
       )}
       {fluidPhoto && <section>{fluidPhoto}</section>}
-      <main className="container mx-auto px-4">{children}</main>
+      <main className="lg:container mx-7 md:mx-16 lg:mx-auto">{children}</main>
       {fluid && <section>{fluid}</section>}
       {squares && <section className="relative">{squares}</section>}
       <Footer />
