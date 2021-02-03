@@ -25,6 +25,7 @@ export default function LesserSlider({ slides }) {
               }}
             >
               <Image
+                quality={100}
                 src={item.slider_photo.sizes["post-thumbnail"]}
                 alt={item.slider_photo.alt}
                 layout="fill"

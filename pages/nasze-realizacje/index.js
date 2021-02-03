@@ -6,7 +6,6 @@ import Head from "next/head";
 import Text from "../../components/typography/text";
 import Logos from "../../components/common/logos";
 import SquareGrid from "../../components/common/squareGrid";
-import Link from "next/link";
 
 export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7");
@@ -91,7 +90,7 @@ export default function Realizations(props) {
           Zobacz, co możemy Ci zaproponować
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -140,7 +139,7 @@ export default function Realizations(props) {
           {realizations.length === 0 && (
             <Text
               size="h2"
-              custom="min-h-screen md:text-center lg:text-left md:min-h-60"
+              custom="min-h-screen md:text-center lg:text-left md:min-h-60 lg:min-h-80 xl:min-h-60"
             >
               Takiej realizacji jeszcze nie mamy, ale ogarniemy. <br />
               <b className="underline">Spotkajmy się,</b> porozmawiajmy.

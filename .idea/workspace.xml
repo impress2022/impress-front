@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/gallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/gallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryBreak.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/galleryPhoto.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/case-study/lesserSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/case-study/lesserSlider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hamburger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hamburger.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hooks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/lottie" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kamil\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -51,11 +46,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Kamil\projects\impress-wp\hooks" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\common" />
+      <recent name="C:\Users\Kamil\projects\impress-wp\hooks" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\realizations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
@@ -107,7 +102,10 @@
       <workItem from="1610969089366" duration="1515000" />
       <workItem from="1611041119815" duration="29754000" />
       <workItem from="1611742007633" duration="41740000" />
-      <workItem from="1612003396846" duration="7832000" />
+      <workItem from="1612003396846" duration="13858000" />
+      <workItem from="1612033378040" duration="3262000" />
+      <workItem from="1612091912297" duration="31052000" />
+      <workItem from="1612291642994" duration="7089000" />
     </task>
     <servers />
   </component>

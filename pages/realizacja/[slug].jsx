@@ -79,6 +79,7 @@ const Post = (props) => {
   const fluidPhoto = (
     <div className="flex justify-center relative">
       <Image
+        quality={100}
         src={page.main_image.sizes["twentytwenty-fullscreen"]}
         alt={page.main_image.alt}
         width={page.main_image.sizes["twentytwenty-fullscreen-width"]}
@@ -127,7 +128,7 @@ const Post = (props) => {
           {nextPage.title.rendered}
         </Text>
         <svg
-          className="absolute left-16 md:left-8 md:left-1/3 top-44 md:top-36 lg:left-48 lg:top-1/2 md:top-32 z-10"
+          className="hidden md:block absolute left-16 md:left-8 md:left-1/3 top-44 md:top-36 lg:left-48 lg:top-1/2 md:top-32 z-10"
           width="34"
           height="34"
           viewBox="0 0 34 34"

@@ -11,14 +11,8 @@ function Nav() {
   const [menuHide, setMenuHide] = useState(false);
   const scrollOffsetY = useRef(0);
 
-  let logoClassess = classNames({
-    "transition-opacity duration-200 ease-in": true,
-    "opacity-0 md:opacity-100": menuToggle,
-    "opacity-100": !menuToggle,
-  });
-
   let menuClasses = classNames({
-    "transition-all duration-500 ease-in-out z-20 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 md:pt-28 lg:pt-36 flex": true,
+    "transition-all duration-500 ease-in-out z-50 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 md:pt-28 lg:pt-36 flex": true,
     "left-full": !menuToggle,
     // "transform translate-x-full": !menuToggle,
     "left-7 md:left-2/4 lg:left-l58": menuToggle,
@@ -59,6 +53,22 @@ function Nav() {
 
   return (
     <>
+      <div className={menuClasses}>
+        <Hamburger
+          menuToggle={menuToggle}
+          setMenuToggle={setMenuToggle}
+          custom="fixed right-6 md:right-57px top-26px md:right-3.75 lg:right-20 lg:top-9 z-60"
+          active={!menuToggle}
+        />
+        <div className={leftBarClasses} />
+        <div className="social-media mx-8 md:mx-12 lg:mx-28">
+          <Social />
+        </div>
+        <div className="navigation flex flex-col justify-between">
+          <NavMenu />
+          <Details />
+        </div>
+      </div>
       <div
         className="sticky bg-white top-0 z-40 transition-transform ease-in h-20 lg:h-nav px-7 md:px-15"
         style={{
@@ -68,23 +78,17 @@ function Nav() {
         <nav className="h-full relative">
           <div className="flex justify-between items-center h-full">
             <Link href="/">
-              <a className={logoClassess}>
+              <a>
                 <img src="/images/Logo.svg" alt="Impress" />
               </a>
             </Link>
-            <Hamburger menuToggle={menuToggle} setMenuToggle={setMenuToggle} />
+            <Hamburger
+              menuToggle={menuToggle}
+              setMenuToggle={setMenuToggle}
+              active={menuToggle}
+            />
           </div>
         </nav>
-      </div>
-      <div className={menuClasses}>
-        <div className={leftBarClasses} />
-        <div className="social-media mx-8 md:mx-12 lg:mx-28">
-          <Social />
-        </div>
-        <div className="navigation flex flex-col justify-between">
-          <NavMenu />
-          <Details />
-        </div>
       </div>
     </>
   );

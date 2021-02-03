@@ -1,5 +1,7 @@
 import { useMenu } from "../../hooks/useMenu";
 import Image from "next/image";
+import React from "react";
+import Slide from "react-reveal/Slide";
 
 export default function Logos(props) {
   const menu = useMenu();
@@ -8,7 +10,17 @@ export default function Logos(props) {
   let c = 0;
   for (const el of menu.logos) {
     c++;
-    logos.push(<Image key={c} src={el.logo.url} width={83} height={83} />);
+    logos.push(
+      <Slide bottom key={c}>
+        <Image
+          quality={100}
+          src={el.logo.url}
+          width={200}
+          height={200}
+          className="w-full h-full"
+        />
+      </Slide>
+    );
   }
 
   return (

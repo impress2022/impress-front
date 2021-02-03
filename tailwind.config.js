@@ -40,10 +40,14 @@ module.exports = {
       md: "768px",
       // => @media (min-width: 1024px) { ... }
 
+      md2: "876px",
+
       lg: "1280px",
       // => @media (min-width: 1280px) { ... }
 
       xl: "1620px",
+
+      "2xl": "2501px",
     },
     extend: {
       fontFamily: {
@@ -93,6 +97,7 @@ module.exports = {
       },
       inset: {
         initial: "initial",
+        "3.75": "3.75rem",
         n15: "-1rem",
         "7.5": "7.5rem",
         "-15": "-15rem",
@@ -104,6 +109,8 @@ module.exports = {
         xs1: "22px",
         "100": "100px",
         "200": "200px",
+        "26px": "26px",
+        "57px": "57px",
       },
       spacing: {
         l58: "58%",
@@ -141,10 +148,12 @@ module.exports = {
         "15": "3.75rem",
         "12.5": "12.5rem",
         "20": "20rem",
+        "7.5r": "7.5rem",
         "5.25": "5.25rem",
         "7.25": "7.25rem",
         "104": "26rem",
         "132": "34rem",
+        "300": "300px",
         "-690": "-690px",
       },
       boxShadow: {
@@ -155,6 +164,8 @@ module.exports = {
         caseInsetMobile: "-5px 5px 0px 0px rgba(149,149,149,0.85)",
         sliderMobile: "-5px 5px 0px 0px rgba(0,0,0,0.1)",
         sliderTablet: "-10px 10px 0px 0px rgba(0,0,0,0.1)",
+        dark: "-5px 5px 0px 0px rgba(0,0,0,0.4)",
+        "dark-wide": "-10px 10px 0px 0px rgba(0,0,0,0.4)",
         buttonBg: "-10px 10px 0px 0px rgba(0,0,0,0.3)",
         caseInsetActiveMobile: "-10px 10px 0px 0px rgba(126,126,126,0.85)",
         cardShadow: "0px 0px 0px 0px rgba(0,0,0,0.45)",
@@ -164,6 +175,9 @@ module.exports = {
         challenges:
           "-30px 0px 0px 0px rgba(199,211,0,1), 30px 0px 0px 0px rgba(199,211,0,1)",
         "challenges-li": "-6px 0px 0px 0px rgba(220,232,35,1)",
+        "1px-grey": "0px 2px 0px 0px rgba(32,34,34,1)",
+        "1px-white": "0px -2px 0px 0px rgba(255,255,255,1)",
+        "1px-red": "0px 2px 0px 0px rgba(204,51,102,1)",
       },
       textColor: {
         primary: "#202222",
@@ -180,15 +194,20 @@ module.exports = {
         "15": "3.75rem",
         "-104": "-26rem",
         "s-mar": "200px",
+        "20p": "20%",
         "30p": "30%",
         "150": "150px",
         "200": "200px",
+        "-200": "-200px",
         "250": "250px",
+        "300": "300px",
+        "400": "400px",
         "500": "500px",
         "600": "600px",
         "700": "700px",
       },
       width: {
+        "45p": "45%",
         "25": "6.25rem",
         "22": "5.50rem",
         "320": "320px",
@@ -218,13 +237,19 @@ module.exports = {
         "l-118": "118px",
         "l-160": "160px",
         "l-255": "255px",
+        "3/8": "37.5%",
       },
       height: {
         "25": "6.25rem",
         nav: "100px",
+        "155": "155px",
+        "220": "220px",
         "320": "320px",
+        "345": "345px",
+        "390": "390px",
         "438": "438px",
         "400": "400px",
+        "625": "625px",
         "690": "690px",
         "405": "405px",
         "420": "420px",
@@ -249,6 +274,12 @@ module.exports = {
         "l-255": "255px",
         "80p": "80%",
         "500": "500px",
+        "100vh": "100vh",
+        "50vh": "50vh",
+        "30vh": "30vh",
+        "80px": "80px",
+        "148px": "148px",
+        "230px": "230px",
       },
       maxHeight: {
         "480": "480px",
@@ -256,7 +287,9 @@ module.exports = {
         "555": "555px",
       },
       maxWidth: {
+        "40": "40%",
         "50": "50%",
+        "90": "90%",
         "14": "14rem",
         "16.25": "16.25rem",
         "26.875": "26.875rem",
@@ -272,7 +305,14 @@ module.exports = {
         "1/3": "33.33%",
       },
       minWidth: {
+        "35": "35vw",
+        "1/3": "33vw",
+        "1/4": "25vw",
+        "345": "345px",
         "387": "387px",
+        "42": "42vw",
+        "60vw": "60vw",
+        "70vw": "70vw",
       },
       minHeight: {
         "40": "40vh",
@@ -298,6 +338,22 @@ module.exports = {
       },
       borderColor: {
         grey: "#202222",
+      },
+      animation: {
+        "bounce-slow": "bounce 2s linear infinite",
+        "bounce-slow-diag": "bounce-arrow-diag 2s linear infinite",
+      },
+      keyframes: {
+        "bounce-arrow-diag": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0)" },
+          "50%": { transform: "translate3d(10px, -10px, 0)" },
+        },
+      },
+      zIndex: {
+        "60": "60",
+      },
+      scale: {
+        "200": "2",
       },
     },
   },

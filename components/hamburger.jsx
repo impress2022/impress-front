@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function Hamburger(props) {
   let hamburgerClasses1 = classNames({
@@ -14,18 +15,31 @@ export default function Hamburger(props) {
     "transform translate-x-0.5 origin-bottom-left -rotate-45": props.menuToggle,
   });
 
+  let buttonClasses = classNames({
+    "flex justify-center items-center focus:outline-none": true,
+    "transition duration-100 ease-linear hidden": props.active,
+  });
+
+  buttonClasses += " " + props.custom;
+
+  const windowSize = useWindowSize();
+
   return (
     <>
       <button
-        className="relative flex justify-center items-center z-50 focus:outline-none"
+        className={buttonClasses}
         onClick={() => {
           props.setMenuToggle(!props.menuToggle);
           if (!props.menuToggle) {
-            document.querySelector("body").style.overflowY = "hidden";
-            document.querySelector("body").style.paddingRight = "6px";
+            // document.querySelector("body").style.overflowY = "hidden";
+            // if (windowSize.width >= 1280) {
+            //   document.querySelector("body").style.paddingRight = "18px";
+            // }
           } else {
-            document.querySelector("body").style.overflowY = "scroll";
-            document.querySelector("body").style.paddingRight = "0";
+            // document.querySelector("body").style.overflowY = "scroll";
+            // if (windowSize.width >= 1280) {
+            //   document.querySelector("body").style.paddingRight = "0px";
+            // }
           }
         }}
       >
