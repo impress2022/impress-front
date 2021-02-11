@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/hamburger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hamburger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/lottie" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kamil\AppData\Roaming\npm\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -46,11 +47,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\post" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\blog" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\common" />
-      <recent name="C:\Users\Kamil\projects\impress-wp\hooks" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
