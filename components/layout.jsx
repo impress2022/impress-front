@@ -7,6 +7,7 @@ export default function Layout({
   fluidPhoto,
   titleSection,
   squares,
+  overflow,
 }) {
   return (
     <div>
@@ -17,7 +18,12 @@ export default function Layout({
         </section>
       )}
       {fluidPhoto && <section>{fluidPhoto}</section>}
-      <main className="container mx-auto px-4">{children}</main>
+      <main
+        className="container mx-auto px-4"
+        style={{ overflow: overflow ? "hidden" : "visible" }}
+      >
+        {children}
+      </main>
       {fluid && <section>{fluid}</section>}
       {squares && <section className="relative">{squares}</section>}
       <Footer />

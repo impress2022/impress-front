@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/kontakt/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/kontakt/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +110,8 @@
       <workItem from="1612033378040" duration="3262000" />
       <workItem from="1612091912297" duration="31052000" />
       <workItem from="1612291642994" duration="7089000" />
+      <workItem from="1613134403806" duration="12633000" />
+      <workItem from="1613223329233" duration="12031000" />
     </task>
     <servers />
   </component>
