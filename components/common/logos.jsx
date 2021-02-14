@@ -1,10 +1,9 @@
-import { useMenu } from "../../hooks/useMenu";
 import Image from "next/image";
 import React from "react";
 import Slide from "react-reveal/Slide";
 
 export default function Logos(props) {
-  const menu = useMenu();
+  const menu = props.menu;
 
   let logos = [];
   let c = 0;

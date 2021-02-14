@@ -13,6 +13,11 @@ export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/11");
   const data = await res.json();
 
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
+
   if (!data) {
     return {
       props: {
@@ -24,6 +29,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -157,7 +163,12 @@ export default function About(props) {
       <Head>
         <title>Kim jesteśmy - Impress</title>
       </Head>
-      <Layout titleSection={Hero} fluidPhoto={HeroDesc} squares={squares}>
+      <Layout
+        titleSection={Hero}
+        fluidPhoto={HeroDesc}
+        squares={squares}
+        menu={props.menu}
+      >
         <section className="mb-400 lg:mb-700">
           <div className="md:mx-4 my-7.5r md:my-8r md:my-s-mar">
             <Text

@@ -8,10 +8,11 @@ export default function Layout({
   titleSection,
   squares,
   overflow,
+  menu,
 }) {
   return (
     <div>
-      <Nav />
+      {menu && <Nav menu={menu} />}
       {titleSection && (
         <section className="container mx-auto px-4 md:px-8 relative">
           {titleSection}
@@ -26,7 +27,7 @@ export default function Layout({
       </main>
       {fluid && <section>{fluid}</section>}
       {squares && <section className="relative">{squares}</section>}
-      <Footer />
+      <Footer menu={menu} />
     </div>
   );
 }

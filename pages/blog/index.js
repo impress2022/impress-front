@@ -16,6 +16,11 @@ export async function getServerSideProps(context) {
 
   const dataPosts = await posts.json();
 
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
+
   if (!data) {
     return {
       props: {
@@ -27,6 +32,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       posts: dataPosts,
       notFound: false,
     },
@@ -54,7 +60,7 @@ export default function Blog(props) {
       <Head>
         <title>Blog - Impress</title>
       </Head>
-      <Layout squares={squares}>
+      <Layout squares={squares} menu={props.menu}>
         <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-8r lg:mt-16 xl:mt-8r md:mt-7.5r">
           <Text size="h2" custom="mb-8">
             {props.data.acf.header_title}

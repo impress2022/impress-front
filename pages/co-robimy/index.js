@@ -10,6 +10,11 @@ export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/9");
   const data = await res.json();
 
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
+
   if (!data) {
     return {
       props: {
@@ -21,6 +26,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -91,7 +97,12 @@ export default function Work(props) {
       <Head>
         <title>Co robimy - Impress</title>
       </Head>
-      <Layout titleSection={Hero} fluidPhoto={HeroDesc} squares={squares}>
+      <Layout
+        titleSection={Hero}
+        fluidPhoto={HeroDesc}
+        squares={squares}
+        menu={props.menu}
+      >
         {/*md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12*/}
         <section className="mb-400 lg:mb-700 md:flex md:flex-wrap md:justify-between">
           {page.activities.map((item, index) => (

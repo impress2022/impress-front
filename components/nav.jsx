@@ -5,8 +5,9 @@ import classNames from "classnames";
 import Social from "./social";
 import Details from "./kontakt/details";
 import NavMenu from "./navMenu";
+import Image from "next/image";
 
-function Nav() {
+function Nav({ menu }) {
   const [menuToggle, setMenuToggle] = useState(false);
   const [menuHide, setMenuHide] = useState(false);
   const scrollOffsetY = useRef(0);
@@ -62,11 +63,11 @@ function Nav() {
         />
         <div className={leftBarClasses} />
         <div className="social-media mx-8 md:mx-12 lg:mx-28">
-          <Social />
+          <Social menu={menu} />
         </div>
         <div className="navigation flex flex-col justify-between">
-          <NavMenu />
-          <Details />
+          <NavMenu menu={menu} />
+          <Details menu={menu} />
         </div>
       </div>
       <div
@@ -79,7 +80,12 @@ function Nav() {
           <div className="flex justify-between items-center h-full">
             <Link href="/">
               <a>
-                <img src="/images/Logo.svg" alt="Impress" />
+                <Image
+                  src="/images/Logo.svg"
+                  alt="Impress"
+                  width={146}
+                  height={30}
+                />
               </a>
             </Link>
             <Hamburger

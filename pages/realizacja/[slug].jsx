@@ -25,6 +25,11 @@ export async function getServerSideProps(context) {
 
   const allPostsIdsData = await allPostsIds.json();
 
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
+
   if (!data) {
     return {
       props: {
@@ -36,6 +41,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       posts: allPostsIdsData,
       notFound: false,
     },
@@ -162,6 +168,7 @@ const Post = (props) => {
         <title>{page.header_title} - Impress</title>
       </Head>
       <Layout
+        menu={props.menu}
         titleSection={titleSection}
         fluidPhoto={fluidPhoto}
         fluid={fluidSlider}

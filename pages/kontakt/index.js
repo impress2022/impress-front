@@ -13,6 +13,11 @@ export async function getServerSideProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/13");
   const data = await res.json();
 
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
+
   if (!data) {
     return {
       props: {
@@ -24,6 +29,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -34,7 +40,7 @@ export default function Contact(props) {
 
   const router = useRouter();
   const { thanks } = router.query;
-  console.log(page);
+
   const [checked, setChecked] = useState(false);
 
   return (
@@ -42,7 +48,7 @@ export default function Contact(props) {
       <Head>
         <title>Skontaktuj się - Impress</title>
       </Head>
-      <Layout overflow={true}>
+      <Layout overflow={true} menu={props.menu}>
         {thanks && thanks === "true" && (
           <Modal
             header={page.thanks.header}
