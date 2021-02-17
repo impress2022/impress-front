@@ -63,8 +63,7 @@ export default function FeaturedRealizations(props) {
       >
         <Link href={"/realizacja/" + e.post_name}>
           <a>
-            <Image
-              quality={100}
+            <img
               src={e.acf.teaser.teaser_photo.url}
               alt={e.acf.teaser.teaser_photo.alt}
               width={700}
