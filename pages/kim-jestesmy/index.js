@@ -7,10 +7,16 @@ import Image from "next/image";
 import SubpagesLottie from "../../components/lottie/subpagesLottie";
 import classNames from "classnames";
 import Link from "next/link";
+import Head from "next/head";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/11");
   const data = await res.json();
+
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
 
   if (!data) {
     return {
@@ -23,6 +29,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -87,7 +94,7 @@ export default function About(props) {
       </div>
     </SquareGrid>
   );
-  console.log(page);
+
   const icons = {
     pr: "Public Relations",
     marketing: "Marketing",
@@ -152,30 +159,40 @@ export default function About(props) {
   }
 
   return (
-    <Layout titleSection={Hero} fluidPhoto={HeroDesc} squares={squares}>
-      <section className="mb-400 lg:mb-700">
-        <div className="md:mx-4 my-7.5r md:my-8r md:my-s-mar">
-          <Text
-            size="body-18"
-            custom="lg:text-1.5 lg:leading-2.625 mb-12 md:mb-20 lg:max-w-803"
-          >
-            {page.subpage_content}
-          </Text>
-          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 ">
-            {lotties}
-          </div>
-        </div>
-        <div className="lg:mt-300">
-          <div className="md:max-w-50 lg:max-w-803 mb-24 xl:mb-150">
-            <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
-              {page.subpage_mini_gallery.gallery_text}
+    <>
+      <Head>
+        <title>Kim jesteśmy - Impress</title>
+      </Head>
+      <Layout
+        titleSection={Hero}
+        fluidPhoto={HeroDesc}
+        squares={squares}
+        menu={props.menu}
+      >
+        <section className="mb-400 lg:mb-700">
+          <div className="md:mx-4 my-7.5r md:my-8r md:my-s-mar">
+            <Text
+              size="body-18"
+              custom="lg:text-1.5 lg:leading-2.625 mb-12 md:mb-20 lg:max-w-803"
+            >
+              {page.subpage_content}
             </Text>
+            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 ">
+              {lotties}
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 gap-6 md:grid-cols-4">
-            {images}
+          <div className="lg:mt-300">
+            <div className="md:max-w-50 lg:max-w-803 mb-24 xl:mb-150">
+              <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
+                {page.subpage_mini_gallery.gallery_text}
+              </Text>
+            </div>
+            <div className="grid grid-cols-2 gap-4 gap-6 md:grid-cols-4">
+              {images}
+            </div>
           </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
+    </>
   );
 }

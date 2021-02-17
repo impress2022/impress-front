@@ -1,10 +1,7 @@
 import Link from "next/link";
 import classNames from "classnames";
-import { useMenu } from "../hooks/useMenu";
 
-export default function NavMenu() {
-  const menu = useMenu();
-
+export default function NavMenu({ menu }) {
   let liClasses = classNames({
     "transition duration-500 ease-linear font-en-sans text-2xl md:text-2xl lg:text-2.5 leading-250 md:leading-200 shadow-menuInset hover:shadow-menuInsetActive pb-1": true,
   });

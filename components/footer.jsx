@@ -1,12 +1,10 @@
 import Arrow from "./arrow";
 import Link from "next/link";
 import Social from "./social";
-import { useMenu } from "../hooks/useMenu";
 import classNames from "classnames";
 import LogoFooter from "./logoFooter";
 
-export default function Footer() {
-  const menu = useMenu();
+export default function Footer({ menu }) {
   let pd = menu.personal_data;
 
   let textClasses = classNames({
@@ -61,7 +59,7 @@ export default function Footer() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-8 md:grid-cols-12 py-36">
             <Arrow link="/kontakt" />
-            <div className="md:hidden"></div>
+            <div className="md:hidden" />
             <div className="col-span-5 h-20 md:h-25 lg:ml-12 flex flex-col justify-center">
               <p className="text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
                 Masz pomysł?
@@ -96,11 +94,11 @@ export default function Footer() {
           </div>
           <div className="md:flex md:w-full pb-24">
             <div className="mb-10 md:mb-0 md:mr-4 lg:mr-12">
-              <Social flex={true} />
+              <Social menu={menu} flex={true} />
             </div>
             <div className="flex flex-row justify-between md:w-full">
               <ul className="md:flex lg:min-w-387">{navItems}</ul>
-              <div className="hidden md:h-full md:w-px md:block md:bg-lighter-grey md:flex md:md:items-center"></div>
+              <div className="hidden md:h-full md:w-px md:block md:bg-lighter-grey md:flex md:md:items-center" />
               <div className="text-right flex flex-col justify-between md:flex-row lg:w-full">
                 <ul className="md:flex">{navSecondaryItems}</ul>
                 <p className="text-0.75 leading-4.5 mb-4 md:mb-0 text-light-grey font-inter font-extralight md:ml-4 lg:ml-auto md:flex md:items-center">

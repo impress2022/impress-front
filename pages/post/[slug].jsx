@@ -6,24 +6,37 @@ import Image from "next/image";
 import Text from "../../components/typography/text";
 import Social from "../../components/social";
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query;
+export async function getStaticPaths() {
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${slug}`
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=9"
+  );
+  const posts = await res.json();
+
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  // const { slug } = context.query;
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${params.slug}`
   );
   const data = await res.json();
 
-  if (!data) {
-    return {
-      props: {
-        notFound: true,
-      },
-    };
-  }
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
+
+  console.log(data);
 
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -32,6 +45,7 @@ export async function getServerSideProps(context) {
 const BlogPost = (props) => {
   const squares = <SquareGrid colors={["grey", "green", "green", "red"]} />;
   const page = props.data[0].acf;
+  const menu = props.menu;
 
   const d = new Date(props.data[0].date);
   const ye = new Intl.DateTimeFormat("pl", { year: "numeric" }).format(d);
@@ -44,7 +58,7 @@ const BlogPost = (props) => {
       <Head>
         <title>{props.data[0].title.rendered} - Impress</title>
       </Head>
-      <Layout squares={squares}>
+      <Layout squares={squares} menu={menu}>
         <section className="md:grid md:grid-cols-12 md:items-center">
           <div className="md:col-span-7">
             <div className="my-10 mb-16">
@@ -73,7 +87,7 @@ const BlogPost = (props) => {
         </section>
         <section className="mb-600 mt-7.5r md:mt-8r md:grid md:grid-cols-12 wysiwyg">
           <div className="social-media w-full">
-            <Social />
+            <Social menu={menu} />
           </div>
           <div
             className="md:col-span-11"
