@@ -7,8 +7,10 @@ import Text from "../../components/typography/text";
 import Logos from "../../components/common/logos";
 import SquareGrid from "../../components/common/squareGrid";
 
-export async function getStaticProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7");
+export async function getStaticProps() {
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7?_fields=acf"
+  );
   const data = await res.json();
 
   const realizations = await fetch(

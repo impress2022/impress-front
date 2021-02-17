@@ -3,7 +3,7 @@ import BasicPage from "../../components/BasicPage";
 import SquareGrid from "../../components/common/squareGrid";
 import Head from "next/head";
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/135");
   const data = await res.json();
 
