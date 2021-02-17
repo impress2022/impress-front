@@ -15,7 +15,9 @@ import Pulse from "react-reveal/Pulse";
 import Slide from "react-reveal/Slide";
 
 export async function getStaticProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69");
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69?_fields=acf"
+  );
   const data = await res.json();
 
   const resMenu = await fetch(
