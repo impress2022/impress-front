@@ -6,7 +6,7 @@ import SquareGrid from "../../components/common/squareGrid";
 import PostThumbnail from "../../components/blog/postThumbnail";
 import Link from "next/link";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/295");
   const data = await res.json();
 

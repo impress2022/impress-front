@@ -1,5 +1,6 @@
 module.exports = {
   images: {
-    domains: [ process.env.DOMAIN ]
-  }
-}
+    domains: [process.env.DOMAIN],
+    loader: "imgix",
+  },
+};

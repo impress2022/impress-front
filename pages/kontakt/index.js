@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import Modal from "../../components/common/modal";
 import Head from "next/head";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/13");
   const data = await res.json();
 

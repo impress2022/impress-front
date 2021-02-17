@@ -11,10 +11,23 @@ import useWindowSize from "../../hooks/useWindowSize";
 import Square from "../../components/square";
 import SquareGrid from "../../components/common/squareGrid";
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query;
+export async function getStaticPaths() {
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${slug}`
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=3"
+  );
+  const posts = await res.json();
+
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  // const { slug } = context.query;
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${params.slug}`
   );
   const data = await res.json();
 

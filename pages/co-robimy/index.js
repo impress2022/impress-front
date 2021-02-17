@@ -6,7 +6,7 @@ import Text from "../../components/typography/text";
 import Activity from "../../components/co-robimy/activity";
 import Head from "next/head";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/9");
   const data = await res.json();
 

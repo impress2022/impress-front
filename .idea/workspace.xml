@@ -3,24 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/logos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/logos.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/kontakt/details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/kontakt/details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/social.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useMenu.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/404.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/blog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/co-robimy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/co-robimy/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/kim-jestesmy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/kim-jestesmy/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/kontakt/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/kontakt/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/polityka-prywatnosci/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/polityka-prywatnosci/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/post/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/post/[slug].jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
@@ -129,7 +116,8 @@
       <workItem from="1612291642994" duration="7089000" />
       <workItem from="1613134403806" duration="12633000" />
       <workItem from="1613223329233" duration="13593000" />
-      <workItem from="1613301911680" duration="6702000" />
+      <workItem from="1613301911680" duration="8509000" />
+      <workItem from="1613576367588" duration="3015000" />
     </task>
     <servers />
   </component>
