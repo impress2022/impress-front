@@ -96,6 +96,10 @@ export default function Work(props) {
     <>
       <Head>
         <title>Co robimy - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Co robimy."
+        />
       </Head>
       <Layout
         titleSection={Hero}

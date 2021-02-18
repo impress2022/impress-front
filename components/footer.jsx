@@ -54,7 +54,12 @@ export default function Footer({ menu }) {
   }
 
   return (
-    <footer>
+    <footer
+      className="site-footer"
+      role="contentinfo"
+      itemScope
+      itemType="http://schema.org/WPFooter"
+    >
       <div className="w-screen bg-grey">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-8 md:grid-cols-12 py-36">
@@ -101,7 +106,10 @@ export default function Footer({ menu }) {
               <div className="hidden md:h-full md:w-px md:block md:bg-lighter-grey md:flex md:md:items-center" />
               <div className="text-right flex flex-col justify-between md:flex-row lg:w-full">
                 <ul className="md:flex">{navSecondaryItems}</ul>
-                <p className="text-0.75 leading-4.5 mb-4 md:mb-0 text-light-grey font-inter font-extralight md:ml-4 lg:ml-auto md:flex md:items-center">
+                <p
+                  itemProp="copyrightYear"
+                  className="text-0.75 leading-4.5 mb-4 md:mb-0 text-light-grey font-inter font-extralight md:ml-4 lg:ml-auto md:flex md:items-center"
+                >
                   {footerCopy}
                 </p>
               </div>

@@ -23,7 +23,7 @@ export default function Input({ label, arr, custom }) {
   };
 
   return (
-    <label htmlFor="imię" className="md:flex h-full">
+    <label htmlFor={arr.name} className="md:flex h-full">
       <Text size="p" custom="text-1.75 leading-2.875 font-encode-sans">
         {label ? label : ""}
       </Text>

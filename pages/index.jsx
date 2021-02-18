@@ -3,14 +3,14 @@ import HomeHero from "../components/lottie/homeHero";
 import Text from "../components/typography/text";
 import Logos from "../components/common/logos";
 import ThinArrow from "../components/common/thinArrow";
-import React, { useState } from "react";
 import FeaturedRealizationsMobile from "../components/home/featuredRealizationsMobile";
-import useWindowSize from "../hooks/useWindowSize";
 import FeaturedRealizations from "../components/home/featuredRealizations";
-import Head from "next/head";
-import Link from "next/link";
 import SingleSquare from "../components/common/singleSquare";
 import Card from "../components/common/card";
+import React from "react";
+import useWindowSize from "../hooks/useWindowSize";
+import Head from "next/head";
+import Link from "next/link";
 import Pulse from "react-reveal/Pulse";
 import Slide from "react-reveal/Slide";
 
@@ -76,6 +76,10 @@ export default function Home(props) {
     <>
       <Head>
         <title>Impress - agencja marketingowa</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Strona główna."
+        />
       </Head>
       <Layout fluid={fluid} menu={props.menu}>
         <section className="md:relative mt-20 md:mt-0 mb-12 md:mb-s-mar leading-0.875 md:flex md:justify-between md:items-center">

@@ -17,7 +17,7 @@ export default function Modal({ header, content, signature, defaultActive }) {
       />
       <div className="relative z-60 bg-white py-24 px-12 shadow-dark-wide">
         <div className="absolute right-0 top-0 p-4">
-          <button onClick={() => setActive(false)}>
+          <button onClick={() => setActive(false)} aria-label="Zamknij modal">
             <svg
               width="24"
               height="24"

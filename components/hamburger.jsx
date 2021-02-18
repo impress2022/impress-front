@@ -27,20 +27,10 @@ export default function Hamburger(props) {
   return (
     <>
       <button
+        aria-label="menu"
         className={buttonClasses}
         onClick={() => {
           props.setMenuToggle(!props.menuToggle);
-          if (!props.menuToggle) {
-            // document.querySelector("body").style.overflowY = "hidden";
-            // if (windowSize.width >= 1280) {
-            //   document.querySelector("body").style.paddingRight = "18px";
-            // }
-          } else {
-            // document.querySelector("body").style.overflowY = "scroll";
-            // if (windowSize.width >= 1280) {
-            //   document.querySelector("body").style.paddingRight = "0px";
-            // }
-          }
         }}
       >
         <b className="hidden md:block md:mr-8 uppercase text-primary">Menu</b>

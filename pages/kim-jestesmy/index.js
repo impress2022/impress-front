@@ -162,6 +162,10 @@ export default function About(props) {
     <>
       <Head>
         <title>Kim jesteśmy - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Kim jesteśmy."
+        />
       </Head>
       <Layout
         titleSection={Hero}

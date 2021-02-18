@@ -25,11 +25,11 @@ export default function HomeTeaserMobile(props) {
         <div className="shadow-caseInset h-320 w-320 md:h-400 md:w-400 lg:h-438 lg:w-438 relative">
           <Link href={"/realizacja/" + props.element.post_name}>
             <a className="block-important">
-              <img
+              <Image
                 src={el.teaser.teaser_photo.sizes["post-thumbnail"]}
                 alt={el.teaser.teaser_photo.alt}
-                // layout="fill"
-                // objectFit="cover"
+                layout="fill"
+                objectFit="cover"
                 className="block-important"
               />
             </a>

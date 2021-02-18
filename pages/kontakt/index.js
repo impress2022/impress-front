@@ -47,6 +47,10 @@ export default function Contact(props) {
     <>
       <Head>
         <title>Skontaktuj się - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Kontakt."
+        />
       </Head>
       <Layout overflow={true} menu={props.menu}>
         {thanks && thanks === "true" && (
@@ -152,7 +156,7 @@ export default function Contact(props) {
                   required="required"
                 />
                 <label
-                  htmlFor="styled-checkbox-2"
+                  htmlFor="Akceptuje regulamin"
                   className="text-0.75 leading-4.5 font-aller font-bold"
                   onClick={() => {
                     setChecked(!checked);
