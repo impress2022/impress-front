@@ -36,6 +36,10 @@ export default function Rodo(props) {
     <>
       <Head>
         <title>RODO - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. RODO."
+        />
       </Head>
       <Layout squares={squares} menu={props.menu}>
         <BasicPage content={props.data.acf.content} />

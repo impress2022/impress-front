@@ -179,6 +179,10 @@ const Post = (props) => {
     <>
       <Head>
         <title>{page.header_title} - Impress</title>
+        <meta
+          name="Description"
+          content={"ImpressPR - agencja marketingowa. " + page.header_title}
+        />
       </Head>
       <Layout
         menu={props.menu}

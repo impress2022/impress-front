@@ -11,13 +11,24 @@ export default function NavMenu({ menu }) {
   for (const value of menu.navigation) {
     c++;
     liItems.push(
-      <li className="overflow-hidden" key={c}>
+      <li itemProp="name" className="overflow-hidden" key={c}>
         <Link href={"/" + value.navigation_link[0].post_name}>
-          <a className={liClasses}>{value.navigation_label}</a>
+          <a itemProp="url" className={liClasses}>
+            {value.navigation_label}
+          </a>
         </Link>
       </li>
     );
   }
 
-  return <ul className="mb-4 md:mb-8 lg:mb-12">{liItems}</ul>;
+  return (
+    <ul
+      itemScope
+      role="navigation"
+      itemType="http://www.schema.org/SiteNavigationElement"
+      className="mb-4 md:mb-8 lg:mb-12"
+    >
+      {liItems}
+    </ul>
+  );
 }

@@ -7,6 +7,10 @@ export default function Custom404({ menu }) {
     <>
       <Head>
         <title>404 Nie znaleziono strony - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Nie znaleziono strony. Author: Kamil Serafin"
+        />
       </Head>
 
       <section className="mb-500 py-7.25 flex flex-col justify-center items-center">

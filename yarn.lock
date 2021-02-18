@@ -113,6 +113,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/encode-sans@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/encode-sans/-/encode-sans-4.2.1.tgz#c82d38bfabbaa64a993306529a1c5cbbfd09237b"
+  integrity sha512-pYYr06I2MPdZQWRqVK+XxWNgdJd28rT3wwRlppPxiClqoqMLCJNRwVvGMvZ3boxXuS4Zutn2t4BJcFPXugNmgA==
+
+"@fontsource/inter@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.2.1.tgz#f91177509d4616488c92a137cd77f197ab366078"
+  integrity sha512-zIE1066du7y3LLL4V3Ot4BgwE3XC3MbmTBJYG7alAuXUuPGVr/2Mmt+BG9rp4ucF5An+iwZ1HcdS8CQnapMcRw==
+
 "@fullhuman/postcss-purgecss@^3.0.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-3.1.0.tgz#3b396e21c167196b7bd226230e36fa68c1e2cb31"

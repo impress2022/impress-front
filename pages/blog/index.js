@@ -59,6 +59,10 @@ export default function Blog(props) {
     <>
       <Head>
         <title>Blog - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Blog."
+        />
       </Head>
       <Layout squares={squares} menu={props.menu}>
         <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-8r lg:mt-16 xl:mt-8r md:mt-7.5r">

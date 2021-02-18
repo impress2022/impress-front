@@ -126,6 +126,10 @@ export default function Realizations(props) {
     <>
       <Head>
         <title>Realizacje - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Nasze realizacje."
+        />
       </Head>
       <Layout fluid={grid} squares={squares} menu={props.menu}>
         <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-8r lg:mt-16 xl:mt-8r md:mt-7.5r">
