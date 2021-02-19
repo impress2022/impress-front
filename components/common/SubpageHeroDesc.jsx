@@ -23,13 +23,13 @@ export default function SubpageHero({ data }) {
         </div>
         <div className="hidden md:block" />
         {windowSize.width < 1280 && (
-          <div className="hidden md:block block-important shadow-dark-wide md:min-w-1/4">
+          <div className="relative hidden md:block block-important shadow-dark-wide w-full md:h-320 md:min-w-1/4">
             {data.photo && (
               <Image
                 quality={100}
                 src={data.photo.sizes["medium"]}
-                width={data.photo.sizes["medium-width"]}
-                height={data.photo.sizes["medium-height"]}
+                layout="fill"
+                objectFit="cover"
                 alt={data.photo.alt}
               />
             )}

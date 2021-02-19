@@ -4,10 +4,16 @@ import SubpageHeroDesc from "../../components/common/SubpageHeroDesc";
 import SquareGrid from "../../components/common/squareGrid";
 import Text from "../../components/typography/text";
 import Activity from "../../components/co-robimy/activity";
+import Head from "next/head";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/9");
   const data = await res.json();
+
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
 
   if (!data) {
     return {
@@ -20,6 +26,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -86,13 +93,27 @@ export default function Work(props) {
   );
 
   return (
-    <Layout titleSection={Hero} fluidPhoto={HeroDesc} squares={squares}>
-      {/*md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12*/}
-      <section className="mb-400 lg:mb-700 md:flex md:flex-wrap md:justify-between">
-        {page.activities.map((item, index) => (
-          <Activity key={index} activity={item} />
-        ))}
-      </section>
-    </Layout>
+    <>
+      <Head>
+        <title>Co robimy - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Co robimy."
+        />
+      </Head>
+      <Layout
+        titleSection={Hero}
+        fluidPhoto={HeroDesc}
+        squares={squares}
+        menu={props.menu}
+      >
+        {/*md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12*/}
+        <section className="mb-400 lg:mb-700 md:flex md:flex-wrap md:justify-between">
+          {page.activities.map((item, index) => (
+            <Activity key={index} activity={item} />
+          ))}
+        </section>
+      </Layout>
+    </>
   );
 }

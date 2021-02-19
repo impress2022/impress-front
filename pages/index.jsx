@@ -3,20 +3,27 @@ import HomeHero from "../components/lottie/homeHero";
 import Text from "../components/typography/text";
 import Logos from "../components/common/logos";
 import ThinArrow from "../components/common/thinArrow";
-import React, { useState } from "react";
 import FeaturedRealizationsMobile from "../components/home/featuredRealizationsMobile";
-import useWindowSize from "../hooks/useWindowSize";
 import FeaturedRealizations from "../components/home/featuredRealizations";
-import Head from "next/head";
-import Link from "next/link";
 import SingleSquare from "../components/common/singleSquare";
 import Card from "../components/common/card";
+import React from "react";
+import useWindowSize from "../hooks/useWindowSize";
+import Head from "next/head";
+import Link from "next/link";
 import Pulse from "react-reveal/Pulse";
 import Slide from "react-reveal/Slide";
 
-export async function getServerSideProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69");
+export async function getStaticProps(context) {
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69?_fields=acf"
+  );
   const data = await res.json();
+
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
 
   if (!data) {
     return {
@@ -29,6 +36,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -68,8 +76,12 @@ export default function Home(props) {
     <>
       <Head>
         <title>Impress - agencja marketingowa</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Strona główna."
+        />
       </Head>
-      <Layout fluid={fluid}>
+      <Layout fluid={fluid} menu={props.menu}>
         <section className="md:relative mt-20 md:mt-0 mb-12 md:mb-s-mar leading-0.875 md:flex md:justify-between md:items-center">
           <div className="mb-10 md:flex-50 lg:flex-none md:mt-16 md:max-w-sm lg:max-w-xl">
             <Text
@@ -98,7 +110,7 @@ export default function Home(props) {
         </section>
         <section className="md:mb-s-mar">
           <div className="my-20 lg:my-400 container mx-auto">
-            <Logos />
+            <Logos menu={props.menu} />
           </div>
         </section>
         <section id="realizacje" className="pt-10 md:pt-0">

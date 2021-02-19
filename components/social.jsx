@@ -1,9 +1,8 @@
 import classNames from "classnames";
-import { useMenu } from "../hooks/useMenu";
 import Image from "next/image";
 
 export default function Social(props) {
-  const menu = useMenu();
+  let menu = props.menu;
 
   let socialClasses = classNames({
     "mt-5 md:mt-3 lg:mt-6 md:leading-200": !props.flex,
@@ -21,6 +20,7 @@ export default function Social(props) {
         key={el.social_media_object.social_media_object_icon.alt}
         target="_blank"
         href={el.social_media_object.social_media_object_link}
+        rel="nofollow noopener noreferrer"
       >
         <div className={socialClasses}>
           <Image

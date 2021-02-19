@@ -7,8 +7,10 @@ import Text from "../../components/typography/text";
 import Logos from "../../components/common/logos";
 import SquareGrid from "../../components/common/squareGrid";
 
-export async function getServerSideProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7");
+export async function getStaticProps() {
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7?_fields=acf"
+  );
   const data = await res.json();
 
   const realizations = await fetch(
@@ -43,6 +45,11 @@ export async function getServerSideProps(context) {
     taxonomy: "post_tag",
   });
 
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+  );
+  const menu = await resMenu.json();
+
   if (!data) {
     return {
       props: {
@@ -55,6 +62,7 @@ export async function getServerSideProps(context) {
     props: {
       data: data,
       tags: dataTags,
+      menu: menu.acf,
       realizations: dataRealizations,
       dict: dataPosts,
       notFound: false,
@@ -75,7 +83,7 @@ export default function Realizations(props) {
   const grid = (
     <div className="-mt-80 py-80 md:py-96 lg:py-132 lg:-mt-104 bg-green">
       <div className="my-20 container mx-auto">
-        <Logos />
+        <Logos menu={props.menu} />
       </div>
     </div>
   );
@@ -118,8 +126,12 @@ export default function Realizations(props) {
     <>
       <Head>
         <title>Realizacje - Impress</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Nasze realizacje."
+        />
       </Head>
-      <Layout fluid={grid} squares={squares}>
+      <Layout fluid={grid} squares={squares} menu={props.menu}>
         <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-8r lg:mt-16 xl:mt-8r md:mt-7.5r">
           <Text size="h2" custom="mb-8">
             {props.data.acf.header_title}

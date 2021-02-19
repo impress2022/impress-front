@@ -1,7 +1,4 @@
-import { useMenu } from "../../hooks/useMenu";
-
-export default function Details() {
-  const menu = useMenu();
+export default function Details({ menu }) {
   const descItems = [];
 
   for (const value in menu.personal_data) {

@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function Hamburger(props) {
   let hamburgerClasses1 = classNames({
@@ -21,17 +22,15 @@ export default function Hamburger(props) {
 
   buttonClasses += " " + props.custom;
 
+  const windowSize = useWindowSize();
+
   return (
     <>
       <button
+        aria-label="menu"
         className={buttonClasses}
         onClick={() => {
           props.setMenuToggle(!props.menuToggle);
-          if (!props.menuToggle) {
-            document.querySelector("body").style.overflowY = "hidden";
-          } else {
-            document.querySelector("body").style.overflowY = "scroll";
-          }
         }}
       >
         <b className="hidden md:block md:mr-8 uppercase text-primary">Menu</b>

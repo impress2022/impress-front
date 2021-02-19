@@ -8,8 +8,13 @@ function Button(props) {
     "mr-0.625 mt-3 lg:mr-5 transition duration-200 ease-linear": true,
   });
 
+  classes += props.custom ? " " + props.custom : "";
+
   return (
-    <button onClick={props.onFilterSelected} className={classes}>
+    <button
+      onClick={props.onFilterSelected ? props.onFilterSelected : ""}
+      className={classes}
+    >
       {props.name}
     </button>
   );

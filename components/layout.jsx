@@ -7,20 +7,22 @@ export default function Layout({
   fluidPhoto,
   titleSection,
   squares,
+  overflow,
+  menu,
 }) {
   return (
     <div>
-      <Nav />
+      {menu && <Nav menu={menu} />}
       {titleSection && (
         <section className="lg:container mx-7 md:mx-16 lg:mx-auto relative">
           {titleSection}
         </section>
       )}
       {fluidPhoto && <section>{fluidPhoto}</section>}
-      <main className="lg:container mx-7 md:mx-16 lg:mx-auto">{children}</main>
+      <main className="lg:container mx-7 md:mx-16 lg:mx-auto" style={{ overflow: overflow ? "hidden" : "visible" }}>{children}</main>
       {fluid && <section>{fluid}</section>}
       {squares && <section className="relative">{squares}</section>}
-      <Footer />
+      <Footer menu={menu} />
     </div>
   );
 }

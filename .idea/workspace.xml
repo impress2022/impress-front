@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/components/common/SubpageHero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/SubpageHero.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
@@ -10,6 +11,32 @@
       <change beforePath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/components/common/input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hamburger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hamburger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/realizations/homeTeaserMobile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/homeTeaserMobile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/404.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/blog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/co-robimy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/co-robimy/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/kim-jestesmy/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/kim-jestesmy/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/kontakt/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/kontakt/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/nasze-realizacje/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/polityka-prywatnosci/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/polityka-prywatnosci/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/post/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/post/[slug].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/rodo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/rodo/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+>>>>>>> f40baa726f895ff577bcdc41baa7699ac57a7840
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +67,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/lottie" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Kamil\AppData\Roaming\npm\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Users\Kamil\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\203.5981.135\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -52,11 +87,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\post" />
+      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\pages\blog" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\common" />
-      <recent name="C:\Users\Kamil\projects\impress-wp\hooks" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front\public\fonts" />
-      <recent name="C:\Users\Kamil\WebstormProjects\impress-front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kamil\WebstormProjects\impress-front\components\lottie" />
@@ -111,7 +146,15 @@
       <workItem from="1612003396846" duration="13858000" />
       <workItem from="1612033378040" duration="3262000" />
       <workItem from="1612091912297" duration="31052000" />
+<<<<<<< HEAD
       <workItem from="1612291642994" duration="10065000" />
+=======
+      <workItem from="1612291642994" duration="7089000" />
+      <workItem from="1613134403806" duration="12633000" />
+      <workItem from="1613223329233" duration="13593000" />
+      <workItem from="1613301911680" duration="8509000" />
+      <workItem from="1613576367588" duration="21799000" />
+>>>>>>> f40baa726f895ff577bcdc41baa7699ac57a7840
     </task>
     <servers />
   </component>

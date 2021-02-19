@@ -23,12 +23,12 @@ export default function SubpageHero({ data }) {
           />
         </div>
         {data.lesser_photo && windowSize.width >= 1280 && (
-          <div className="lg:w-1/2 h-auto lg:float-right lg:mt-16 block-important shadow-dark md:shadow-dark-wide">
+          <div className="relative lg:w-3/8 lg:h-320 lg:float-right lg:mt-16 block-important shadow-dark md:shadow-dark-wide">
             <Image
               quality={100}
               src={data.lesser_photo.sizes["medium"]}
-              width={data.lesser_photo.sizes["medium-width"]}
-              height={data.lesser_photo.sizes["medium-height"]}
+              layout="fill"
+              objectFit="cover"
               alt={data.lesser_photo.alt}
             />
           </div>

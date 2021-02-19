@@ -8,8 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/encode-sans": "^4.2.1",
+    "@fontsource/inter": "^4.2.1",
+    "@next/bundle-analyzer": "^10.0.7",
     "autoprefixer": "^10.1.0",
     "classnames": "^2.2.6",
+    "eslint-plugin-react": "^7.22.0",
     "next": "10.0.3",
     "postcss": "^8.2.1",
     "react": "17.0.1",
@@ -21,6 +25,7 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "eslint": "^7.20.0",
     "tailwindcss-aspect-ratio": "^3.0.0"
   }
 }

@@ -6,7 +6,6 @@ import Text from "../typography/text";
 import React, { useState } from "react";
 import { Scrollama, Step } from "react-scrollama";
 import useWindowSize from "../../hooks/useWindowSize";
-import classNames from "classnames";
 
 function getZIndex(index) {
   switch (index) {
@@ -52,11 +51,6 @@ export default function FeaturedRealizations(props) {
               : currentStepIndex > idx
               ? "polygon(0 0, 100% 0, 100% 0, 0 0)"
               : "",
-
-          // transform:
-          //   currentStepIndex === idx && currentStepIndex !== 0
-          //     ? "translateY(-20px)"
-          //     : "translateY(-" + currentProgress * 20 + "px)",
           zIndex: getZIndex(idx),
         }}
         className="lg:relative lg:first:translate-y-0 lg:shadow-caseInset md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
@@ -64,7 +58,6 @@ export default function FeaturedRealizations(props) {
         <Link href={"/realizacja/" + e.post_name}>
           <a>
             <Image
-              quality={100}
               src={e.acf.teaser.teaser_photo.url}
               alt={e.acf.teaser.teaser_photo.alt}
               width={700}

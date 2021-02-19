@@ -1,10 +1,7 @@
 import Link from "next/link";
 import classNames from "classnames";
-import { useMenu } from "../hooks/useMenu";
 
-export default function NavMenu() {
-  const menu = useMenu();
-
+export default function NavMenu({ menu }) {
   let liClasses = classNames({
     "transition duration-500 ease-linear font-en-sans text-2xl md:text-2xl lg:text-2.5 leading-250 md:leading-200 shadow-menuInset hover:shadow-menuInsetActive pb-1": true,
   });
@@ -14,13 +11,24 @@ export default function NavMenu() {
   for (const value of menu.navigation) {
     c++;
     liItems.push(
-      <li className="overflow-hidden" key={c}>
+      <li itemProp="name" className="overflow-hidden" key={c}>
         <Link href={"/" + value.navigation_link[0].post_name}>
-          <a className={liClasses}>{value.navigation_label}</a>
+          <a itemProp="url" className={liClasses}>
+            {value.navigation_label}
+          </a>
         </Link>
       </li>
     );
   }
 
-  return <ul className="mb-4 md:mb-8 lg:mb-12">{liItems}</ul>;
+  return (
+    <ul
+      itemScope
+      role="navigation"
+      itemType="http://www.schema.org/SiteNavigationElement"
+      className="mb-4 md:mb-8 lg:mb-12"
+    >
+      {liItems}
+    </ul>
+  );
 }
