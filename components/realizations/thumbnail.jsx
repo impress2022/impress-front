@@ -11,12 +11,12 @@ export default function Thumbnail(props) {
     : "";
 
   return (
-    <div className="realization-thumbnail lg:max-h-480 mb-12 md:mb-0 lg:mb-14">
+    <div className="realization-thumbnail lg:max-h-480 mb-12 md:mb-0 md:mr-12 lg:mb-14">
       <Slide bottom>
         <Link href={href}>
           <a>
             <div className="group flex flex-col items-center md:block cursor-pointer">
-              <div className="shadow-caseInsetMobile block-important w-320 h-320 lg:w-405 lg:h-405 lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive transform group-hover:translate-x-2.5 group-hover:-translate-y-2.5 md:w-320 md:h-320 xl:w-400 xl:h-400 transition duration-200 ease-linear">
+              <div className="shadow-caseInsetMobile block-important w-320 h-320 md:w-405 md:h-405 lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive transform group-hover:translate-x-2.5 group-hover:-translate-y-2.5 md:w-320 md:h-320 xl:w-400 xl:h-400 transition duration-200 ease-linear">
                 <Image
                   quality={100}
                   src={photo.url}

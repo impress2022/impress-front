@@ -23,7 +23,6 @@ export default function NavMenu({ menu }) {
 
   return (
     <ul
-      itemScope
       role="navigation"
       itemType="http://www.schema.org/SiteNavigationElement"
       className="mb-4 md:mb-8 lg:mb-12"
