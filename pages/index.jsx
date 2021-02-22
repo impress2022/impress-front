@@ -109,7 +109,7 @@ export default function Home(props) {
           <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:bottom-0 md:left-0 animate-bounce-slow" />
         </section>
         <section className="md:mb-s-mar">
-          <div className="my-20 lg:my-400 container mx-auto">
+          <div className="my-20 lg:my-200 container mx-auto">
             <Logos menu={props.menu} />
           </div>
         </section>
