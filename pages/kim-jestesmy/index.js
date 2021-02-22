@@ -124,7 +124,7 @@ export default function About(props) {
               autoplay={false}
               isStopped={true}
             />
-            <Text size="h3" color="white">
+            <Text size="h3" color="white" custom="mb-0">
               {icons[key]}
             </Text>
           </div>
