@@ -69,10 +69,10 @@ export default function Home(props) {
                 {content.third_section_description}
               </Text>
             </div>
-            <div>
+            <div className="overflow-hidden max-w-240 pb-1">
               <Link href="/co-robimy/">
                 <a>
-                  <Text size="body-bold-18">Poznaj szczegóły oferty</Text>
+                  <Text size="body-bold-18" custom="transition-shadow duration-500 ease-linear shadow-menuInset hover:shadow-menuInsetActive">Poznaj szczegóły oferty 🡪</Text>
                 </a>
               </Link>
             </div>
