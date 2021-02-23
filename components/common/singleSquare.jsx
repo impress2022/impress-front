@@ -6,7 +6,7 @@ export default function SingleSquare({ children }) {
   return (
     <div className="md:col-span-3 flex justify-items-start">
       <Link href="/nasze-realizacje">
-        <a className="hover:shadow-buttonBg transition duration-200 ease-out">
+        <a className="hover:shadow-buttonBg art-transition">
           <Square
             sizeClasses="w-x6 h-x6 md:w-x4 md:h-x4 lg:w-x7 lg:h-x7"
             color="green"

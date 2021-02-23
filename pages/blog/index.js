@@ -41,7 +41,38 @@ export async function getStaticProps(context) {
 
 export default function Blog(props) {
   const squares = (
-    <SquareGrid colors={["grey", "green", "green", "red"]} href={"/kontakt"} />
+    <SquareGrid colors={["grey", "green", "red", "green"]} href={"/co-robimy"}>
+      <div className="cursor-pointer">
+        <Text
+          size="h3"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
+        >
+          Zobacz, co możemy Ci zaproponować
+        </Text>
+        <svg
+          style={{ width: '24px', height: "auto" }}
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          width="34"
+          height="34"
+          viewBox="0 0 34 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z"
+            fill="#202222"
+          />
+          <path
+            d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z"
+            fill="#202222"
+          />
+          <path
+            d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z"
+            fill="#202222"
+          />
+        </svg>
+      </div>
+    </SquareGrid>
   );
 
   const promoted = props.data.acf.promoted_post[0];
@@ -81,7 +112,7 @@ export default function Blog(props) {
             <div className="md:col-span-8">
               <Link href={"/post/" + promoted.post_name}>
                 <a className="group">
-                  <div className="relative block-important transition duration-200 ease-out shadow-caseInsetMobile lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:min-h-60">
+                  <div className="relative block-important art-transition group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:min-h-60">
                     <Image
                       src={promoted.acf.main_image.sizes["1536x1536"]}
                       layout="fill"
@@ -109,7 +140,7 @@ export default function Blog(props) {
               </Link>
             </div>
           </section>
-          <section className="md:col-span-12 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-x-28 md:mt-24">
+          <section className="md:col-span-12 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-x-28 lg:gap-y-20 md:mt-24">
             {posts.map((item, index) => (
               <PostThumbnail key={index} image={item} />
             ))}

@@ -154,7 +154,7 @@ export default function FeaturedRealizations(props) {
             ))}
           </div>
         </Number>
-        <div style={{ width: '690px', height: '690px', overflow: 'hidden' }} className="md:absolute md:right-0 lg:shadow-caseInset ease-out duration-200  lg:hover:shadow-caseInsetActive">
+        <div style={{ width: '690px', height: '690px', overflow: 'hidden' }} className="md:absolute md:right-0 lg:shadow-caseInset art-transition lg:hover:shadow-caseInsetActive">
           {images}
         </div>
       </div>

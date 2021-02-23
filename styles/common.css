@@ -367,3 +367,21 @@ body {
         right: 115px;
     }
 }
+
+.ratio-square:before {
+    content: "";
+    float: left;
+    padding-top: 100%;
+}
+
+@media (min-width: 768px) {
+    .ratio-square-md:before {
+        content: "";
+        float: left;
+        padding-top: 100%;
+    }
+}
+
+.art-transition {
+    transition: all .7s ease;
+}

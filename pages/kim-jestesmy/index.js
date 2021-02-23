@@ -8,6 +8,7 @@ import SubpagesLottie from "../../components/lottie/subpagesLottie";
 import classNames from "classnames";
 import Link from "next/link";
 import Head from "next/head";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/11");
@@ -97,16 +98,23 @@ export default function About(props) {
 
   const icons = {
     pr: "Public Relations",
-    marketing: "Marketing",
     social: "Social Media",
+    marketing: "Marketing",
     design: "Design",
   };
 
   let lotties = [];
 
+  const windowSize = useWindowSize();
+
+  const lottieWrapper = classNames({
+    "grid grid-cols-2 md:grid-cols-4": true,
+    "container mx-auto": windowSize.width < 768,
+  })
+
   for (const key in icons) {
     let lottieClasses = classNames({
-      "w-full h-24 flex items-center lg:hover:shadow-dark-wide transition duration-200 ease-out cursor-pointer": true,
+      "w-full h-160 md:h-auto flex flex-col items-center justify-center lg:hover:shadow-dark-wide transition duration-200 ease-out cursor-pointer": true,
       "bg-grey-hover": key === "design",
       "bg-red": key === "marketing",
       "bg-dark-green": key === "pr",
@@ -115,16 +123,15 @@ export default function About(props) {
 
     lotties.push(
       <Link key={key} href={"/co-robimy#" + key}>
-        <a>
+        <a className="flex flex-row relative ratio-square-md">
           <div className={lottieClasses}>
             <SubpagesLottie
               lottie={key}
               key={key}
-              custom="h-20 w-20 m-2"
-              autoplay={false}
-              isStopped={true}
+              custom="h-20 w-20 md:scale-125 m-2"
+              innerCustom="md:h-x2 md:w-x2 lg:w-180 lg:h-180"
             />
-            <Text size="h3" color="white" custom="mb-0">
+            <Text size="body-bold-18" color="white" custom="mb-0 lg:mt-12 md:text-1.375 lg:text-1.625 md:leading-7 lg:leading-2.125">
               {icons[key]}
             </Text>
           </div>
@@ -181,7 +188,7 @@ export default function About(props) {
             >
               {page.subpage_content}
             </Text>
-            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 ">
+            <div className={lottieWrapper}>
               {lotties}
             </div>
           </div>

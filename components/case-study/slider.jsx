@@ -20,8 +20,8 @@ export default function Slider({ data }) {
   }
 
   const handleClick = (value) => {
-    swiper.slideTo(currentSlide + Math.floor(slidesPerView) * value);
-    setCurrentSlide(currentSlide + Math.floor(slidesPerView) * value);
+    swiper.slideTo(currentSlide + value);
+    setCurrentSlide(currentSlide + value);
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Slider({ data }) {
     >
       {data.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="w-280 h-full bg-grey-hover relative">
+          <div className="w-280 h-full bg-grey-hover relative ratio-square">
             <div className="absolute -bottom-14 left-1 pointer-events-none">
               <Text size="h4">
                 {index < 10 ? "0" + (index + 1) : index + 1}

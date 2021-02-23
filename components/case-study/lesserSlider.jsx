@@ -38,7 +38,7 @@ export default function LesserSlider({ slides }) {
         </div>
         <div style={{ paddingTop: '5%', paddingBottom: '5%' }} className="bg-grey-hover shadow-slider md:shadow-none relative overflow-hidden min-w-full min-h-300 lg:min-h-40">
           <div
-            className="min-w-full min-h-300 lg:min-h-40 transition-transform duration-200 ease-out"
+            className="min-w-full min-h-300 lg:min-h-40 art-transition"
             style={{
               transform:
                 windowSize.width > 1280
