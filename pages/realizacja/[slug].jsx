@@ -85,8 +85,8 @@ const Post = (props) => {
   });
 
   const titleSection = (
-    <div className="mt-7.5r lg:mt-24 mb-2.625 md:mb-24 lg:mb-8r">
-      <Text size="h2" custom="mb-8">
+    <div className="mt-7.5r lg:mt-24 mb-2.625 md:mb-2.625">
+      <Text size="h2" custom="mb-4">
         {page.header_title}
       </Text>
       <Text size="body-18" custom="md:text-1.5 md:leading-2.625">
@@ -192,7 +192,7 @@ const Post = (props) => {
         squares={squares}
       >
         <div className={contClassess}>
-          <section className="md:flex">
+          <section className="md:flex md:justify-between">
             <div className="mt-2.625 md:flex-1 md:max-w-sm lg:max-w-690">
               <p className={textHeaderClasses}>{page.company_date}</p>
               <Text size="body-18" custom="md:text-1.5 md:leading-2.625">
