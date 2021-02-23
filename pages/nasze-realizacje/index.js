@@ -6,6 +6,7 @@ import Head from "next/head";
 import Text from "../../components/typography/text";
 import Logos from "../../components/common/logos";
 import SquareGrid from "../../components/common/squareGrid";
+import classNames from "classnames";
 
 export async function getStaticProps() {
   const res = await fetch(
@@ -80,8 +81,13 @@ export default function Realizations(props) {
     });
   }
 
+  const gridClassess = classNames({
+    'bg-green': true,
+    '-mt-80 lg:-mt-116 py-80 md:py-96 lg:py-108': realizations.length !== 0,
+    'lg:mt-0 pt-12 pb-80 md:pb-96 lg:pb-108': realizations.length === 0,
+  })
   const grid = (
-    <div className="-mt-80 py-80 md:py-96 lg:py-108 lg:-mt-116 bg-green">
+    <div className={gridClassess}>
       <div className="my-20 container mx-auto">
         <Logos menu={props.menu} />
       </div>
@@ -93,12 +99,13 @@ export default function Realizations(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
         >
           Zobacz, co możemy Ci zaproponować
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10 animate-bounce-slow-diag"
+          style={{ width: '24px', height: "auto" }}
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -151,7 +158,7 @@ export default function Realizations(props) {
           {realizations.length === 0 && (
             <Text
               size="h2"
-              custom="min-h-screen md:text-center lg:text-left md:min-h-60 lg:min-h-80 xl:min-h-60"
+              custom="md:text-center lg:text-left pb-24"
             >
               Takiej realizacji jeszcze nie mamy, ale ogarniemy. <br />
               <b className="underline">Spotkajmy się,</b> porozmawiajmy.
