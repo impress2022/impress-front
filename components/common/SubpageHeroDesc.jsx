@@ -6,9 +6,8 @@ import classNames from "classnames";
 export default function SubpageHero({ data, isImage }) {
   const windowSize = useWindowSize();
   let wrapperClasses = classNames({
-    "bg-green z-10 pb-16 md:min-h-70 lg:ml-7.5r": true,
-    "lg:mb-400": data.photo,
-    "lg:mb-s-mar": !data.photo,
+    "bg-green z-10 pb-16 lg:ml-7.5r": true,
+    "lg:mb-200 md:min-h-70": data.photo,
   });
 
   let textWrapperClasses = classNames({
