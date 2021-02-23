@@ -19,9 +19,11 @@ export default function LesserSlider({ slides }) {
           {slides.map((item, index) => (
             <div
               key={index}
-              className="absolute transform -translate-y-80p md:translate-y-0 md:right-0 h-full w-full md:w-1/2 lg:w-2/3 max-h-350 lg:min-h-80 lg:max-h-full shadow-sliderMobile md:shadow-sliderTablet"
+              // shadow-sliderMobile md:shadow-sliderTablet
+              className="absolute transform -translate-y-80p md:translate-y-0 scale-95 md:scale-100 md:right-0 h-full w-full md:w-1/2 lg:w-2/3 max-h-350 md:max-h-initial lg:min-h-80 lg:max-h-full"
               style={{
                 zIndex: index === currentSlide ? 1000 : 999 + -1 * index,
+                paddingTop: '50%',
               }}
             >
               <Image
@@ -34,7 +36,7 @@ export default function LesserSlider({ slides }) {
             </div>
           ))}
         </div>
-        <div className="bg-grey-hover shadow-slider md:shadow-none relative overflow-hidden min-w-full min-h-300 lg:min-h-40">
+        <div style={{ paddingTop: '5%', paddingBottom: '5%' }} className="bg-grey-hover shadow-slider md:shadow-none relative overflow-hidden min-w-full min-h-300 lg:min-h-40">
           <div
             className="min-w-full min-h-300 lg:min-h-40 transition-transform duration-200 ease-out"
             style={{
@@ -58,7 +60,7 @@ export default function LesserSlider({ slides }) {
                 <Text
                   size="body-18"
                   color="white"
-                  custom="md:text-1.5 md:leading-2.625"
+                  custom="md:text-1.25 md:leading-2.625 px-6"
                 >
                   {item.slider_desc}
                 </Text>

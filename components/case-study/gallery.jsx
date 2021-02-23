@@ -1,8 +1,9 @@
 import React from "react";
 import GalleryPhoto from "./galleryPhoto";
 import GalleryBreak from "./galleryBreak";
+import Text from "../typography/text";
 
-export default function Gallery({ photos, data }) {
+export default function Gallery({ photos, data, title }) {
   let gallery = [];
   let c = 0;
   let middleIndex = Math.round(photos.length / 2);
@@ -48,6 +49,9 @@ export default function Gallery({ photos, data }) {
   }
 
   return (
-    <div className="md:flex md:flex-wrap md:justify-center">{gallery}</div>
+    <>
+      <Text size="body-xl" custom="md:mt-20">{title}</Text>
+      <div className="md:flex md:flex-wrap md:justify-center">{gallery}</div>
+    </>
   );
 }

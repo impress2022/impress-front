@@ -19,7 +19,7 @@ export default function Challenges({ challenges }) {
           </div>
         </Text>
       </div>
-      <div className="bg-green md:relative shadow-challenges md:shadow-none flex flex-col py-12 md:py-24 md:w-1/2 md:mx-16 lg:w-600">
+      <div className="bg-green md:relative shadow-challenges md:shadow-none md:transform md:translate-x-3 lg:translate-x-14 flex flex-col py-12 md:py-24 md:w-1/2 md:mx-16 lg:w-600">
         <Square
           color="grey"
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"

@@ -81,7 +81,7 @@ const Post = (props) => {
   });
 
   let textHeaderClasses = classNames({
-    "tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller": true,
+    "tracking-widest md:text-0.875 font-bold uppercase mb-8 font-aller": true,
   });
 
   const titleSection = (
@@ -206,11 +206,11 @@ const Post = (props) => {
               </div>
             </div>
           </section>
-          <section className="mt-7.5r md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 xl:mb-0">
+          <section className="mt-7.5r md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-0">
             <Text size="h2" custom="mb-20 md:mb-8 lg:mb-20">
               Cele, które postanowiliśmy osiągnąć
             </Text>
-            <div className="md:grid md:grid-cols-12">
+            <div className="md:grid md:grid-cols-12 md:gap-x-12">
               {page.goals.map((el, index) => (
                 <div
                   key={index}
@@ -230,7 +230,7 @@ const Post = (props) => {
           </section>
           {page.gallery.length > 2 && (
             <section className="xl:my-s-mar">
-              <Gallery photos={page.gallery} data={page.gallery_break} />
+              <Gallery photos={page.gallery} data={page.gallery_break} title={page.gallery_subtitle} />
             </section>
           )}
         </div>

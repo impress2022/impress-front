@@ -9,9 +9,10 @@ export default function GalleryPhoto({ photo, index }) {
     "md:flex-100 md:my-6.25": photo.gallery_full_width,
   });
 
+  //shadow-caseInsetMobile md:shadow-caseInset
   let imageContainerclasses = classNames({
     "block-important": true,
-    "md:mx-4 xl:mx-5 shadow-caseInsetMobile md:shadow-caseInset": !photo.gallery_full_width,
+    "md:mx-4 xl:mx-5": !photo.gallery_full_width,
     "md:mt-6.25 xl:mt-30p": !(index % 2) && !photo.gallery_full_width,
     "xl:-mt-20": index % 2,
   });
