@@ -157,6 +157,7 @@ module.exports = {
         menuInset: "-300px 4px 0px 0px rgba(52,52,52,1)",
         menuInsetActive: "0px 4px 0px 0px rgba(52,52,52,1)",
         caseInset: "-10px 10px 0px 0px rgba(149,149,149,0.85)",
+        caseInsetHover: "-15px 15px 0px 0px rgba(149,149,149,0.85)",
         caseInsetActive: "-15px 15px 0px 0px rgba(126,126,126,0.85)",
         caseInsetMobile: "-5px 5px 0px 0px rgba(149,149,149,0.85)",
         sliderMobile: "-5px 5px 0px 0px rgba(0,0,0,0.1)",
@@ -285,6 +286,7 @@ module.exports = {
         "555": "555px",
       },
       maxWidth: {
+        "initial": "initial",
         "40": "40%",
         "50": "50%",
         "90": "90%",

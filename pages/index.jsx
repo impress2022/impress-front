@@ -51,25 +51,54 @@ export default function Home(props) {
   const window = useWindowSize();
 
   const fluid = (
-    <section className="relative md:mt-300">
-      <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0" />
-      <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:grid md:grid-cols-12 md:container md:mx-auto">
-        {content.fourth_section.map((item, index) => (
-          <div key={index} className="md:col-span-3 lottie-card">
-            <Link href={"/co-robimy#" + items[index]}>
-              <a>
-                <Card
-                  title={item.card_header}
-                  elements={item.card_items}
-                  lottie={items[index]}
-                  color={colors[index]}
-                />
-              </a>
-            </Link>
-          </div>
-        ))}
+    <>
+      <div className="md:grid md:grid-cols-12 px-8 md:px-16">
+        <SingleSquare>Zobacz, mamy ich trochę więcej</SingleSquare>
       </div>
-    </section>
+      <Slide left>
+        <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:px-16 md:mt-s-mar lg:mt-300">
+          <header className="md:col-span-4 lg:col-span-3">
+            <h2 className="text-2.25 lg:text-2.875 leading-3r font-light lg:leading-4r font-aller md:text-left lg:text-right">
+              {content.third_section_header}
+            </h2>
+          </header>
+          <div className="hidden md:block" />
+          <div className="md:col-span-7 lg:md:col-span-8">
+            <div className="md:mb-8">
+              <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
+                {content.third_section_description}
+              </Text>
+            </div>
+            <div>
+              <Link href="/co-robimy/">
+                <a>
+                  <Text size="body-bold-18">Poznaj szczegóły oferty</Text>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </Slide>
+      <section className="relative md:mt-300 md:px-16">
+        <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0" />
+        <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:max-w-initial md:grid md:grid-cols-12">
+          {content.fourth_section.map((item, index) => (
+            <div key={index} className="md:col-span-3 lottie-card">
+              <Link href={"/co-robimy#" + items[index]}>
+                <a>
+                  <Card
+                    title={item.card_header}
+                    elements={item.card_items}
+                    lottie={items[index]}
+                    color={colors[index]}
+                  />
+                </a>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 
   return (
@@ -106,10 +135,10 @@ export default function Home(props) {
             </Text>
           </div>
           <HomeHero custom="md:flex-50 lg:flex-none md:col-span-5" />
-          <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:bottom-0 md:left-0 animate-bounce-slow" />
+          <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:-bottom-8 md:left-0 animate-bounce-slow" />
         </section>
         <section className="md:mb-s-mar">
-          <div className="my-20 lg:my-200 container mx-auto">
+          <div className="my-20 lg:my-200 md:container md:mx-auto">
             <Logos menu={props.menu} />
           </div>
         </section>
@@ -123,34 +152,7 @@ export default function Home(props) {
           {window.width >= 1380 && (
             <FeaturedRealizations realizations={content.realizations} />
           )}
-          <div>
-            <SingleSquare>Zobacz, mamy ich trochę więcej</SingleSquare>
-          </div>
         </section>
-        <Slide left>
-          <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:mt-s-mar lg:mt-300">
-            <header className="md:col-span-4">
-              <Text size="h2" custom="md:text-left lg:text-center">
-                {content.third_section_header}
-              </Text>
-            </header>
-            <div className="hidden md:block lg:hidden" />
-            <div className="md:col-span-7 lg:md:col-span-8">
-              <div className="md:mb-8">
-                <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
-                  {content.third_section_description}
-                </Text>
-              </div>
-              <div>
-                <Link href="/co-robimy/">
-                  <a>
-                    <Text size="body-bold-18">Poznaj szczegóły oferty</Text>
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </section>
-        </Slide>
       </Layout>
     </>
   );

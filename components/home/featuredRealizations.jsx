@@ -35,85 +35,87 @@ export default function FeaturedRealizations(props) {
     setCurrentProgress(progress);
   };
 
-  const images = props.realizations.map((e, idx) => (
-    <div key={idx} className="md:absolute md:right-0">
-      <div
-        style={{
-          clipPath:
-            currentStepIndex === idx
-              ? currentStepIndex === props.realizations.length - 1
+  const images = props.realizations.map((e, idx) => {
+    return (
+      <div key={idx} className='md:absolute md:right-0'>
+        <div
+          style={{
+            clipPath:
+              currentStepIndex === idx
+                ? currentStepIndex === props.realizations.length - 1
                 ? ""
                 : "polygon(0 0, 100% 0, 100% " +
-                  (100 - currentProgress * 100) +
-                  "%, 0 " +
-                  (100 - currentProgress * 100) +
-                  "%)"
-              : currentStepIndex > idx
-              ? "polygon(0 0, 100% 0, 100% 0, 0 0)"
-              : "",
-          zIndex: getZIndex(idx),
-        }}
-        className="lg:relative lg:first:translate-y-0 lg:shadow-caseInset md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
-      >
-        <Link href={"/realizacja/" + e.post_name}>
-          <a>
-            <Image
-              src={e.acf.teaser.teaser_photo.url}
-              alt={e.acf.teaser.teaser_photo.alt}
-              width={700}
-              height={700}
-              className={"transition-home-image transition-home-image-" + idx}
-            />
-          </a>
-        </Link>
-        <style jsx global>{`
+                (100 - currentProgress * 100) +
+                "%, 0 " +
+                (100 - currentProgress * 100) +
+                "%)"
+                : currentStepIndex > idx
+                ? "polygon(0 0, 100% 0, 100% 0, 0 0)"
+                : "",
+            zIndex: getZIndex(idx),
+          }}
+          className="lg:relative lg:first:translate-y-0 md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
+        >
+          <Link href={"/realizacja/" + e.post_name}>
+            <a>
+              <Image
+                src={e.acf.teaser.teaser_photo.url}
+                alt={e.acf.teaser.teaser_photo.alt}
+                width={700}
+                height={700}
+                className={"transition-home-image transition-home-image-" + idx}
+              />
+            </a>
+          </Link>
+          <style jsx global>{`
           .transition-home-image {
             transform: translateY(0);
           }
 
           .transition-home-image-0 {
             ${currentStepIndex === 0
-              ? "transform: translateY(-" +
-                currentProgress * 20 +
-                "px) !important"
-              : "transform: translateY(0px)"};
+            ? "transform: translateY(-" +
+            currentProgress * 20 +
+            "px) !important"
+            : "transform: translateY(0px)"};
           }
 
           .transition-home-image-1 {
             ${currentStepIndex === 0
-              ? "transform: translateY(" +
-                (1 - currentProgress) * 20 +
-                "px) !important"
-              : currentStepIndex === 1
+            ? "transform: translateY(" +
+            (1 - currentProgress) * 20 +
+            "px) !important"
+            : currentStepIndex === 1
               ? "transform: translateY(-" +
-                currentProgress * 20 +
-                "px) !important"
+              currentProgress * 20 +
+              "px) !important"
               : ""};
           }
 
           .transition-home-image-2 {
             ${currentStepIndex === 1
-              ? "transform: translateY(" +
-                (1 - currentProgress) * 20 +
-                "px) !important"
-              : currentStepIndex === 2
+            ? "transform: translateY(" +
+            (1 - currentProgress) * 20 +
+            "px) !important"
+            : currentStepIndex === 2
               ? "transform: translateY(-" +
-                currentProgress * 20 +
-                "px) !important"
+              currentProgress * 20 +
+              "px) !important"
               : ""};
           }
 
           .transition-home-image-3 {
             ${currentStepIndex === 2
-              ? "transform: translateY(" +
-                (1 - currentProgress) * 20 +
-                "px) !important"
-              : ""};
+            ? "transform: translateY(" +
+            (1 - currentProgress) * 20 +
+            "px) !important"
+            : ""};
           }
         `}</style>
+        </div>
       </div>
-    </div>
-  ));
+    )
+  });
 
   // clip-path: polygon(0 0, 100% 0, 100% 64%, 0 63%);
 
@@ -152,7 +154,9 @@ export default function FeaturedRealizations(props) {
             ))}
           </div>
         </Number>
-        {images}
+        <div style={{ width: '690px', height: '690px', overflow: 'hidden' }} className="md:absolute md:right-0 lg:shadow-caseInset ease-out duration-200  lg:hover:shadow-caseInsetActive">
+          {images}
+        </div>
       </div>
       <Scrollama
         offset="0.1"
@@ -202,4 +206,5 @@ export default function FeaturedRealizations(props) {
       </Scrollama>
     </div>
   );
+
 }

@@ -170,7 +170,7 @@ export default function Contact(props) {
               <div className="form-group text-center md:text-left my-16">
                 <button
                   type="submit"
-                  className="bg-green hover:bg-green-hover transition-colors duration-200 ease-linear px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"
+                  className="bg-green hover:bg-green-hover transition-colors duration-200 ease-out px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"
                 >
                   Wyślij
                 </button>

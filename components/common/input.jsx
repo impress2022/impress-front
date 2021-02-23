@@ -6,7 +6,7 @@ export default function Input({ label, arr, custom }) {
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
   let inputClassess = classNames({
-    "relative w-full text-1.75 leading-2.875 font-encode-sans transition-colors duration-200 ease-linear border-dashed border-b-2 focus:border-black focus:outline-none": true,
+    "relative w-full text-1.75 leading-2.875 font-encode-sans transition-colors duration-200 ease-out border-dashed border-b-2 focus:border-black focus:outline-none": true,
     "border-input-red focus:border-input-red text-input-red": error,
   });
 

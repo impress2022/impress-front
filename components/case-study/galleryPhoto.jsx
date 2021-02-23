@@ -5,8 +5,8 @@ import Text from "../typography/text";
 export default function GalleryPhoto({ photo, index }) {
   let imageClassess = classNames({
     "mb-5": true,
-    "md:flex-40 xl:max-w-555 xl:max-h-555": !photo.gallery_full_width,
-    "md:flex-100 md:my-6.25 xl:my-s-mar": photo.gallery_full_width,
+    "md:flex-40 xl:max-w-555": !photo.gallery_full_width,
+    "md:flex-100 md:my-6.25": photo.gallery_full_width,
   });
 
   let imageContainerclasses = classNames({

@@ -106,7 +106,7 @@ export default function About(props) {
 
   for (const key in icons) {
     let lottieClasses = classNames({
-      "w-full h-24 flex items-center lg:hover:shadow-dark-wide transition duration-200 ease-linear cursor-pointer": true,
+      "w-full h-24 flex items-center lg:hover:shadow-dark-wide transition duration-200 ease-out cursor-pointer": true,
       "bg-grey-hover": key === "design",
       "bg-red": key === "marketing",
       "bg-dark-green": key === "pr",

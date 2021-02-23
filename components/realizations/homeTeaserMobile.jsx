@@ -22,7 +22,7 @@ export default function HomeTeaserMobile(props) {
   return (
     <div className="flex flex-col items-center md:flex-row-reverse md:mb-36 md:justify-between lg:justify-around">
       <div>
-        <div className="shadow-caseInset h-320 w-320 md:h-400 md:w-400 lg:h-438 lg:w-438 relative">
+        <div className="shadow-caseInset hover:shadow-caseInsetHover ease-out duration-200 h-320 w-320 md:h-400 md:w-400 lg:h-438 lg:w-438 relative">
           <Link href={"/realizacja/" + props.element.post_name}>
             <a className="block-important">
               <Image

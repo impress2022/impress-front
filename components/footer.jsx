@@ -16,7 +16,7 @@ export default function Footer({ menu }) {
   });
 
   let linksClasses = classNames({
-    "text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey hover:text-white transition-color duration-200 ease-linear": true,
+    "text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey hover:text-white transition-color duration-200 ease-out": true,
   });
 
   let navItems = [];
@@ -43,7 +43,7 @@ export default function Footer({ menu }) {
     c++;
     navSecondaryItems.push(
       <li
-        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center hover:text-white transition-color duration-200 ease-linear"
+        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center hover:text-white transition-color duration-200 ease-out"
         key={c}
       >
         <Link href={"/" + value.footer_navigation_link[0].post_name}>

@@ -81,7 +81,7 @@ export default function Blog(props) {
             <div className="md:col-span-8">
               <Link href={"/post/" + promoted.post_name}>
                 <a className="group">
-                  <div className="relative block-important transition duration-200 ease-linear shadow-caseInsetMobile lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:min-h-60">
+                  <div className="relative block-important transition duration-200 ease-out shadow-caseInsetMobile lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:min-h-60">
                     <Image
                       src={promoted.acf.main_image.sizes["1536x1536"]}
                       layout="fill"

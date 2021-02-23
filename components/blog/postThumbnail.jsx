@@ -13,7 +13,7 @@ export default function PostThumbnail({ image }) {
     <article className="group cursor-pointer my-12 lg:my-0">
       <Link href={"/post/" + image.slug}>
         <a>
-          <div className="relative block-important transition duration-200 ease-linear shadow-caseInsetMobile lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:col-span-8">
+          <div className="relative block-important transition duration-200 ease-out shadow-caseInsetMobile lg:shadow-caseInset group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:col-span-8">
             <Image
               src={image.acf.main_image.sizes["1536x1536"]}
               layout="fill"

@@ -4,9 +4,9 @@ import Text from "../typography/text";
 
 export default function SingleSquare({ children }) {
   return (
-    <div className="md:mb-7.5r flex justify-items-start">
+    <div className="md:col-span-3 flex justify-items-start">
       <Link href="/nasze-realizacje">
-        <a className="hover:shadow-buttonBg transition duration-200 ease-linear">
+        <a className="hover:shadow-buttonBg transition duration-200 ease-out">
           <Square
             sizeClasses="w-x6 h-x6 md:w-x4 md:h-x4 lg:w-x7 lg:h-x7"
             color="green"

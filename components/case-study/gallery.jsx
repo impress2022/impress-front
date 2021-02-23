@@ -48,6 +48,6 @@ export default function Gallery({ photos, data }) {
   }
 
   return (
-    <div className="md:flex md:flex-wrap md:justify-center xl">{gallery}</div>
+    <div className="md:flex md:flex-wrap md:justify-center">{gallery}</div>
   );
 }

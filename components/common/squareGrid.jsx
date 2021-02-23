@@ -16,7 +16,7 @@ export default function SquareGrid({ children, colors, href }) {
         </Slide>
         <a
           href={href}
-          className="hover:shadow-buttonBg transition duration-200 ease-linear z-10"
+          className="hover:shadow-buttonBg transition duration-200 ease-out z-10"
         >
           <Square
             sizeClasses="w-x6 h-x6 md:w-x4 md:h-x4 lg:w-x7 lg:h-x7"
