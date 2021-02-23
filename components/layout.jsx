@@ -14,7 +14,7 @@ export default function Layout({
     <div>
       {menu && <Nav menu={menu} />}
       {titleSection && (
-        <section className="lg:container mx-7 md:mx-16 lg:mx-auto relative">
+        <section className="mx-7 md:mx-16 lg:mx-7.5r relative">
           {titleSection}
         </section>
       )}

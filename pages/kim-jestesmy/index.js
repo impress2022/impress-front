@@ -41,16 +41,20 @@ export default function About(props) {
 
   const Hero = (
     <SubpageHero
+      isImage={true}
       data={{
         title: page.subpage_title,
         subtitle: page.subpage_subtitle,
         photo: page.subpage_main_image,
         lesser_photo: page.subpage_lesser_image,
+        desc: page.subpage_lesser_desc,
+        b_desc: page.subpage_bigger_desc,
       }}
     />
   );
   const HeroDesc = (
     <SubpageHeroDesc
+      isImage={true}
       data={{
         desc: page.subpage_lesser_desc,
         b_desc: page.subpage_bigger_desc,
@@ -128,7 +132,7 @@ export default function About(props) {
             <SubpagesLottie
               lottie={key}
               key={key}
-              custom="h-20 w-20 md:scale-125 m-2"
+              custom="h-20 w-20 mt-4"
               innerCustom="md:h-x2 md:w-x2 lg:w-180 lg:h-180"
             />
             <Text size="body-bold-18" color="white" custom="mb-0 lg:mt-12 md:text-1.375 lg:text-1.625 md:leading-7 lg:leading-2.125">
@@ -180,8 +184,8 @@ export default function About(props) {
         squares={squares}
         menu={props.menu}
       >
-        <section className="mb-400 lg:mb-700">
-          <div className="md:mx-4 my-7.5r md:my-8r md:my-s-mar">
+        <section className="mb-400 mt-7.5r md:mt-24 lg:mt-0">
+          <div className="md:mx-4 mb-7.5r md:mb-8r md:mb-s-mar">
             <Text
               size="body-18"
               custom="lg:text-1.5 lg:leading-2.625 mb-12 md:mb-20 lg:max-w-803"
@@ -192,7 +196,7 @@ export default function About(props) {
               {lotties}
             </div>
           </div>
-          <div className="lg:mt-300">
+          <div className="lg:mt-200">
             <div className="md:max-w-50 lg:max-w-803 mb-24 xl:mb-150">
               <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
                 {page.subpage_mini_gallery.gallery_text}
