@@ -19,11 +19,10 @@ export default function LesserSlider({ slides }) {
           {slides.map((item, index) => (
             <div
               key={index}
-              // shadow-sliderMobile md:shadow-sliderTablet
-              className="absolute transform -translate-y-80p md:translate-y-0 scale-95 md:scale-100 md:right-0 h-full w-full md:w-1/2 lg:w-2/3 max-h-350 md:max-h-initial lg:min-h-80 lg:max-h-full"
+              //
+              className="absolute ratio-square transform -translate-y-80p md:translate-y-0 md:right-0 w-full md:w-1/2 lg:w-2/3 max-h-350 md:max-h-initial lg:min-h-80 lg:max-h-full"
               style={{
                 zIndex: index === currentSlide ? 1000 : 999 + -1 * index,
-                paddingTop: '50%',
               }}
             >
               <Image

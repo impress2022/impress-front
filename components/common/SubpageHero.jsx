@@ -29,7 +29,7 @@ export default function SubpageHero({ data, isImage }) {
 })
 
   return (
-    <header className="hero-section-header mt-7.5r md:flex md:items-end lg:grid lg:grid-cols-12">
+    <header className="hero-section-header mt-16 md:flex md:items-end lg:grid lg:grid-cols-12">
       <div className={textClasses}>
         <p className="max-w-90 tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller">
           {data.subtitle}

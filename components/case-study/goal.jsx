@@ -3,11 +3,11 @@ import Square from "../square";
 export default function Goal({ children, squareCount }) {
   return (
     <div>
-      <div className="lg:w-full w-xs2 h-xs2 lg:flex lg:justify-center">
+      <div className="w-full flex justify-center">
         <Square
           sizeClasses="w-xs2 h-xs2"
           color="green"
-          customWrapper="relative transform translate-x-xs1 lg:translate-x-0"
+          customWrapper="relative"
           // translate-x-xs1
         >
           {squareCount >= 1 && (

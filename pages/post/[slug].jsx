@@ -5,6 +5,7 @@ import SquareGrid from "../../components/common/squareGrid";
 import Image from "next/image";
 import Text from "../../components/typography/text";
 import Social from "../../components/social";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export async function getStaticPaths() {
   const res = await fetch(
@@ -78,6 +79,7 @@ const BlogPost = (props) => {
 
   const page = props.data[0].acf;
   const menu = props.menu;
+  const windowSize = useWindowSize();
 
   const d = new Date(props.data[0].date);
   const ye = new Intl.DateTimeFormat("pl", { year: "numeric" }).format(d);
@@ -120,7 +122,7 @@ const BlogPost = (props) => {
                 </time>
               </div>
             </div>
-            <figure className="relative block-important w-full md:col-span-12 md:h-50vh">
+            <figure className="relative block-important w-full md:col-span-12 h-320 md:h-50vh">
               <Image
                 src={page.main_image.sizes["twentytwenty-fullscreen"]}
                 objectFit="cover"
@@ -129,9 +131,9 @@ const BlogPost = (props) => {
               />
             </figure>
           </header>
-          <section className="mb-600 mt-7.5r md:mt-8r md:grid md:grid-cols-12 wysiwyg">
-            <div className="social-media w-full">
-              <Social menu={menu} />
+          <section className="mb-600 mt-16 md:mt-8r md:grid md:grid-cols-12 wysiwyg">
+            <div className="social-media w-full my-10 md:my-0">
+              <Social menu={menu} flex={windowSize.width < 768}/>
             </div>
             <div
               itemProp="articleBody"

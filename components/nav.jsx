@@ -6,17 +6,21 @@ import Social from "./social";
 import Details from "./kontakt/details";
 import NavMenu from "./navMenu";
 import Image from "next/image";
+import useWindowSize from "../hooks/useWindowSize";
 
 function Nav({ menu }) {
   const [menuToggle, setMenuToggle] = useState(false);
   const [menuHide, setMenuHide] = useState(false);
   const scrollOffsetY = useRef(0);
 
+  const windowSize = useWindowSize();
+
   let menuClasses = classNames({
-    "transition-all duration-500 ease-in-out z-50 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 md:pt-28 lg:pt-36 flex": true,
+    "transition-all duration-500 ease-in-out z-50 nav-wrapper bg-white fixed top-0 w-screen md:h-screen pt-24 md:pt-28 lg:pt-36 flex overflow-y-scroll md:overflow-y-visible": true,
     "left-full": !menuToggle,
     // "transform translate-x-full": !menuToggle,
-    "left-7 md:left-2/4 lg:left-l58": menuToggle,
+    "md:left-2/4 lg:left-l58": menuToggle && windowSize.width >= 768,
+    "left-0": menuToggle && windowSize.width < 768,
   });
 
   let leftBarClasses = classNames({
@@ -54,7 +58,7 @@ function Nav({ menu }) {
 
   return (
     <>
-      <div className={menuClasses}>
+      <div className={menuClasses} style={{ height: '100vh' }}>
         <Hamburger
           menuToggle={menuToggle}
           setMenuToggle={setMenuToggle}

@@ -24,7 +24,7 @@ export default function Gallery({ photos, data, title }) {
       if (smallCount % 2 === 1) {
         gallery.push(
           <div
-            className="hidden md:block md:flex-40 md:min-w-387 xl:min-w-0 xl:max-w-555 md:h-1"
+            className="hidden md:block md:flex-40 md:min-w-387 lg:min-w-0 lg:max-w-555 md:h-1"
             key={(10 + c) * c}
           />
         );
@@ -36,7 +36,7 @@ export default function Gallery({ photos, data, title }) {
       if (smallCount % 2 === 1) {
         gallery.push(
           <div
-            className="hidden md:block md:flex-40 md:min-w-387 xl:min-w-0 xl:max-w-555 md:h-1"
+            className="hidden md:block  md:flex-40 md:min-w-387 lg:min-w-0 lg:max-w-555 md:h-1"
             key={(3 + c) * c}
           />
         );

@@ -96,7 +96,7 @@ export default function Blog(props) {
         />
       </Head>
       <Layout squares={squares} menu={props.menu}>
-        <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-8r lg:mt-16 xl:mt-8r md:mt-7.5r">
+        <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-16 lg:mt-16 xl:mt-8r md:mt-7.5r">
           <Text size="h2" custom="mb-8">
             {props.data.acf.header_title}
           </Text>

@@ -85,7 +85,7 @@ const Post = (props) => {
   });
 
   const titleSection = (
-    <div className="mt-7.5r lg:mt-24 mb-2.625 md:mb-2.625">
+    <div className="mt-16 lg:mt-24 mb-2.625 md:mb-2.625">
       <Text size="h2" custom="mb-4">
         {page.header_title}
       </Text>
@@ -109,7 +109,7 @@ const Post = (props) => {
   );
 
   const fluidSlider = page.slider_efects && (
-    <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-500 md:mb-400 lg:mb-500 relative">
+    <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-400 lg:mb-500 relative">
       <div className="absolute bg-green right-0 top-0 h-full md:h-80vh w-1/4 md:w-80vh lg:w-1/2">
         <Square
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"
@@ -190,6 +190,7 @@ const Post = (props) => {
         fluidPhoto={fluidPhoto}
         fluid={fluidSlider}
         squares={squares}
+        overflow={false}
       >
         <div className={contClassess}>
           <section className="md:flex md:justify-between">
@@ -206,7 +207,7 @@ const Post = (props) => {
               </div>
             </div>
           </section>
-          <section className="mt-7.5r md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-0">
+          <section className="mt-16 md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-0">
             <Text size="h2" custom="mb-20 md:mb-8 lg:mb-20">
               Cele, które postanowiliśmy osiągnąć
             </Text>
