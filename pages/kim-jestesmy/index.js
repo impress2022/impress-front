@@ -71,12 +71,12 @@ export default function About(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
         >
           Zobacz nasze realizacje
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 md:top-36 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -150,7 +150,7 @@ export default function About(props) {
 
   for (const index in imagesArray) {
     const imageClassess = classNames({
-      "block-important shadow-caseInsetMobile md:shadow-caseInset relative mini-gallery-image": true,
+      "block-important relative ratio-square-md mini-gallery-image": true,
       "w-full h-320 md:h-390 lg:h-625 col-span-2 row-span-2 md:row-span-4":
         imagesArray[index].gallery_image_2x,
       "flex-40 h-155 md:h-220 lg:h-345": !imagesArray[index].gallery_image_2x,
