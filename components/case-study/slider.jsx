@@ -15,8 +15,10 @@ export default function Slider({ data }) {
     slidesPerView = 1.2;
   } else if (windowSize.width < 1280) {
     slidesPerView = 2.2;
-  } else {
+  } else if (windowSize.width < 1600) {
     slidesPerView = 3.2;
+  } else {
+    slidesPerView = 4.2;
   }
 
   const handleClick = (value) => {
@@ -36,13 +38,13 @@ export default function Slider({ data }) {
     >
       {data.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="w-280 h-full bg-grey-hover relative ratio-square">
+          <div className="w-280 h-full bg-grey-hover relative ratio-square cursor-pointer">
             <div className="absolute -bottom-14 left-1 pointer-events-none">
               <Text size="h4">
                 {index < 10 ? "0" + (index + 1) : index + 1}
               </Text>
             </div>
-            <div className="p-8 pb-24 md:pt-16 xl:pt-24 md:px-12">
+            <div className="relative z-20 p-8 pb-24 md:pt-16 xl:pt-24 md:px-12">
               <div className="mb-5 md:mb-7">
                 <Text size="h3" color="white">
                   {item.slider_efect_title}

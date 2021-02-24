@@ -84,16 +84,18 @@ export default function Home(props) {
         <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:max-w-initial md:grid md:grid-cols-12">
           {content.fourth_section.map((item, index) => (
             <div key={index} className="md:col-span-3 lottie-card">
-              <Link href={"/co-robimy#" + items[index]}>
-                <a>
-                  <Card
-                    title={item.card_header}
-                    elements={item.card_items}
-                    lottie={items[index]}
-                    color={colors[index]}
-                  />
-                </a>
-              </Link>
+              <Fade bottom>
+                <Link href={"/co-robimy#" + items[index]}>
+                  <a>
+                    <Card
+                      title={item.card_header}
+                      elements={item.card_items}
+                      lottie={items[index]}
+                      color={colors[index]}
+                    />
+                  </a>
+                </Link>
+              </Fade>
             </div>
           ))}
         </div>
@@ -138,7 +140,7 @@ export default function Home(props) {
           <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:-bottom-8 md:left-0 animate-bounce-slow" />
         </section>
         <section className="md:mb-s-mar">
-          <div className="my-20 lg:my-200 md:container md:mx-auto">
+          <div className="my-20 lg:my-200">
             <Logos menu={props.menu} />
           </div>
         </section>

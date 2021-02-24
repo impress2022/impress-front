@@ -113,7 +113,7 @@ export default function About(props) {
   const windowSize = useWindowSize();
 
   const lottieWrapper = classNames({
-    "grid grid-cols-2 md:grid-cols-4": true,
+    "grid grid-cols-2 md:grid-cols-4 lottie-stairs": true,
     "container mx-auto": windowSize.width < 768,
   })
 
@@ -185,7 +185,7 @@ export default function About(props) {
         squares={squares}
         menu={props.menu}
       >
-        <section className="mb-400 lg:mb-500 mt-7.5r md:mt-24 lg:mt-0">
+        <section className="mb-400 md:mb-300 lg:mb-500 mt-7.5r md:mt-24 lg:mt-0">
           <div className="md:mx-4 mb-14 md:mb-7.5r lg:mb-s-mar">
             <Text
               size="body-18"

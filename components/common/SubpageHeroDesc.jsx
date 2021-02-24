@@ -14,7 +14,7 @@ export default function SubpageHero({ data, isImage, color }) {
 
   let textWrapperClasses = classNames({
     "md:mt-0 md:col-span-4": true,
-    "pt-250 -mt-200 md:pt-24 lg:pt-400": isImage,
+    "pt-250 -mt-200 md:pt-24": isImage,
     "pt-250 -mt-200 md:pt-0": !isImage,
   })
 
@@ -30,7 +30,10 @@ export default function SubpageHero({ data, isImage, color }) {
         {isImage && <div className="hidden md:block md:col-span-7 2k:hidden">
 
         </div>}
-        <div className={textWrapperClasses}>
+        <div className={textWrapperClasses} style={{
+          paddingTop: windowSize.width >= 1280 && windowSize.width < 1450 && isImage ? (windowSize.width/10 + 100) + "px" :
+            windowSize.width >= 1450 ? (windowSize.width/5) + "px" : "",
+        }}>
           <Text size="body-18" custom="mb-8 md:text-1.5 md:leading-8 md:mb-16" color={color === "blue" ? "white" : "black"}>
             {data.b_desc}
           </Text>

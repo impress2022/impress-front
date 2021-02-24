@@ -1,7 +1,6 @@
 import Text from "../typography/text";
 import Image from "next/image";
 import SubpagesLottie from "../lottie/subpagesLottie";
-import useWindowSize from "../../hooks/useWindowSize";
 import {useEffect, useRef, useState} from "react";
 
 export default function Activity({ activity }) {

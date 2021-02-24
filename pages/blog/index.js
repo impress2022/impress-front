@@ -5,6 +5,8 @@ import Text from "../../components/typography/text";
 import SquareGrid from "../../components/common/squareGrid";
 import PostThumbnail from "../../components/blog/postThumbnail";
 import Link from "next/link";
+import React from 'react';
+import Fade from 'react-reveal/Fade';
 
 export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/295");
@@ -109,40 +111,44 @@ export default function Blog(props) {
         </header>
         <main className="mb-600">
           <section className="md:grid md:grid-cols-12 md:items-center">
-            <div className="md:col-span-8">
-              <Link href={"/post/" + promoted.post_name}>
-                <a className="group">
-                  <div className="relative block-important art-transition group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:min-h-60">
-                    <Image
-                      src={promoted.acf.main_image.sizes["1536x1536"]}
-                      layout="fill"
-                      objectFit="cover"
-                      alt={promoted.acf.main_image.alt}
-                    />
-                  </div>
-                  <div className="md:col-span-5 md:grid md:grid-cols-8">
-                    <Text size="h3" custom="mt-10 md:col-span-5">
-                      {promoted.post_title}
-                    </Text>
-                    <Text
-                      size="p"
-                      custom="text-0.75 font-bold font-aller opacity-30 mt-4 md:col-span-5"
-                    >
-                      {`${da} ${mo} ${ye}`}
-                    </Text>
-                    <Text size="body-18" custom="mt-4 md:col-span-5">
-                      {promoted.acf.promoted_content
-                        ? promoted.acf.promoted_content
-                        : ""}
-                    </Text>
-                  </div>
-                </a>
-              </Link>
-            </div>
+            <Fade left>
+              <div className="md:col-span-8">
+                <Link href={"/post/" + promoted.post_name}>
+                  <a className="group">
+                    <div className="relative block-important art-transition group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive group-hover:-translate-y-2.5 h-400 md:min-h-60">
+                      <Image
+                        src={promoted.acf.main_image.sizes["1536x1536"]}
+                        layout="fill"
+                        objectFit="cover"
+                        alt={promoted.acf.main_image.alt}
+                      />
+                    </div>
+                    <div className="md:col-span-5 md:grid md:grid-cols-8">
+                      <Text size="h3" custom="mt-10 md:col-span-5">
+                        {promoted.post_title}
+                      </Text>
+                      <Text
+                        size="p"
+                        custom="text-0.75 font-bold font-aller opacity-30 mt-4 md:col-span-5"
+                      >
+                        {`${da} ${mo} ${ye}`}
+                      </Text>
+                      <Text size="body-18" custom="mt-4 md:col-span-5">
+                        {promoted.acf.promoted_content
+                          ? promoted.acf.promoted_content
+                          : ""}
+                      </Text>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            </Fade>
           </section>
           <section className="md:col-span-12 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-x-28 lg:gap-y-20 md:mt-24">
             {posts.map((item, index) => (
-              <PostThumbnail key={index} image={item} />
+              <Fade left>
+                <PostThumbnail key={index} image={item} />
+              </Fade>
             ))}
           </section>
         </main>

@@ -17,7 +17,7 @@ export default function Logos(props) {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-x-12 gap-y-20 md:gap-x-28 md:gap-y-20 lg:gap-y-36 md:px-16 lg:px-7.5r md:grid-cols-4 items-center">
+      <div style={{ gridAutoRows: '1fr' }} className="grid grid-cols-3 gap-x-12 gap-y-16 md:gap-x-16 md:gap-y-20 lg:gap-x-36 lg:gap-y-36 md:px-16 lg:px-7.5r md:grid-cols-4 items-center">
         {logos}
       </div>
     </>

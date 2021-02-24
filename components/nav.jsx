@@ -62,7 +62,7 @@ function Nav({ menu }) {
         <Hamburger
           menuToggle={menuToggle}
           setMenuToggle={setMenuToggle}
-          custom="fixed right-6 md:right-57px top-26px md:right-3.75 lg:right-20 lg:top-9 z-60"
+          custom="fixed right-6 top-26px md:right-3.75 lg:right-15 lg:top-9 z-60"
           active={!menuToggle}
         />
         <div className={leftBarClasses} />

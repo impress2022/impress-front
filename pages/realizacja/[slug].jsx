@@ -109,8 +109,8 @@ const Post = (props) => {
   );
 
   const fluidSlider = page.slider_efects && (
-    <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-400 lg:mb-500 relative">
-      <div className="absolute bg-green right-0 top-0 h-full md:h-80vh w-1/4 md:w-80vh lg:w-1/2">
+    <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-400 lg:mb-600 relative">
+      <div className="absolute bg-green right-0 top-0 h-full ratio-square-md w-1/4 lg:w-1/2">
         <Square
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"
           color="blue"
@@ -118,12 +118,12 @@ const Post = (props) => {
         />
       </div>
       <div className="mb-16 lg:mb-24">
-        {windowSize.width < 768 && (
+        {windowSize.width < 1280 && (
           <Text size="h2" custom="relative z-30">
             Efekty, które <br /> zaowocowały
           </Text>
         )}
-        {windowSize.width >= 768 && (
+        {windowSize.width >= 1280 && (
           <Text size="h2" custom="relative z-30">Efekty, które zaowocowały</Text>
         )}
       </div>

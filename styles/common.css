@@ -1,3 +1,7 @@
+svg, img {
+    shape-rendering: geometricPrecision;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -384,4 +388,23 @@ body {
 
 .art-transition {
     transition: all .6s ease;
+}
+
+@media(min-width: 768px) and (max-width: 950px) {
+    .lottie-card .art-transition svg {
+        display: none;
+    }
+
+    .footer-arrow-text {
+        font-size: 2.5rem;
+        margin-left: 0.25rem;
+    }
+
+    .footer-menu-text {
+        font-size: 9px !important;
+    }
+
+    .footer-menu-text-larger {
+        font-size: 13px !important;
+    }
 }

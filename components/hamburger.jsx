@@ -33,7 +33,7 @@ export default function Hamburger(props) {
           props.setMenuToggle(!props.menuToggle);
         }}
       >
-        <b className="hidden md:block md:mr-8 uppercase text-primary">Menu</b>
+        <b className="hidden md:block md:text-0.875 md:mr-8 uppercase text-primary">Menu</b>
         <svg
           width="32"
           height="28"

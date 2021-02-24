@@ -6,6 +6,7 @@ import Image from "next/image";
 import Text from "../../components/typography/text";
 import Social from "../../components/social";
 import useWindowSize from "../../hooks/useWindowSize";
+import Pulse from 'react-reveal/Pulse';
 
 export async function getStaticPaths() {
   const res = await fetch(
@@ -122,14 +123,16 @@ const BlogPost = (props) => {
                 </time>
               </div>
             </div>
-            <figure className="relative block-important w-full md:col-span-12 h-320 md:h-50vh">
-              <Image
-                src={page.main_image.sizes["twentytwenty-fullscreen"]}
-                objectFit="cover"
-                layout="fill"
-                alt={page.main_image.alt}
-              />
-            </figure>
+            <Pulse>
+              <figure className="relative block-important w-full md:col-span-12 h-320 md:h-50vh">
+                <Image
+                  src={page.main_image.sizes["twentytwenty-fullscreen"]}
+                  objectFit="cover"
+                  layout="fill"
+                  alt={page.main_image.alt}
+                />
+              </figure>
+            </Pulse>
           </header>
           <section className="mb-400 md:mb-300 lg:mb-500 mt-16 md:mt-8r md:grid md:grid-cols-12 wysiwyg">
             <div className="social-media w-full my-10 md:my-0">

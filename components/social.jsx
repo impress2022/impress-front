@@ -6,10 +6,11 @@ export default function Social(props) {
 
   let socialClasses = classNames({
     "mt-5 md:mt-3 lg:mt-6 md:leading-200": !props.flex,
+    "flex items-center": props.flex,
   });
 
   let flex = classNames({
-    "flex justify-between w-22": props.flex,
+    "flex justify-between items-center w-22": props.flex,
   });
 
   let icons = [];
