@@ -5,6 +5,8 @@ import SquareGrid from "../../components/common/squareGrid";
 import Image from "next/image";
 import Text from "../../components/typography/text";
 import Social from "../../components/social";
+import useWindowSize from "../../hooks/useWindowSize";
+import Pulse from 'react-reveal/Pulse';
 
 export async function getStaticPaths() {
   const res = await fetch(
@@ -41,9 +43,44 @@ export async function getStaticProps({ params }) {
 }
 
 const BlogPost = (props) => {
-  const squares = <SquareGrid colors={["grey", "green", "green", "red"]} />;
+  const squares = (
+    <SquareGrid colors={["grey", "green", "red", "green"]} href={"/blog"}>
+      <div className="cursor-pointer">
+        <Text
+          size="h3"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
+        >
+          Wróć do wszystkich wpisów
+        </Text>
+        <svg
+          style={{ width: '24px', height: "auto" }}
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          width="34"
+          height="34"
+          viewBox="0 0 34 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.67752 1.31135e-07H33.6775V4H5.67752V1.31135e-07Z"
+            fill="#202222"
+          />
+          <path
+            d="M29.6775 28L29.6775 0L33.6775 1.31135e-07V28H29.6775Z"
+            fill="#202222"
+          />
+          <path
+            d="M28.87 1.97924L31.6984 4.80767L3.41412 33.0919L0.585693 30.2635L28.87 1.97924Z"
+            fill="#202222"
+          />
+        </svg>
+      </div>
+    </SquareGrid>
+  );
+
   const page = props.data[0].acf;
   const menu = props.menu;
+  const windowSize = useWindowSize();
 
   const d = new Date(props.data[0].date);
   const ye = new Intl.DateTimeFormat("pl", { year: "numeric" }).format(d);
@@ -86,18 +123,20 @@ const BlogPost = (props) => {
                 </time>
               </div>
             </div>
-            <figure className="relative block-important shadow-caseInsetMobile lg:shadow-caseInset w-full md:col-span-12 md:h-50vh">
-              <Image
-                src={page.main_image.sizes["twentytwenty-fullscreen"]}
-                objectFit="cover"
-                layout="fill"
-                alt={page.main_image.alt}
-              />
-            </figure>
+            <Pulse>
+              <figure className="relative block-important w-full md:col-span-12 h-320 md:h-50vh">
+                <Image
+                  src={page.main_image.sizes["twentytwenty-fullscreen"]}
+                  objectFit="cover"
+                  layout="fill"
+                  alt={page.main_image.alt}
+                />
+              </figure>
+            </Pulse>
           </header>
-          <section className="mb-600 mt-7.5r md:mt-8r md:grid md:grid-cols-12 wysiwyg">
-            <div className="social-media w-full">
-              <Social menu={menu} />
+          <section className="mb-400 md:mb-300 lg:mb-500 mt-16 md:mt-8r md:grid md:grid-cols-12 wysiwyg">
+            <div className="social-media w-full my-10 md:my-0">
+              <Social menu={menu} flex={windowSize.width < 768}/>
             </div>
             <div
               itemProp="articleBody"

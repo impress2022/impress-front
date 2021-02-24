@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1079c293-8617-4ba8-bd0a-b90da5d8cdd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/components/common/SubpageHero.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/SubpageHero.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/featuredRealizations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/realizations/homeTeaserMobile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/homeTeaserMobile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/realizations/thumbnail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/components/common/input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/input.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/common/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/modal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.jsx" afterDir="false" />
@@ -27,6 +36,7 @@
       <change beforePath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/realizacja/[slug].jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/rodo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/rodo/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+>>>>>>> f40baa726f895ff577bcdc41baa7699ac57a7840
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,11 +146,15 @@
       <workItem from="1612003396846" duration="13858000" />
       <workItem from="1612033378040" duration="3262000" />
       <workItem from="1612091912297" duration="31052000" />
+<<<<<<< HEAD
+      <workItem from="1612291642994" duration="10065000" />
+=======
       <workItem from="1612291642994" duration="7089000" />
       <workItem from="1613134403806" duration="12633000" />
       <workItem from="1613223329233" duration="13593000" />
       <workItem from="1613301911680" duration="8509000" />
       <workItem from="1613576367588" duration="21799000" />
+>>>>>>> f40baa726f895ff577bcdc41baa7699ac57a7840
     </task>
     <servers />
   </component>

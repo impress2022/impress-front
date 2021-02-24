@@ -8,6 +8,7 @@ import Flip from "react-reveal/Flip";
 import { useRouter } from "next/router";
 import Modal from "../../components/common/modal";
 import Head from "next/head";
+import SelectMultiple from "../../components/common/selectMultiple";
 
 export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/13");
@@ -62,7 +63,7 @@ export default function Contact(props) {
         )}
         <div className="relative">
           <div>
-            <Text size="h2" custom="my-12 lg:max-w-690">
+            <Text size="h2" custom="my-12 md:mb-24 lg:max-w-690">
               {page.header_title}
             </Text>
             <Flip left>
@@ -116,14 +117,19 @@ export default function Contact(props) {
               ))}
 
               {page.select_fields.map((item, index) => (
-                <div className="form-group" key={index}>
+                <div className="form-group py-2" key={index}>
                   <Text
                     size="p"
                     custom="text-1.75 leading-2.875 font-encode-sans md:mb-6"
                   >
                     {item.label}
                   </Text>
-                  <Select options={item.options} name={item.label} />
+                  {!item.multiple &&
+                    <Select options={item.options} name={item.label} />
+                  }
+                  {item.multiple &&
+                    <SelectMultiple options={item.options} name={item.label} />
+                  }
                 </div>
               ))}
 
@@ -153,6 +159,7 @@ export default function Contact(props) {
                   id="styled-checkbox-2"
                   type="checkbox"
                   value={checked}
+                  checked={checked}
                   required="required"
                 />
                 <label
@@ -167,10 +174,10 @@ export default function Contact(props) {
                   </p>
                 </label>
               </div>
-              <div className="form-group text-center md:text-left my-16">
+              <div className="form-group text-center md:text-left my-16 mb-32">
                 <button
                   type="submit"
-                  className="bg-green hover:bg-green-hover transition-colors duration-200 ease-linear px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"
+                  className="bg-green hover:bg-green-hover transition-colors duration-200 ease-out px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"
                 >
                   Wyślij
                 </button>

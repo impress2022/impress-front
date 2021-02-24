@@ -8,7 +8,7 @@ export default function SliderArrow({
   maxElements,
 }) {
   let buttonClassess = classNames({
-    "flex justify-center items-center w-16 h-16 focus:outline-none transition-color duration-200 ease-linear": true,
+    "flex justify-center items-center w-16 h-16 focus:outline-none transition-color duration-200 ease-out": true,
     "bg-red hover:bg-red-hover": active,
     "bg-white": !active,
     "transform rotate-180": direction === "left",

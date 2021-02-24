@@ -1,12 +1,30 @@
 import Text from "../typography/text";
 import Image from "next/image";
 import SubpagesLottie from "../lottie/subpagesLottie";
+import {useEffect, useRef, useState} from "react";
 
 export default function Activity({ activity }) {
+  const wrapper = useRef(null);
+  const [customHeight, setCustomHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        setCustomHeight(wrapper.current.offsetWidth)
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <div
       id={activity.activity_animation}
-      className="activity mt-s-mar lg:mt-500 xl:mt-s-mar md:w-45p flex flex-col-reverse justify-end lg:w-full lg:flex-row lg:items-center lg:h-100vh"
+      className="activity mt-32 md:mt-s-mar lg:mt-300 md:w-45p flex flex-col-reverse justify-end lg:justify-start lg:w-full lg:flex-row"
     >
       <div className="lg:max-w-40 lg:mr-200">
         <div className="my-12">
@@ -28,20 +46,20 @@ export default function Activity({ activity }) {
           ))}
         </div>
       </div>
-      <div className="relative">
-        <div className="absolute top-0 right-0 transform -translate-y-full h-80px md:h-148px lg:h-230px w-1/4 md:w-2/5 lg:w-2/5">
+      <div className="relative lg:w-full lg:transform lg:-translate-x-115 lg:mt-28">
+        <div className="absolute top-0 right-0 transform -translate-y-full lg:translate-x-full h-xs5 w-xs5 lg:w-x2 lg:h-x2">
           <SubpagesLottie
             lottie={activity.activity_animation}
-            custom="h-full w-full p-4 md:p-8"
-            innerCustom="md:transform md:scale-125 lg:scale-200"
+            custom="h-full w-full p-4 lg:p-6"
+            innerCustom="w-full h-full"
           />
         </div>
-        <div className="block-important shadow-dark md:shadow-dark-wide">
+        <div className="block-important hover:shadow-caseInsetActiveMobile md:hover:shadow-caseInsetActive art-transition relative w-full ratio-square" style={{ height: customHeight + 'px'}} ref={wrapper}>
           <Image
             quality={100}
             src={activity.activity_image.sizes["post-thumbnail"]}
-            width={activity.activity_image.sizes["post-thumbnail-width"]}
-            height={activity.activity_image.sizes["post-thumbnail-height"]}
+            layout="fill"
+            objectFit="cover"
             alt={activity.activity_image.alt}
           />
         </div>

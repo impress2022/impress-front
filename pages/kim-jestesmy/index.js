@@ -8,6 +8,7 @@ import SubpagesLottie from "../../components/lottie/subpagesLottie";
 import classNames from "classnames";
 import Link from "next/link";
 import Head from "next/head";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/11");
@@ -40,16 +41,21 @@ export default function About(props) {
 
   const Hero = (
     <SubpageHero
+      isImage={true}
       data={{
         title: page.subpage_title,
         subtitle: page.subpage_subtitle,
         photo: page.subpage_main_image,
         lesser_photo: page.subpage_lesser_image,
+        desc: page.subpage_lesser_desc,
+        b_desc: page.subpage_bigger_desc,
       }}
     />
   );
   const HeroDesc = (
     <SubpageHeroDesc
+      color='green'
+      isImage={true}
       data={{
         desc: page.subpage_lesser_desc,
         b_desc: page.subpage_bigger_desc,
@@ -66,12 +72,12 @@ export default function About(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-7 md:top-16 lg:top-24 z-10"
         >
           Zobacz nasze realizacje
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-24 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -97,16 +103,23 @@ export default function About(props) {
 
   const icons = {
     pr: "Public Relations",
-    marketing: "Marketing",
     social: "Social Media",
+    marketing: "Marketing",
     design: "Design",
   };
 
   let lotties = [];
 
+  const windowSize = useWindowSize();
+
+  const lottieWrapper = classNames({
+    "grid grid-cols-2 md:grid-cols-4 lottie-stairs": true,
+    "container mx-auto": windowSize.width < 768,
+  })
+
   for (const key in icons) {
     let lottieClasses = classNames({
-      "w-full h-24 flex items-center lg:hover:shadow-dark-wide transition duration-200 ease-linear cursor-pointer": true,
+      "w-full h-160 md:h-auto flex flex-col items-center justify-center lg:hover:shadow-dark-wide transition duration-200 ease-out cursor-pointer": true,
       "bg-grey-hover": key === "design",
       "bg-red": key === "marketing",
       "bg-dark-green": key === "pr",
@@ -115,16 +128,15 @@ export default function About(props) {
 
     lotties.push(
       <Link key={key} href={"/co-robimy#" + key}>
-        <a>
+        <a className="flex flex-row relative ratio-square-md">
           <div className={lottieClasses}>
             <SubpagesLottie
               lottie={key}
               key={key}
-              custom="h-20 w-20 m-2"
-              autoplay={false}
-              isStopped={true}
+              custom="h-20 w-20 m-4 lg:m-6"
+              innerCustom="md:h-x2 md:w-x2 md:transform lg:scale-125 lg:w-180 lg:h-180"
             />
-            <Text size="h3" color="white">
+            <Text size="body-bold-18" color="white" custom="mb-0 lg:mt-12 lg:text-1.625 md:leading-7 lg:leading-2.125">
               {icons[key]}
             </Text>
           </div>
@@ -139,7 +151,7 @@ export default function About(props) {
 
   for (const index in imagesArray) {
     const imageClassess = classNames({
-      "block-important shadow-caseInsetMobile md:shadow-caseInset relative mini-gallery-image": true,
+      "block-important relative ratio-square-md mini-gallery-image": true,
       "w-full h-320 md:h-390 lg:h-625 col-span-2 row-span-2 md:row-span-4":
         imagesArray[index].gallery_image_2x,
       "flex-40 h-155 md:h-220 lg:h-345": !imagesArray[index].gallery_image_2x,
@@ -173,20 +185,20 @@ export default function About(props) {
         squares={squares}
         menu={props.menu}
       >
-        <section className="mb-400 lg:mb-700">
-          <div className="md:mx-4 my-7.5r md:my-8r md:my-s-mar">
+        <section className="mb-400 md:mb-300 lg:mb-500 mt-7.5r md:mt-24 lg:mt-0">
+          <div className="md:mx-4 mb-14 md:mb-7.5r lg:mb-s-mar">
             <Text
               size="body-18"
-              custom="lg:text-1.5 lg:leading-2.625 mb-12 md:mb-20 lg:max-w-803"
+              custom="lg:text-1.5 lg:leading-2.625 mb-12 md:mb-20 lg:mb-200 lg:max-w-803"
             >
               {page.subpage_content}
             </Text>
-            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 ">
+            <div className={lottieWrapper}>
               {lotties}
             </div>
           </div>
-          <div className="lg:mt-300">
-            <div className="md:max-w-50 lg:max-w-803 mb-24 xl:mb-150">
+          <div className="lg:mt-400">
+            <div className="md:max-w-50 lg:max-w-803 mb-12 md:mb-24 xl:mb-150">
               <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
                 {page.subpage_mini_gallery.gallery_text}
               </Text>

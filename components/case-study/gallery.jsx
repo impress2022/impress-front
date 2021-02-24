@@ -1,8 +1,9 @@
 import React from "react";
 import GalleryPhoto from "./galleryPhoto";
 import GalleryBreak from "./galleryBreak";
+import Text from "../typography/text";
 
-export default function Gallery({ photos, data }) {
+export default function Gallery({ photos, data, title }) {
   let gallery = [];
   let c = 0;
   let middleIndex = Math.round(photos.length / 2);
@@ -23,8 +24,8 @@ export default function Gallery({ photos, data }) {
       if (smallCount % 2 === 1) {
         gallery.push(
           <div
-            className="hidden md:block md:flex-40 md:min-w-387 xl:min-w-0 xl:max-w-555 md:h-1"
-            key={photos.length}
+            className="hidden md:block md:flex-40 md:min-w-387 lg:min-w-0 lg:max-w-555 md:h-1"
+            key={(10 + c) * c}
           />
         );
       }
@@ -35,8 +36,8 @@ export default function Gallery({ photos, data }) {
       if (smallCount % 2 === 1) {
         gallery.push(
           <div
-            className="hidden md:block md:flex-40 md:min-w-387 xl:min-w-0 xl:max-w-555 md:h-1"
-            key={photos.length}
+            className="hidden md:block  md:flex-40 md:min-w-387 lg:min-w-0 lg:max-w-555 md:h-1"
+            key={(3 + c) * c}
           />
         );
       }
@@ -48,6 +49,9 @@ export default function Gallery({ photos, data }) {
   }
 
   return (
-    <div className="md:flex md:flex-wrap md:justify-center xl">{gallery}</div>
+    <>
+      <Text size="body-xl" custom="md:mt-20">{title}</Text>
+      <div className="md:flex md:flex-wrap md:justify-center">{gallery}</div>
+    </>
   );
 }

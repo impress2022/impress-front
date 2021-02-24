@@ -6,12 +6,12 @@ const Square = ({ children, sizeClasses, color, custom, customWrapper }) => {
   });
 
   squareClasses += ` fill-${color}`;
-  squareClasses += " " + sizeClasses;
-  squareClasses += " " + custom;
+  squareClasses += sizeClasses ? " " + sizeClasses : "";
+  squareClasses += custom ? " " + custom : "";
 
   return (
     <div className={customWrapper}>
-      <svg className={sizeClasses}>
+      <svg className={sizeClasses} shapeRendering="crispEdges">
         <rect className={squareClasses} />
       </svg>
       {children}

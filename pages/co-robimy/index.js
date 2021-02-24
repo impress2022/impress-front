@@ -47,6 +47,7 @@ export default function Work(props) {
   );
   const HeroDesc = (
     <SubpageHeroDesc
+      color='blue'
       data={{
         desc: page.subpage_lesser_desc,
         b_desc: page.subpage_bigger_desc,
@@ -63,12 +64,12 @@ export default function Work(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
         >
-          Zobacz, co dotychczas zrobiliśmy
+          Zobacz co dotychczas zrobiliśmy
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -108,7 +109,7 @@ export default function Work(props) {
         menu={props.menu}
       >
         {/*md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12*/}
-        <section className="mb-400 lg:mb-700 md:flex md:flex-wrap md:justify-between">
+        <section className="mb-300 lg:mb-600 md:flex md:flex-wrap md:justify-between">
           {page.activities.map((item, index) => (
             <Activity key={index} activity={item} />
           ))}

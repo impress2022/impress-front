@@ -8,7 +8,7 @@ export default function Footer({ menu }) {
   let pd = menu.personal_data;
 
   let textClasses = classNames({
-    "leading-8 text-lg text-white": true,
+    "footer-menu-text-larger leading-8 text-lg text-white": true,
   });
 
   let textHeaderClasses = classNames({
@@ -16,7 +16,7 @@ export default function Footer({ menu }) {
   });
 
   let linksClasses = classNames({
-    "text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey hover:text-white transition-color duration-200 ease-linear": true,
+    "footer-menu-text text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey hover:text-white transition-color duration-200 ease-out": true,
   });
 
   let navItems = [];
@@ -43,7 +43,7 @@ export default function Footer({ menu }) {
     c++;
     navSecondaryItems.push(
       <li
-        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center hover:text-white transition-color duration-200 ease-linear"
+        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center hover:text-white transition-color duration-200 ease-out"
         key={c}
       >
         <Link href={"/" + value.footer_navigation_link[0].post_name}>
@@ -61,15 +61,15 @@ export default function Footer({ menu }) {
       itemType="http://schema.org/WPFooter"
     >
       <div className="w-screen bg-grey">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-8 md:grid-cols-12 py-36">
+        <div className="mx-7 md:mx-16 lg:mx-7.5r">
+          <div className="grid grid-cols-8 md:grid-cols-12 pt-12 pb-4 md:py-24 lg:py-36">
             <Arrow link="/kontakt" />
             <div className="md:hidden" />
             <div className="col-span-5 h-20 md:h-25 lg:ml-12 flex flex-col justify-center">
-              <p className="text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
+              <p className="footer-arrow-text text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
                 Masz pomysł?
               </p>
-              <p className="text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
+              <p className="footer-arrow-text text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
                 Porozmawiajmy
               </p>
             </div>

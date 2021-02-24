@@ -5,7 +5,7 @@ import Rotate from "react-reveal/Rotate";
 
 export default function SquareGrid({ children, colors, href }) {
   return (
-    <div className="absolute -top-15 md:-top-219 lg:-top-345 left-0 right-0 container mx-auto md:flex md:items-end md:justify-between">
+    <div className="absolute -top-15 md:-top-219 lg:-top-345 left-0 right-0 mx-7 md:mx-16 lg:mx-7.5r md:flex md:items-end md:justify-between">
       <div className="md:flex md:items-end">
         <Slide bottom>
           <Square
@@ -16,7 +16,7 @@ export default function SquareGrid({ children, colors, href }) {
         </Slide>
         <a
           href={href}
-          className="hover:shadow-buttonBg transition duration-200 ease-linear z-10"
+          className="hover:shadow-buttonBg art-transition z-10"
         >
           <Square
             sizeClasses="w-x6 h-x6 md:w-x4 md:h-x4 lg:w-x7 lg:h-x7"
