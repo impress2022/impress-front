@@ -120,7 +120,7 @@ const BlogPost = (props) => {
                 </time>
               </div>
             </div>
-            <figure className="relative block-important shadow-caseInsetMobile lg:shadow-caseInset w-full md:col-span-12 md:h-50vh">
+            <figure className="relative block-important w-full md:col-span-12 md:h-50vh">
               <Image
                 src={page.main_image.sizes["twentytwenty-fullscreen"]}
                 objectFit="cover"

@@ -44,7 +44,6 @@ export default function Contact(props) {
 
   const [checked, setChecked] = useState(false);
 
-  console.log(page)
   return (
     <>
       <Head>
@@ -64,7 +63,7 @@ export default function Contact(props) {
         )}
         <div className="relative">
           <div>
-            <Text size="h2" custom="my-12 lg:max-w-690">
+            <Text size="h2" custom="my-12 md:mb-24 lg:max-w-690">
               {page.header_title}
             </Text>
             <Flip left>
@@ -118,7 +117,7 @@ export default function Contact(props) {
               ))}
 
               {page.select_fields.map((item, index) => (
-                <div className="form-group" key={index}>
+                <div className="form-group py-2" key={index}>
                   <Text
                     size="p"
                     custom="text-1.75 leading-2.875 font-encode-sans md:mb-6"
@@ -160,6 +159,7 @@ export default function Contact(props) {
                   id="styled-checkbox-2"
                   type="checkbox"
                   value={checked}
+                  checked={checked}
                   required="required"
                 />
                 <label
@@ -174,7 +174,7 @@ export default function Contact(props) {
                   </p>
                 </label>
               </div>
-              <div className="form-group text-center md:text-left my-16">
+              <div className="form-group text-center md:text-left my-16 mb-32">
                 <button
                   type="submit"
                   className="bg-green hover:bg-green-hover transition-colors duration-200 ease-out px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"

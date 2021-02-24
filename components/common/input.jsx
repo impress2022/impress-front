@@ -31,7 +31,7 @@ export default function Input({ label, arr, custom }) {
         <input
           className={inputClassess}
           onFocus={(e) => (e.target.placeholder = "")}
-          onBlur={(e) => {
+          onChange={(e) => {
             e.target.placeholder = arr.placeholder;
 
             if (arr.type === "email") {
@@ -59,20 +59,20 @@ export default function Input({ label, arr, custom }) {
               setMessage("");
             }
           }}
-          onChange={(e) => {
-            if (arr.type === "phone") {
-              let text = e.target.value.slice();
-              text = text.replace(/\s/g, "");
-
-              if (
-                text.length % 3 === 0 &&
-                text.length !== 9 &&
-                text.length !== 0
-              ) {
-                e.target.value += " ";
-              }
-            }
-          }}
+          // onChange={(e) => {
+          //   if (arr.type === "phone") {
+          //     let text = e.target.value.slice();
+          //     text = text.replace(/\s/g, "");
+          //
+          //     if (
+          //       text.length % 3 === 0 &&
+          //       text.length !== 9 &&
+          //       text.length !== 0
+          //     ) {
+          //       e.target.value += " ";
+          //     }
+          //   }
+          // }}
           type={arr.type ? arr.type : "text"}
           id={arr.id}
           name={arr.name}

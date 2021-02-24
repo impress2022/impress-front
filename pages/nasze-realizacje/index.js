@@ -88,7 +88,7 @@ export default function Realizations(props) {
   })
   const grid = (
     <div className={gridClassess}>
-      <div className="my-20 container mx-auto">
+      <div className="my-20 mx-7 md:mx-16 lg:mx-7.5r">
         <Logos menu={props.menu} />
       </div>
     </div>

@@ -61,7 +61,7 @@ export default function Footer({ menu }) {
       itemType="http://schema.org/WPFooter"
     >
       <div className="w-screen bg-grey">
-        <div className="container mx-auto px-4">
+        <div className="mx-7 md:mx-16 lg:mx-7.5r">
           <div className="grid grid-cols-8 md:grid-cols-12 py-36">
             <Arrow link="/kontakt" />
             <div className="md:hidden" />
