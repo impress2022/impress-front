@@ -14,6 +14,7 @@ function Button(props) {
     <button
       onClick={props.onFilterSelected ? props.onFilterSelected : ""}
       className={classes}
+      value={props.value}
     >
       {props.name}
     </button>

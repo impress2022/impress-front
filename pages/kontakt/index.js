@@ -8,6 +8,7 @@ import Flip from "react-reveal/Flip";
 import { useRouter } from "next/router";
 import Modal from "../../components/common/modal";
 import Head from "next/head";
+import SelectMultiple from "../../components/common/selectMultiple";
 
 export async function getStaticProps(context) {
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/13");
@@ -43,6 +44,7 @@ export default function Contact(props) {
 
   const [checked, setChecked] = useState(false);
 
+  console.log(page)
   return (
     <>
       <Head>
@@ -123,7 +125,12 @@ export default function Contact(props) {
                   >
                     {item.label}
                   </Text>
-                  <Select options={item.options} name={item.label} />
+                  {!item.multiple &&
+                    <Select options={item.options} name={item.label} />
+                  }
+                  {item.multiple &&
+                    <SelectMultiple options={item.options} name={item.label} />
+                  }
                 </div>
               ))}
 
