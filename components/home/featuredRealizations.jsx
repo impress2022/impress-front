@@ -3,7 +3,7 @@ import Image from "next/image";
 import Number from "../common/number";
 import Link from "next/link";
 import Text from "../typography/text";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Scrollama, Step } from "react-scrollama";
 import useWindowSize from "../../hooks/useWindowSize";
 
@@ -26,6 +26,23 @@ export default function FeaturedRealizations(props) {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
   const windowSize = useWindowSize();
+
+  const wrapper = useRef(null);
+  const [customHeight, setCustomHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        setCustomHeight(wrapper.current.offsetWidth)
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   const onStepEnter = ({ data }) => {
     setCurrentStepIndex(data);
@@ -54,7 +71,7 @@ export default function FeaturedRealizations(props) {
                 : "",
             zIndex: getZIndex(idx),
           }}
-          className="lg:relative lg:first:translate-y-0 md:w-438 md:h-438 lg:w-690 lg:h-690 md:overflow-hidden md:flex md:flex-col"
+          className="lg:relative lg:first:translate-y-0 w-full h-full md:overflow-hidden md:flex md:flex-col"
         >
           <Link href={"/realizacja/" + e.post_name}>
             <a>
@@ -127,10 +144,10 @@ export default function FeaturedRealizations(props) {
           top:
             currentStepIndex === props.realizations.length - 1
               ? "0"
-              : (windowSize.height - 690) / 2 + "px",
+              : (windowSize.height - customHeight) / 2 + "px",
           paddingTop:
             currentStepIndex === props.realizations.length - 1
-              ? (windowSize.height - 690) / 2 + "px"
+              ? (windowSize.height - customHeight) / 2 + "px"
               : "",
         }}
       >
@@ -154,7 +171,7 @@ export default function FeaturedRealizations(props) {
             ))}
           </div>
         </Number>
-        <div style={{ width: '690px', height: '690px', overflow: 'hidden' }} className="md:absolute md:right-0 lg:shadow-caseInset art-transition lg:hover:shadow-caseInsetActive">
+        <div ref={wrapper} style={{ width: '40%', height: customHeight + 'px', overflow: 'hidden' }} className="md:absolute md:right-0 lg:shadow-caseInset art-transition lg:hover:shadow-caseInsetActive">
           {images}
         </div>
       </div>
@@ -174,10 +191,10 @@ export default function FeaturedRealizations(props) {
               className="md:mb-36 md:max-w-365 md:h-screen lg:ml-150 lg:mt-150"
             >
               <div
-                className="mt-9 md:mt-12 md:mr-10 lg:mt-0"
+                className="ml-8"
                 style={{
                   paddingTop:
-                    idx === props.realizations.length - 1 ? "200px" : "150px",
+                    idx === props.realizations.length - 1 ? "100px" : "50px",
                 }}
               >
                 <Link href={"/realizacja/" + e.post_name}>

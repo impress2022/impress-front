@@ -12,9 +12,9 @@ import useWindowSize from "../hooks/useWindowSize";
 import Head from "next/head";
 import Link from "next/link";
 import Pulse from "react-reveal/Pulse";
-import Slide from "react-reveal/Slide";
+import Fade from "react-reveal/Fade";
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const res = await fetch(
     process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/69?_fields=acf"
   );
@@ -55,7 +55,7 @@ export default function Home(props) {
       <div className="md:grid md:grid-cols-12 px-8 md:px-16">
         <SingleSquare>Zobacz, mamy ich trochę więcej</SingleSquare>
       </div>
-      <Slide left>
+      <Fade top>
         <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:px-16 md:mt-s-mar lg:mt-300">
           <header className="md:col-span-4 lg:col-span-3">
             <h2 className="text-2.25 lg:text-2.875 leading-3r font-light lg:leading-4r font-aller md:text-left lg:text-right">
@@ -78,7 +78,7 @@ export default function Home(props) {
             </div>
           </div>
         </section>
-      </Slide>
+      </Fade>
       <section className="relative md:mt-300 md:px-16">
         <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0" />
         <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:max-w-initial md:grid md:grid-cols-12">
@@ -142,14 +142,14 @@ export default function Home(props) {
             <Logos menu={props.menu} />
           </div>
         </section>
-        <section id="realizacje" className="pt-10 md:pt-0">
+        <section id="realizacje">
           <Text size="h2" custom="pb-5.25 md:pb-7.25 lg:pb-0 lg:mb-s-mar">
             Poznaj nasze realizacje
           </Text>
-          {window.width < 1380 && (
+          {window.width < 1280 && (
             <FeaturedRealizationsMobile realizations={content.realizations} />
           )}
-          {window.width >= 1380 && (
+          {window.width >= 1280 && (
             <FeaturedRealizations realizations={content.realizations} />
           )}
         </section>
