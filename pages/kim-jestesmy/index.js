@@ -54,6 +54,7 @@ export default function About(props) {
   );
   const HeroDesc = (
     <SubpageHeroDesc
+      color='green'
       isImage={true}
       data={{
         desc: page.subpage_lesser_desc,

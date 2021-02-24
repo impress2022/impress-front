@@ -2,8 +2,9 @@ import Text from "../typography/text";
 import Image from "next/image";
 import useWindowSize from "../../hooks/useWindowSize";
 import { useRef, useEffect, useState } from "react";
+import classNames from "classnames";
 
-export default function SubpageHero({ data }) {
+export default function SubpageHero({ data, isImage }) {
   const windowSize = useWindowSize();
   const wrapper = useRef(null);
   const [customHeight, setCustomHeight] = useState(0);
@@ -22,9 +23,14 @@ export default function SubpageHero({ data }) {
     }
   }, []);
 
+  const textClasses = classNames({
+    "mb-8 md:w-1/2 lg:w-full lg:col-span-5": true,
+    "lg:mx-12": !isImage,
+})
+
   return (
     <header className="hero-section-header mt-7.5r md:flex md:items-end lg:grid lg:grid-cols-12">
-      <div className="mb-8 md:w-1/2 lg:w-full lg:col-span-5">
+      <div className={textClasses}>
         <p className="max-w-90 tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller">
           {data.subtitle}
         </p>
