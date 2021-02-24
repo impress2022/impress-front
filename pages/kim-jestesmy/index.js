@@ -72,12 +72,12 @@ export default function About(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-7 md:top-16 lg:top-24 z-10"
         >
           Zobacz nasze realizacje
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-24 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -186,7 +186,7 @@ export default function About(props) {
         menu={props.menu}
       >
         <section className="mb-400 lg:mb-500 mt-7.5r md:mt-24 lg:mt-0">
-          <div className="md:mx-4 mb-7.5r lg:mb-s-mar">
+          <div className="md:mx-4 mb-14 md:mb-7.5r lg:mb-s-mar">
             <Text
               size="body-18"
               custom="lg:text-1.5 lg:leading-2.625 mb-12 md:mb-20 lg:mb-200 lg:max-w-803"
@@ -198,7 +198,7 @@ export default function About(props) {
             </div>
           </div>
           <div className="lg:mt-400">
-            <div className="md:max-w-50 lg:max-w-803 mb-24 xl:mb-150">
+            <div className="md:max-w-50 lg:max-w-803 mb-12 md:mb-24 xl:mb-150">
               <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
                 {page.subpage_mini_gallery.gallery_text}
               </Text>

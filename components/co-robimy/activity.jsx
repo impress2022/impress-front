@@ -25,7 +25,7 @@ export default function Activity({ activity }) {
   return (
     <div
       id={activity.activity_animation}
-      className="activity mt-s-mar lg:mt-300 md:w-45p flex flex-col-reverse justify-end lg:justify-start lg:w-full lg:flex-row"
+      className="activity mt-32 md:mt-s-mar lg:mt-300 md:w-45p flex flex-col-reverse justify-end lg:justify-start lg:w-full lg:flex-row"
     >
       <div className="lg:max-w-40 lg:mr-200">
         <div className="my-12">
@@ -55,7 +55,7 @@ export default function Activity({ activity }) {
             innerCustom="w-full h-full"
           />
         </div>
-        <div className="relative w-full ratio-square" style={{ height: customHeight + 'px'}} ref={wrapper}>
+        <div className="block-important hover:shadow-caseInsetActiveMobile md:hover:shadow-caseInsetActive art-transition relative w-full ratio-square" style={{ height: customHeight + 'px'}} ref={wrapper}>
           <Image
             quality={100}
             src={activity.activity_image.sizes["post-thumbnail"]}

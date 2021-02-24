@@ -109,7 +109,7 @@ export default function Work(props) {
         menu={props.menu}
       >
         {/*md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12*/}
-        <section className="mb-400 lg:mb-600 md:flex md:flex-wrap md:justify-between">
+        <section className="mb-300 lg:mb-600 md:flex md:flex-wrap md:justify-between">
           {page.activities.map((item, index) => (
             <Activity key={index} activity={item} />
           ))}

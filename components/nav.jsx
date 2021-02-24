@@ -16,7 +16,7 @@ function Nav({ menu }) {
   const windowSize = useWindowSize();
 
   let menuClasses = classNames({
-    "transition-all duration-500 ease-in-out z-50 nav-wrapper bg-white fixed top-0 w-screen md:h-screen pt-24 md:pt-28 lg:pt-36 flex overflow-y-scroll md:overflow-y-visible": true,
+    "art-transition z-50 nav-wrapper bg-white fixed top-0 w-screen md:h-screen pt-24 md:pt-28 lg:pt-36 flex overflow-y-scroll md:overflow-y-visible": true,
     "left-full": !menuToggle,
     // "transform translate-x-full": !menuToggle,
     "md:left-2/4 lg:left-l58": menuToggle && windowSize.width >= 768,
@@ -75,7 +75,7 @@ function Nav({ menu }) {
         </div>
       </div>
       <div
-        className="sticky bg-white top-0 z-40 transition-transform ease-in h-20 lg:h-nav px-7 md:px-15"
+        className="sticky bg-white top-0 z-40 art-transition h-20 lg:h-nav px-7 md:px-15"
         style={{
           transform: menuHide ? "translateY(-100px)" : "translateY(0)",
         }}

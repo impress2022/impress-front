@@ -14,8 +14,8 @@ export default function SubpageHero({ data, isImage, color }) {
 
   let textWrapperClasses = classNames({
     "md:mt-0 md:col-span-4": true,
-    "pt-300 -mt-200 md:pt-24 lg:pt-400": isImage,
-    "pt-300 -mt-200 md:pt-0": !isImage,
+    "pt-250 -mt-200 md:pt-24 lg:pt-400": isImage,
+    "pt-250 -mt-200 md:pt-0": !isImage,
   })
 
   let wrClasses = classNames({

@@ -131,7 +131,7 @@ const BlogPost = (props) => {
               />
             </figure>
           </header>
-          <section className="mb-600 mt-16 md:mt-8r md:grid md:grid-cols-12 wysiwyg">
+          <section className="mb-400 md:mb-300 lg:mb-500 mt-16 md:mt-8r md:grid md:grid-cols-12 wysiwyg">
             <div className="social-media w-full my-10 md:my-0">
               <Social menu={menu} flex={windowSize.width < 768}/>
             </div>

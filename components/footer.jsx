@@ -62,7 +62,7 @@ export default function Footer({ menu }) {
     >
       <div className="w-screen bg-grey">
         <div className="mx-7 md:mx-16 lg:mx-7.5r">
-          <div className="grid grid-cols-8 md:grid-cols-12 py-16 md:py-36">
+          <div className="grid grid-cols-8 md:grid-cols-12 pt-12 pb-4 md:py-36">
             <Arrow link="/kontakt" />
             <div className="md:hidden" />
             <div className="col-span-5 h-20 md:h-25 lg:ml-12 flex flex-col justify-center">
