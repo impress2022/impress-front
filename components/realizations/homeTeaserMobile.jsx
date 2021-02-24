@@ -41,7 +41,7 @@ export default function HomeTeaserMobile(props) {
   return (
     <div className="flex flex-col items-center md:flex-row-reverse md:mb-36 md:justify-between lg:justify-around">
       <div className="w-full flex-100 md:flex-50" ref={wrapper}>
-        <div className="shadow-caseInset hover:shadow-caseInsetHover art-transition w-full lg:h-438 lg:w-438 relative"
+        <div className="hover:shadow-caseInsetActiveMobile md:hover:shadow-caseInsetHover art-transition w-full lg:h-438 lg:w-438 relative"
            style={{ height: customHeight + 'px'}}
         >
           <Link href={"/realizacja/" + props.element.post_name}>
