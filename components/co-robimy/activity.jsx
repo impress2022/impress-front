@@ -24,7 +24,7 @@ export default function Activity({ activity }) {
   return (
     <div
       id={activity.activity_animation}
-      className="activity mt-32 md:mt-s-mar lg:mt-300 md:w-45p flex flex-col-reverse justify-end lg:justify-start lg:w-full lg:flex-row"
+      className="activity mt-32 md:mt-s-mar lg:mt-s-mar lg:pt-28 md:w-45p flex flex-col-reverse justify-end lg:justify-start lg:w-full lg:flex-row"
     >
       <div className="lg:max-w-40 lg:mr-200">
         <div className="my-12">

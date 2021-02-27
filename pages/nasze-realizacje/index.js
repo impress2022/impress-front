@@ -74,6 +74,25 @@ export async function getStaticProps() {
 export default function Realizations(props) {
   let realizations = props.realizations;
   const [filter, setFilter] = useState(999);
+  const sortingTable = props.data.acf.realizations;
+
+  if (sortingTable.length > 0) {
+    const tempRealizations = realizations
+    realizations = []
+
+    sortingTable.forEach(item => {
+      realizations.push(tempRealizations.filter(obj => {
+        return obj.id === item;
+      })[0])
+    })
+
+    let restOfRealizations;
+    restOfRealizations = tempRealizations.filter(item => {
+      return !realizations.includes(item)
+    })
+
+    realizations = [...realizations, ...restOfRealizations]
+  }
 
   if (filter !== 999) {
     realizations = realizations.filter((item, index) => {
@@ -101,7 +120,7 @@ export default function Realizations(props) {
           size="h3"
           custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
         >
-          Zobacz, co możemy Ci zaproponować
+          Zobacz co możemy Ci zaproponować
         </Text>
         <svg
           style={{ width: '24px', height: "auto" }}

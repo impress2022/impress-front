@@ -94,7 +94,7 @@ export default function Footer({ menu }) {
             </div>
             <div className="mb-10">
               <p className={textHeaderClasses}>Email</p>
-              <p className={textClasses}>{pd.personal_data_mail}</p>
+              <p className={textClasses}><a href={"mailto:" + pd.personal_data_mail}>{pd.personal_data_mail}</a></p>
             </div>
           </div>
           <div className="md:flex md:w-full pb-24">
