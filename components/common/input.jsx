@@ -21,7 +21,7 @@ export default function Input({ label, arr, custom }) {
     const re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
     return re.test(String(phone).toLowerCase());
   };
-
+  
   return (
     <label htmlFor={arr.name} className="md:flex h-full">
       <Text size="p" custom="text-1.75 leading-2.875 font-encode-sans">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import useWindowSize from "../../hooks/useWindowSize";
 import classNames from "classnames";
 
-export default function SubpageHero({ data, isImage, color }) {
+export default function SubpageHeroDesc({ data, isImage, color }) {
   const windowSize = useWindowSize();
   let wrapperClasses = classNames({
     "z-10 pb-16 lg:ml-7.5r": true,

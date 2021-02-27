@@ -25,7 +25,6 @@ export default function SubpageHero({ data, isImage }) {
 
   const textClasses = classNames({
     "mb-8 md:w-1/2 lg:w-full lg:col-span-5": true,
-    "lg:mx-12": !isImage,
 })
 
   return (

@@ -1,6 +1,6 @@
 import Layout from "../../components/layout";
 import SubpageHero from "../../components/common/SubpageHero";
-import SubpageHeroDesc from "../../components/common/SubpageHeroDesc";
+import SubpageHeroDescCoRobimy from "../../components/common/SubpageHeroDescCoRobimy";
 import SquareGrid from "../../components/common/squareGrid";
 import Text from "../../components/typography/text";
 import Activity from "../../components/co-robimy/activity";
@@ -46,7 +46,7 @@ export default function Work(props) {
     />
   );
   const HeroDesc = (
-    <SubpageHeroDesc
+    <SubpageHeroDescCoRobimy
       color='blue'
       data={{
         desc: page.subpage_lesser_desc,

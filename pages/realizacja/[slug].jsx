@@ -4,7 +4,7 @@ import Image from "next/image";
 import classNames from "classnames";
 import Goal from "../../components/case-study/goal";
 import Head from "next/head";
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Gallery from "../../components/case-study/gallery";
 import Slider from "../../components/case-study/slider";
 import useWindowSize from "../../hooks/useWindowSize";
@@ -108,9 +108,26 @@ const Post = (props) => {
     </div>
   );
 
+  const wrapper = useRef(null);
+  const [customHeight, setCustomHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        setCustomHeight(wrapper.current.offsetWidth)
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   const fluidSlider = page.slider_efects && (
     <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-400 lg:mb-600 relative">
-      <div className="absolute bg-green right-0 top-0 h-full ratio-square-md w-1/4 lg:w-1/2">
+      <div ref={wrapper} style={{ height: windowSize.width >= 1280 ? customHeight + 'px' : ''}} className="absolute bg-green right-0 top-0 h-full ratio-square-md w-1/4 lg:w-1/2">
         <Square
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"
           color="blue"
