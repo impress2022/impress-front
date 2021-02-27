@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Input({ label, arr, custom }) {
   const [error, setError] = useState(false);
+  const [placeholder, setPlaceholder] = useState(arr.placeholder);
   const [message, setMessage] = useState("");
   let inputClassess = classNames({
     "relative w-full text-1.75 leading-2.875 font-encode-sans transition-colors duration-200 ease-out border-dashed border-b-2 focus:border-black focus:outline-none": true,
@@ -21,7 +22,7 @@ export default function Input({ label, arr, custom }) {
     const re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
     return re.test(String(phone).toLowerCase());
   };
-  
+
   return (
     <label htmlFor={arr.name} className="md:flex h-full">
       <Text size="p" custom="text-1.75 leading-2.875 font-encode-sans">
@@ -30,7 +31,14 @@ export default function Input({ label, arr, custom }) {
       <div className="relative mb-12">
         <input
           className={inputClassess}
-          onFocus={(e) => (e.target.placeholder = "")}
+          onFocus={() => {
+            setPlaceholder("")
+          }}
+          onBlur={(e) => {
+            if (e.target.value.length === 0) {
+              setPlaceholder(arr.placeholder)
+            }
+          }}
           onChange={(e) => {
             e.target.placeholder = arr.placeholder;
 
@@ -57,6 +65,7 @@ export default function Input({ label, arr, custom }) {
             if (e.target.value.length === 0) {
               setError(false);
               setMessage("");
+              setPlaceholder(arr.placeholder)
             }
           }}
           // onChange={(e) => {
@@ -78,7 +87,7 @@ export default function Input({ label, arr, custom }) {
           name={arr.name}
           autoComplete="off"
           autoFocus="off"
-          placeholder={arr.placeholder}
+          placeholder={placeholder}
           required={arr.required}
         />
         <div
