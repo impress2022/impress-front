@@ -26,13 +26,13 @@ export default function LesserSlider({ slides }) {
   const handleEnd = () => {
     if (swipeStart < swipeEnd) {
       //right
-      if (currentSlide !== slides.length - 1) {
-        handleClick(1)
+      if (currentSlide !== 0) {
+        handleClick(-1)
       }
     } else {
       // left
-      if (currentSlide !== 0) {
-        handleClick(-1)
+      if (currentSlide !== slides.length - 1) {
+        handleClick(1)
       }
     }
   }
