@@ -4,8 +4,8 @@ import Number from "../common/number";
 import Link from "next/link";
 import Text from "../typography/text";
 import React, { useState, useEffect, useRef } from "react";
-import { Scrollama, Step } from "react-scrollama";
 import useWindowSize from "../../hooks/useWindowSize";
+import { Scrollama, Step } from 'react-scrollama';
 
 function getZIndex(index) {
   switch (index) {
