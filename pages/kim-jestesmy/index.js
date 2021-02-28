@@ -73,12 +73,12 @@ export default function About(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-7 md:top-16 lg:top-24 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-7 md:top-16 lg:top-24 z-10 footer-square-text"
         >
           Zobacz nasze realizacje
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-24 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-24 md:top-32 lg:top-44 footer-square-arrow z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"

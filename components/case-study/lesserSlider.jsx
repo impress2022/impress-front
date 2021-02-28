@@ -6,20 +6,47 @@ import useWindowSize from "../../hooks/useWindowSize";
 
 export default function LesserSlider({ slides }) {
   let [currentSlide, setCurrentSlide] = useState(0);
+  let [swipeStart, setSwipeStart] = useState(0)
+  let [swipeEnd, setSwipeEnd] = useState(0)
+
   let windowSize = useWindowSize();
 
   const handleClick = (value) => {
     setCurrentSlide((currentSlide += value));
   };
 
+  const handleStart = (event) => {
+    setSwipeStart(event.touches[0].clientX)
+  }
+
+  const handleMove = (event) => {
+    setSwipeEnd(event.touches[0].clientX)
+  }
+
+  const handleEnd = () => {
+    if (swipeStart < swipeEnd) {
+      //right
+      handleClick(1)
+    } else {
+      // left
+      handleClick(-1)
+    }
+  }
+
   return (
     <div className="mt-500 md:mt-44">
-      <div className="flex flex-col items-center md:items-start relative">
+      <div className="flex flex-col items-center md:items-start relative"
+           onTouchStart={handleStart}
+           onTouchMove={handleMove}
+           onTouchEnd={handleEnd}
+      >
         <div className="w-full z-10">
           {slides.map((item, index) => (
             <div
               key={index}
-              //
+              onTouchStart={handleStart}
+              onTouchMove={handleMove}
+              onTouchEnd={handleEnd}
               className="absolute ratio-square transform -translate-y-80p md:translate-y-0 md:right-0 w-full md:w-1/2 lg:w-2/3 max-h-350 md:max-h-initial lg:min-h-80 lg:max-h-full"
               style={{
                 zIndex: index === currentSlide ? 1000 : 999 + -1 * index,

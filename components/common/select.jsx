@@ -7,7 +7,7 @@ export default function Select({ options, name }) {
   return (
     <div className="mb-12 lg:grid lg:grid-cols-12">
       <input type="hidden" id={name} name={name} value={currentState} />
-      <div className="lg:col-span-7">
+      <div className="lg:col-span-7 select-row-contact">
         {options.map((item, index) => (
           <Button
             key={index}

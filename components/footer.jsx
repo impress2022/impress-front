@@ -62,7 +62,7 @@ export default function Footer({ menu }) {
     >
       <div className="w-screen bg-grey">
         <div className="mx-7 md:mx-16 lg:mx-7.5r">
-          <div className="grid grid-cols-8 md:grid-cols-12 pt-12 pb-4 md:py-24 lg:py-36">
+          <div className="grid grid-cols-8 md:grid-cols-12 pt-16 pb-8 md:py-24 lg:py-36">
             <Arrow link="/kontakt" />
             <div className="md:hidden" />
             <div className="col-span-5 h-20 md:h-25 lg:ml-12 flex flex-col justify-center">
@@ -90,7 +90,7 @@ export default function Footer({ menu }) {
             </div>
             <div className="mb-10 md:mr-14 lg:mr-20">
               <p className={textHeaderClasses}>Telefon</p>
-              <p className={textClasses}>{pd.personal_data_phone}</p>
+              <p className={textClasses}><a href={"tel:" + pd.personal_data_phone}>{pd.personal_data_phone}</a></p>
             </div>
             <div className="mb-10">
               <p className={textHeaderClasses}>Email</p>

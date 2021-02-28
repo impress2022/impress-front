@@ -56,7 +56,7 @@ export default function Home(props) {
         <SingleSquare>Zobacz, mamy ich trochę więcej</SingleSquare>
       </div>
       <Fade top>
-        <section className="hidden md:grid md:grid-cols-12 md:grid-rows-1 md:px-16 md:mt-s-mar lg:mt-300">
+        <section className="mx-7 mt-12 md:mx-0 md:grid md:grid-cols-12 md:grid-rows-1 md:px-16 md:mt-s-mar lg:mt-300">
           <header className="md:col-span-4 lg:col-span-3">
             <h2 className="text-2.25 lg:text-2.875 leading-3r font-light lg:leading-4r font-aller md:text-left lg:text-right">
               {content.third_section_header}
@@ -69,7 +69,7 @@ export default function Home(props) {
                 {content.third_section_description}
               </Text>
             </div>
-            <div className="overflow-hidden max-w-240 pb-1">
+            <div className="overflow-hidden max-w-240 mt-8 md:mt-0 pb-1">
               <Link href="/co-robimy/">
                 <a>
                   <Text size="body-bold-18" custom="transition-shadow duration-500 ease-linear shadow-menuInset hover:shadow-menuInsetActive">Poznaj szczegóły oferty 🡪</Text>
@@ -81,7 +81,7 @@ export default function Home(props) {
       </Fade>
       <section className="relative md:mt-300 md:px-16">
         <div className="absolute bottom-0 left-0 w-full h-80p md:-bottom-4 bg-grey z-0" />
-        <div className="mx-10 mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:max-w-initial md:grid md:grid-cols-12">
+        <div className="mx-10 mt-16 md:mt-7.5r relative max-w-screen-sm mx-auto top-0 z-10 md:max-w-initial md:grid md:grid-cols-12">
           {content.fourth_section.map((item, index) => (
             <div key={index} className="md:col-span-3 lottie-card">
               <Fade bottom>

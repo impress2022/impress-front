@@ -48,13 +48,13 @@ const BlogPost = (props) => {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10 footer-square-text"
         >
           Wróć do wszystkich wpisów
         </Text>
         <svg
           style={{ width: '24px', height: "auto" }}
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 footer-square-arrow lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
