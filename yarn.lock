@@ -3972,6 +3972,11 @@ react-dom@17.0.1:
     object-assign "^4.1.1"
     scheduler "^0.20.1"
 
+react-intersection-observer@^8.31.0:
+  version "8.31.0"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.31.0.tgz#0ed21aaf93c4c0475b22b0ccaba6169076d01605"
+  integrity sha512-XraIC/tkrD9JtrmVA7ypEN1QIpKc52mXBH1u/bz/aicRLo8QQEJQAMUTb8mz4B6dqpPwyzgjrr7Ljv/2ACDtqw==
+
 react-is@16.13.1, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -3997,10 +4002,11 @@ react-reveal@^1.2.2:
   dependencies:
     prop-types "^15.5.10"
 
-react-scrollama@^2.2.15:
+"react-scrollama@https://github.com/wa12rior/react-scrollama-1.git":
   version "2.2.15"
-  resolved "https://registry.yarnpkg.com/react-scrollama/-/react-scrollama-2.2.15.tgz#8a40a19bb09350a7e75ee6f9bb589a3f84eeb9ca"
-  integrity sha512-Rp/8v4AtGIf0eEd6Cli9/uoZ9ufXbVhZfrV1yR5tkapV0CCbgdLBWuVNwBhUXPUxSADltC+CSIFvG/uh2drfqA==
+  resolved "https://github.com/wa12rior/react-scrollama-1.git#200b52944149320295ddb34b18af006ccd781a60"
+  dependencies:
+    react-intersection-observer "^8.31.0"
 
 react@17.0.1:
   version "17.0.1"
