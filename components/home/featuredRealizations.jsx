@@ -180,7 +180,6 @@ export default function FeaturedRealizations(props) {
         onStepEnter={onStepEnter}
         onStepProgress={onStepProgress}
         progress={true}
-        debug
       >
         {props.realizations.map((e, idx) => (
           <Step data={idx} key={idx}>

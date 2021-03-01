@@ -2,7 +2,7 @@ import Head from "next/head";
 import Text from "../components/typography/text";
 import Link from "next/link";
 
-export default function Custom404({ menu }) {
+export default function Custom404() {
   return (
     <>
       <Head>

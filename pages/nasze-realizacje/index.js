@@ -8,24 +8,28 @@ import Logos from "../../components/common/logos";
 import SquareGrid from "../../components/common/squareGrid";
 import classNames from "classnames";
 
-export async function getStaticProps() {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7?_fields=acf"
-  );
-  const data = await res.json();
+export async function getStaticProps(context) {
+  const headers = context.preview ?
+  { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
 
-  const realizations = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3"
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7?_fields=acf", headers
   );
+
+  const data = await res.json();
+  const realizations = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3", headers
+  );
+
   const dataRealizations = await realizations.json();
 
   const resPosts = await fetch(
     process.env.NEXT_PUBLIC_API_URL +
-      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3"
+      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3", headers
   );
   const dataPosts = await resPosts.json();
 
-  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags");
+  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags", headers );
   const dataTags = await resTags.json();
 
   dataTags.unshift({
@@ -75,6 +79,7 @@ export default function Realizations(props) {
   let realizations = props.realizations;
   const [filter, setFilter] = useState(999);
   const sortingTable = props.data.acf.realizations;
+
 
   if (sortingTable.length > 0) {
     const tempRealizations = realizations

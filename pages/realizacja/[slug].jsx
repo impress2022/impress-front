@@ -12,6 +12,9 @@ import Square from "../../components/square";
 import SquareGrid from "../../components/common/squareGrid";
 
 export async function getStaticPaths() {
+  // const headers =
+  //   { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} }
+
   const res = await fetch(
     process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=3"
   );
@@ -24,22 +27,27 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, preview, previewData }) {
+  const headers = preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
   // const { slug } = context.query;
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${params.slug}`
+    previewData ?
+      process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts/${previewData.id}` :
+      process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${params.slug}`, headers
   );
+
   const data = await res.json();
 
   const allPostsIds = await fetch(
     process.env.NEXT_PUBLIC_API_URL +
-      `/wp/v2/posts?_fields=id,title,slug&orderby=id&order=asc&filter[cat]=3`
+      `/wp/v2/posts?_fields=id,title,slug&orderby=id&order=asc&filter[cat]=3`, headers
   );
 
   const allPostsIdsData = await allPostsIds.json();
 
   const resMenu = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
   );
   const menu = await resMenu.json();
 
@@ -55,6 +63,7 @@ export async function getStaticProps({ params }) {
     props: {
       data: data,
       menu: menu.acf,
+      preview: !!preview,
       posts: allPostsIdsData,
       notFound: false,
     },
@@ -62,10 +71,10 @@ export async function getStaticProps({ params }) {
 }
 
 const Post = (props) => {
-  const page = props.data[0].acf;
+  const page = props.preview ? props.data.acf : props.data[0].acf;
   const windowSize = useWindowSize();
 
-  const pageId = props.data[0].id;
+  const pageId = props.preview ? props.data.id : props.data[0].id;
   let index = props.posts.findIndex((el) => el.id === pageId);
   const nextPage =
     props.posts[index === props.posts.length - 1 ? 0 : index + 1];
@@ -114,7 +123,9 @@ const Post = (props) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       function handleResize() {
-        setCustomHeight(wrapper.current.offsetWidth)
+        if (wrapper.current) {
+          setCustomHeight(wrapper.current.offsetWidth)
+        }
       }
 
       window.addEventListener("resize", handleResize);

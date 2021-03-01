@@ -9,17 +9,20 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 export async function getStaticProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/295");
+  const headers = context.preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
+
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/295", headers);
   const data = await res.json();
 
   const posts = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=9"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=9", headers
   );
 
   const dataPosts = await posts.json();
 
   const resMenu = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
   );
   const menu = await resMenu.json();
 
