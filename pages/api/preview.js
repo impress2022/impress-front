@@ -1,4 +1,4 @@
-const site_url = 'http://localhost:3000/'
+const site_url = 'https://impress.vercel.app/'
 
 export default async function (req, res) {
   if (req.query.secret !== 'eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTYxNDUyODI3NCwiaWF0IjoxNjE0NTI4Mjc0fQ.m3yQ7ux7qocj2cF5lrUtlMwd_RobZL0B0kQ-usR6EB8' || !req.query.slug) {
