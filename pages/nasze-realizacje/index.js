@@ -8,24 +8,28 @@ import Logos from "../../components/common/logos";
 import SquareGrid from "../../components/common/squareGrid";
 import classNames from "classnames";
 
-export async function getStaticProps() {
-  const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7?_fields=acf"
-  );
-  const data = await res.json();
+export async function getStaticProps(context) {
+  const headers = context.preview ?
+  { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
 
-  const realizations = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3"
+  const res = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/7?_fields=acf", headers
   );
+
+  const data = await res.json();
+  const realizations = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3", headers
+  );
+
   const dataRealizations = await realizations.json();
 
   const resPosts = await fetch(
     process.env.NEXT_PUBLIC_API_URL +
-      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3"
+      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3", headers
   );
   const dataPosts = await resPosts.json();
 
-  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags");
+  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags", headers );
   const dataTags = await resTags.json();
 
   dataTags.unshift({
@@ -74,6 +78,26 @@ export async function getStaticProps() {
 export default function Realizations(props) {
   let realizations = props.realizations;
   const [filter, setFilter] = useState(999);
+  const sortingTable = props.data.acf.realizations;
+
+
+  if (sortingTable.length > 0) {
+    const tempRealizations = realizations
+    realizations = []
+
+    sortingTable.forEach(item => {
+      realizations.push(tempRealizations.filter(obj => {
+        return obj.id === item;
+      })[0])
+    })
+
+    let restOfRealizations;
+    restOfRealizations = tempRealizations.filter(item => {
+      return !realizations.includes(item)
+    })
+
+    realizations = [...realizations, ...restOfRealizations]
+  }
 
   if (filter !== 999) {
     realizations = realizations.filter((item, index) => {
@@ -99,13 +123,13 @@ export default function Realizations(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10 footer-square-text"
         >
-          Zobacz, co możemy Ci zaproponować
+          Zobacz co możemy Ci zaproponować
         </Text>
         <svg
           style={{ width: '24px', height: "auto" }}
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 footer-square-arrow lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"

@@ -3,12 +3,15 @@ import BasicPage from "../../components/BasicPage";
 import SquareGrid from "../../components/common/squareGrid";
 import Head from "next/head";
 
-export async function getStaticProps() {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/135");
+export async function getStaticProps(context) {
+  const headers = context.preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
+
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/135", headers);
   const data = await res.json();
 
   const resMenu = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
   );
   const menu = await resMenu.json();
 

@@ -50,7 +50,7 @@ export default function Gallery({ photos, data, title }) {
 
   return (
     <>
-      <Text size="body-xl" custom="md:mt-20">{title}</Text>
+      <Text size="p" custom="text-1.75 leading-3r font-aller md:mt-20">{title}</Text>
       <div className="md:flex md:flex-wrap md:justify-center">{gallery}</div>
     </>
   );

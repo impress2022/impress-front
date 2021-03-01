@@ -10,7 +10,7 @@ import Pulse from 'react-reveal/Pulse';
 
 export async function getStaticPaths() {
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=9"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=9", { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} }
   );
   const posts = await res.json();
 
@@ -21,15 +21,20 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, preview, previewData }) {
+  const headers = preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
   // const { slug } = context.query;
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${params.slug}`
+    previewData ?
+      process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts/${previewData.id}` :
+      process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${params.slug}`, headers
   );
+
   const data = await res.json();
 
   const resMenu = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
   );
   const menu = await resMenu.json();
 
@@ -37,6 +42,7 @@ export async function getStaticProps({ params }) {
     props: {
       data: data,
       menu: menu.acf,
+      preview: !!preview,
       notFound: false,
     },
   };
@@ -48,13 +54,13 @@ const BlogPost = (props) => {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10 footer-square-text"
         >
           Wróć do wszystkich wpisów
         </Text>
         <svg
           style={{ width: '24px', height: "auto" }}
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 footer-square-arrow lg:top-44 z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -78,11 +84,13 @@ const BlogPost = (props) => {
     </SquareGrid>
   );
 
-  const page = props.data[0].acf;
+  const page = props.preview ? props.data.acf : props.data[0].acf;
+  const data = props.preview ? props.data : props.data[0];
+
   const menu = props.menu;
   const windowSize = useWindowSize();
 
-  const d = new Date(props.data[0].date);
+  const d = new Date(props.preview ? props.data.date : props.data[0].date);
   const ye = new Intl.DateTimeFormat("pl", { year: "numeric" }).format(d);
   let mo = new Intl.DateTimeFormat("pl", { month: "long" }).format(d);
   mo = mo.charAt(0).toUpperCase() + mo.slice(1);
@@ -91,11 +99,11 @@ const BlogPost = (props) => {
   return (
     <>
       <Head>
-        <title>{props.data[0].title.rendered} - Impress</title>
+        <title>{data.title.rendered} - Impress</title>
         <meta
           name="Description"
           content={
-            "ImpressPR - agencja marketingowa. " + props.data[0].title.rendered
+            "ImpressPR - agencja marketingowa. " + data.title.rendered
           }
         />
       </Head>
@@ -112,7 +120,7 @@ const BlogPost = (props) => {
                   Impress blog
                 </p>
                 <Text size="h2" custom="md:col-span-5">
-                  {props.data[0].title.rendered}
+                  {data.title.rendered}
                 </Text>
                 <time
                   itemProp="datePublished"

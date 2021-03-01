@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ThinArrow({ custom }) {
   return (
-    <div className={custom}>
+    <div className={custom} id="thin-arrow">
       <a href="#realizacje">
         <svg
           width="24"

@@ -178,6 +178,12 @@ body {
     margin-bottom: 30px;
 }
 
+.wysiwyg hr {
+    margin: 12px 0;
+    height: 2px;
+    background-color: #C7D300;
+}
+
 .wysiwyg h1 {
     font-size: 40px;
 }
@@ -247,7 +253,6 @@ body {
 
 .wysiwyg p img {
     margin: 70px 0;
-    box-shadow: -10px 10px 0 0 rgba(149,149,149,0.85);
 }
 
 .wysiwyg ol {
@@ -406,5 +411,87 @@ body {
 
     .footer-menu-text-larger {
         font-size: 13px !important;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1400px) {
+    #thin-arrow svg{
+        height: 70px;
+    }
+
+    .logo-grid {
+        column-gap: 7rem;
+    }
+
+    .realization-thumbnail, .realization-picture {
+        height: 300px;
+        width: 300px;
+    }
+
+    .realization-thumbnail:nth-child(odd) {
+        margin-top: 0;
+    }
+
+    .realization-thumbnail:nth-child(3n+1) {
+        /*margin-right: 75px;*/
+        margin-top: 120px;
+    }
+
+    .realization-thumbnail:nth-child(3n+2) {
+        /*margin-right: 75px;*/
+        margin-top: 60px;
+    }
+
+    .square-footer-1 > svg {
+        width: 146px;
+        height: 146px;
+    }
+
+    .square-footer-2 > svg {
+        width: 219px;
+        height: 219px;
+    }
+
+    .square-footer-3 > svg {
+        width: 73px;
+        height: 73px;
+    }
+
+    .square-footer-4 > svg {
+        width: 146px;
+        height: 146px;
+    }
+
+    .square-wrapper-footer {
+        top: -219px;
+    }
+
+    .footer-square-arrow {
+        top: 9rem;
+    }
+
+    .footer-square-text {
+        top: 4.5rem;
+    }
+
+    .activity {
+        margin-top: 0!important;
+    }
+
+    .who-text-under {
+        padding-top: 130px !important;
+        padding-left: 30px;
+    }
+
+    .who-div-hidden-under {
+        grid-column: 1 / span 6 !important;
+    }
+
+    .co-robimy-section {
+        margin-bottom: 400px;
+    }
+
+    .select-row-contact {
+        grid-column: span 8 / span 8 !important;
     }
 }

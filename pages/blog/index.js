@@ -9,17 +9,20 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 export async function getStaticProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/295");
+  const headers = context.preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
+
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/295", headers);
   const data = await res.json();
 
   const posts = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=9"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=9", headers
   );
 
   const dataPosts = await posts.json();
 
   const resMenu = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
   );
   const menu = await resMenu.json();
 
@@ -47,13 +50,13 @@ export default function Blog(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10 footer-square-text"
         >
-          Zobacz, co możemy Ci zaproponować
+          Zobacz co możemy Ci zaproponować
         </Text>
         <svg
           style={{ width: '24px', height: "auto" }}
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 footer-square-arrow z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"

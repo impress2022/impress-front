@@ -3,7 +3,7 @@ import Image from "next/image";
 import useWindowSize from "../../hooks/useWindowSize";
 import classNames from "classnames";
 
-export default function SubpageHero({ data, isImage, color }) {
+export default function SubpageHeroDesc({ data, isImage, color }) {
   const windowSize = useWindowSize();
   let wrapperClasses = classNames({
     "z-10 pb-16 lg:ml-7.5r": true,
@@ -14,7 +14,7 @@ export default function SubpageHero({ data, isImage, color }) {
 
   let textWrapperClasses = classNames({
     "md:mt-0 md:col-span-4": true,
-    "pt-250 -mt-200 md:pt-24": isImage,
+    "who-text-under pt-250 -mt-200 md:pt-24": isImage,
     "pt-250 -mt-200 md:pt-0": !isImage,
   })
 
@@ -27,7 +27,7 @@ export default function SubpageHero({ data, isImage, color }) {
   return (
     <div className={wrapperClasses}>
       <div className={wrClasses}>
-        {isImage && <div className="hidden md:block md:col-span-7 2k:hidden">
+        {isImage && <div className="hidden md:block md:col-span-7 who-div-hidden-under 2k:hidden">
 
         </div>}
         <div className={textWrapperClasses} style={{

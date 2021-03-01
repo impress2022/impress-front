@@ -9,13 +9,17 @@ import classNames from "classnames";
 import Link from "next/link";
 import Head from "next/head";
 import useWindowSize from "../../hooks/useWindowSize";
+import {useEffect, useRef, useState} from "react";
 
 export async function getStaticProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/11");
+  const headers = context.preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
+
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/11", headers);
   const data = await res.json();
 
   const resMenu = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
   );
   const menu = await resMenu.json();
 
@@ -72,12 +76,12 @@ export default function About(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-7 md:top-16 lg:top-24 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-7 md:top-16 lg:top-24 z-10 footer-square-text"
         >
           Zobacz nasze realizacje
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-24 md:top-32 lg:top-44 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-24 md:top-32 lg:top-44 footer-square-arrow z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -150,6 +154,23 @@ export default function About(props) {
   const imagesArray = page.subpage_mini_gallery.gallery_images;
 
   for (const index in imagesArray) {
+    const wrapper = useRef(null);
+    const [customHeight, setCustomHeight] = useState(0);
+
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        function handleResize() {
+          setCustomHeight(wrapper.current.offsetWidth)
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        handleResize();
+
+        return () => window.removeEventListener("resize", handleResize);
+      }
+    }, []);
+
     const imageClassess = classNames({
       "block-important relative ratio-square-md mini-gallery-image": true,
       "w-full h-320 md:h-390 lg:h-625 col-span-2 row-span-2 md:row-span-4":
@@ -158,7 +179,7 @@ export default function About(props) {
     });
 
     images.push(
-      <div key={index} className={imageClassess}>
+      <div key={index} className={imageClassess} ref={wrapper} style={{ height: customHeight + 'px'}}>
         <Image
           quality={100}
           src={imagesArray[index].gallery_image.sizes["post-thumbnail"]}
@@ -199,7 +220,7 @@ export default function About(props) {
           </div>
           <div className="lg:mt-400">
             <div className="md:max-w-50 lg:max-w-803 mb-12 md:mb-24 xl:mb-150">
-              <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625">
+              <Text size="body-18" custom="lg:text-1.5 lg:leading-2.625 lg:pr-8">
                 {page.subpage_mini_gallery.gallery_text}
               </Text>
             </div>

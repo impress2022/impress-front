@@ -11,11 +11,14 @@ import Head from "next/head";
 import SelectMultiple from "../../components/common/selectMultiple";
 
 export async function getStaticProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/13");
+  const headers = context.preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
+
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/13", headers);
   const data = await res.json();
 
   const resMenu = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
   );
   const menu = await resMenu.json();
 
@@ -44,6 +47,15 @@ export default function Contact(props) {
 
   const [checked, setChecked] = useState(false);
 
+  const submit = (<div className="form-group text-center md:text-left my-16 mb-32 mx-7 md:mx-16 lg:mx-7.5r">
+    <button
+      type="submit"
+      className="bg-green art-transition hover:shadow-caseInsetActive hover:bg-green-hover px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"
+    >
+      Wyślij
+    </button>
+  </div>);
+
   return (
     <>
       <Head>
@@ -53,7 +65,7 @@ export default function Contact(props) {
           content="ImpressPR - agencja marketingowa. Kontakt."
         />
       </Head>
-      <Layout overflow={true} menu={props.menu}>
+      <Layout overflow={true} menu={props.menu} fluid={submit}>
         {thanks && thanks === "true" && (
           <Modal
             header={page.thanks.header}
@@ -173,14 +185,6 @@ export default function Contact(props) {
                     {page.acceptation}
                   </p>
                 </label>
-              </div>
-              <div className="form-group text-center md:text-left my-16 mb-32">
-                <button
-                  type="submit"
-                  className="bg-green hover:bg-green-hover transition-colors duration-200 ease-out px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"
-                >
-                  Wyślij
-                </button>
               </div>
             </div>
           </form>
