@@ -133,12 +133,14 @@ const BlogPost = (props) => {
             </div>
             <Pulse>
               <figure className="relative block-important w-full md:col-span-12 h-320 md:h-50vh">
-                <Image
-                  src={page.main_image.sizes["twentytwenty-fullscreen"]}
-                  objectFit="cover"
-                  layout="fill"
-                  alt={page.main_image.alt}
-                />
+                {page.main_image &&
+                  <Image
+                    src={page.main_image.sizes["twentytwenty-fullscreen"]}
+                    objectFit="cover"
+                    layout="fill"
+                    alt={page.main_image.alt}
+                  />
+                }
               </figure>
             </Pulse>
           </header>
