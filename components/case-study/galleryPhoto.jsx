@@ -38,7 +38,7 @@ export default function GalleryPhoto({ photo, index }) {
   return (
     <div className={imageClassess}>
       <div className={imageContainerclasses} ref={wrapper} style={{ height: !photo.gallery_full_width ? customHeight + 'px' : ''}}>
-        {photo.gallery_full_width && (
+        {photo.gallery_full_width && photo.gallery_image && (
           <Image
             quality={100}
             src={photo.gallery_image.sizes["twentytwenty-fullscreen"]}

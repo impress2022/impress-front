@@ -55,13 +55,15 @@ export default function Activity({ activity }) {
           />
         </div>
         <div className="block-important hover:shadow-caseInsetActiveMobile md:hover:shadow-caseInsetActive art-transition relative w-full ratio-square" style={{ height: customHeight + 'px'}} ref={wrapper}>
-          <Image
-            quality={100}
-            src={activity.activity_image.sizes["post-thumbnail"]}
-            layout="fill"
-            objectFit="cover"
-            alt={activity.activity_image.alt}
-          />
+          { activity.activity_image &&
+            <Image
+              quality={100}
+              src={activity.activity_image.sizes["post-thumbnail"]}
+              layout="fill"
+              objectFit="cover"
+              alt={activity.activity_image.alt}
+            />
+          }
         </div>
       </div>
     </div>

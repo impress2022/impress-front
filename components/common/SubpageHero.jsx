@@ -37,13 +37,15 @@ export default function SubpageHero({ data, isImage }) {
       </div>
       <div className="md:h-full ratio-square-md md:absolute md:right-0 md:bottom-0 lg:top-0 lg:max-w-700 md:transform md:translate-y-44 lg:translate-y-0 md:w-1/2" ref={wrapper} style={{ height: customHeight + 'px'}}>
         <div className="h-320 w-full lg:col-span-5 z-10 relative" style={{ height: customHeight + 'px'}}>
-          <Image
-            quality={100}
-            src={data.photo.sizes["post-thumbnail"]}
-            layout="fill"
-            objectFit="cover"
-            alt={data.photo.alt}
-          />
+          { data.photo &&
+            <Image
+              quality={100}
+              src={data.photo.sizes["post-thumbnail"]}
+              layout="fill"
+              objectFit="cover"
+              alt={data.photo.alt}
+            />
+          }
         </div>
         {data.lesser_photo && windowSize.width >= 768 && (
           <div className="relative h-x7 w-x7 md:transform md:-translate-x-full">

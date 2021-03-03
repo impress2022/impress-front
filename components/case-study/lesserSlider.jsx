@@ -56,13 +56,15 @@ export default function LesserSlider({ slides }) {
                 zIndex: index === currentSlide ? 1000 : 999 + -1 * index,
               }}
             >
-              <Image
-                quality={100}
-                src={item.slider_photo.sizes["post-thumbnail"]}
-                alt={item.slider_photo.alt}
-                layout="fill"
-                objectFit="cover"
-              />
+              { item.slider_photo &&
+                <Image
+                  quality={100}
+                  src={item.slider_photo.sizes["post-thumbnail"]}
+                  alt={item.slider_photo.alt}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              }
             </div>
           ))}
         </div>
