@@ -75,13 +75,15 @@ export default function FeaturedRealizations(props) {
         >
           <Link href={"/realizacja/" + e.post_name}>
             <a>
-              <Image
-                src={e.acf.teaser.teaser_photo.url}
-                alt={e.acf.teaser.teaser_photo.alt}
-                width={700}
-                height={700}
-                className={"transition-home-image transition-home-image-" + idx}
-              />
+              {e.acf.teaser.teaser_photo &&
+                <Image
+                  src={e.acf.teaser.teaser_photo.url}
+                  alt={e.acf.teaser.teaser_photo.alt}
+                  width={700}
+                  height={700}
+                  className={"transition-home-image transition-home-image-" + idx}
+                />
+              }
             </a>
           </Link>
           <style jsx global>{`
