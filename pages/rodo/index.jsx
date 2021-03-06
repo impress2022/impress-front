@@ -45,7 +45,7 @@ export default function Rodo(props) {
         />
       </Head>
       <Layout squares={squares} menu={props.menu}>
-        <BasicPage content={props.data.acf.content} />
+        <BasicPage content={props.data.acf.content} files={props.data.acf.files}/>
       </Layout>
     </>
   );

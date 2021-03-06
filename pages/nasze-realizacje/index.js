@@ -119,7 +119,7 @@ export default function Realizations(props) {
   );
 
   const squares = (
-    <SquareGrid colors={["grey", "blue", "green", "red"]} href={"/kontakt"}>
+    <SquareGrid colors={["grey", "blue", "green", "red"]} href={"/co-robimy"}>
       <div className="cursor-pointer">
         <Text
           size="h3"

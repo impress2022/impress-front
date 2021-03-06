@@ -5,7 +5,6 @@ class BaseDocument extends Document {
     return (
       <Html lang="pl">
         <Head>
-            <title>ImPress PR & Marketing – social media i reklama w internecie</title>
             <meta
                 name="Description"
                 content="Budowanie wizerunku, media społecznościowe, facebook, identyfikacja wizualna, doradztwo.  Agencja marketingowa ★ Nowy Sącz ★ Rynek 13 ☎ 883 969 963"

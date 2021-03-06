@@ -58,7 +58,7 @@ export default function Home(props) {
       <div className="md:grid md:grid-cols-12 px-8 md:px-16">
         <SingleSquare>Zobacz, mamy ich trochę więcej</SingleSquare>
       </div>
-      <Fade top>
+      <Fade bottom>
         <section className="mx-7 mt-12 md:mx-0 md:grid md:grid-cols-12 md:grid-rows-1 md:px-16 md:mt-s-mar lg:mt-300">
           <header className="md:col-span-4 lg:col-span-3">
             <h2 className="text-2.25 lg:text-2.875 leading-3r font-light lg:leading-4r font-aller md:text-left lg:text-right">
@@ -108,6 +108,9 @@ export default function Home(props) {
 
   return (
     <>
+      <Head>
+        <title>ImPress PR & Marketing – social media i reklama w internecie</title>
+      </Head>
       <Layout fluid={fluid} menu={props.menu}>
         <section className="md:relative mt-20 md:mt-0 mb-12 md:mb-s-mar leading-0.875 md:flex md:justify-between md:items-center">
           <div className="mb-10 md:flex-50 lg:flex-none md:mt-16 md:max-w-sm lg:max-w-xl">

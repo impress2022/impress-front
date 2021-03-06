@@ -33,7 +33,9 @@ export default function FeaturedRealizations(props) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       function handleResize() {
-        setCustomHeight(wrapper.current.offsetWidth)
+          if (wrapper.current.offsetWidth) {
+              setCustomHeight(wrapper.current.offsetWidth)
+          }
       }
 
       window.addEventListener("resize", handleResize);
@@ -178,7 +180,7 @@ export default function FeaturedRealizations(props) {
         </div>
       </div>
       <Scrollama
-        offset="0.1"
+        offset="0.4"
         onStepEnter={onStepEnter}
         onStepProgress={onStepProgress}
         progress={true}
