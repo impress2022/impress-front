@@ -99,7 +99,7 @@ export default function Work(props) {
   return (
     <>
       <Head>
-        <title>Co robimy - Impress</title>
+        <title>Co robimy | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content="ImpressPR - agencja marketingowa. Co robimy."

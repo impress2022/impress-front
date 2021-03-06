@@ -94,7 +94,7 @@ export default function Blog(props) {
   return (
     <>
       <Head>
-        <title>Blog - Impress</title>
+        <title>Blog | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content="ImpressPR - agencja marketingowa. Blog."

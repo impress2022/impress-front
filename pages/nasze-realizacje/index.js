@@ -156,7 +156,7 @@ export default function Realizations(props) {
   return (
     <>
       <Head>
-        <title>Realizacje - Impress</title>
+        <title>Realizacje | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content="ImpressPR - agencja marketingowa. Nasze realizacje."

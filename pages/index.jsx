@@ -108,13 +108,6 @@ export default function Home(props) {
 
   return (
     <>
-      <Head>
-        <title>Impress - agencja marketingowa</title>
-        <meta
-          name="Description"
-          content="ImpressPR - agencja marketingowa. Strona główna."
-        />
-      </Head>
       <Layout fluid={fluid} menu={props.menu}>
         <section className="md:relative mt-20 md:mt-0 mb-12 md:mb-s-mar leading-0.875 md:flex md:justify-between md:items-center">
           <div className="mb-10 md:flex-50 lg:flex-none md:mt-16 md:max-w-sm lg:max-w-xl">

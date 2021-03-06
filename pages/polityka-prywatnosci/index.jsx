@@ -38,7 +38,7 @@ export default function Privacy(props) {
   return (
     <>
       <Head>
-        <title>Polityka prywatności - Impress</title>
+        <title>Polityka prywatności | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content="ImpressPR - agencja marketingowa. Polityka prywatności."

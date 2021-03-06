@@ -99,7 +99,7 @@ const BlogPost = (props) => {
   return (
     <>
       <Head>
-        <title>{data.title.rendered} - Impress</title>
+        <title>{data.title.rendered} | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content={

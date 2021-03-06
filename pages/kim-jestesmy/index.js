@@ -194,7 +194,7 @@ export default function About(props) {
   return (
     <>
       <Head>
-        <title>Kim jesteśmy - Impress</title>
+        <title>Kim jesteśmy | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content="ImpressPR - agencja marketingowa. Kim jesteśmy."

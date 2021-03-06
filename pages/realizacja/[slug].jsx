@@ -206,7 +206,7 @@ const Post = (props) => {
   return (
     <>
       <Head>
-        <title>{page.header_title} - Impress</title>
+        <title>{page.header_title} | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content={"ImpressPR - agencja marketingowa. " + page.header_title}

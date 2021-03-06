@@ -38,7 +38,7 @@ export default function Rodo(props) {
   return (
     <>
       <Head>
-        <title>RODO - Impress</title>
+        <title>RODO | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content="ImpressPR - agencja marketingowa. RODO."

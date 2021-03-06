@@ -59,7 +59,7 @@ export default function Contact(props) {
   return (
     <>
       <Head>
-        <title>Skontaktuj się - Impress</title>
+        <title>Kontakt | ImPress PR & Marketing</title>
         <meta
           name="Description"
           content="ImpressPR - agencja marketingowa. Kontakt."
