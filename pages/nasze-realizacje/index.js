@@ -41,15 +41,6 @@ export async function getStaticProps(context) {
     taxonomy: "post_tag",
   });
 
-  dataTags.push({
-    id: 998,
-    link: "",
-    meta: [],
-    name: "Content marketing",
-    slug: "content-marketing",
-    taxonomy: "post_tag",
-  });
-
   const resMenu = await fetch(
     process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105"
   );

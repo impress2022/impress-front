@@ -2,7 +2,6 @@ import Text from "./typography/text";
 import Image from "next/image";
 
 export default function BasicPage({ content, files }) {
-    console.log(files)
   return (
       <>
         <div className="wysiwyg md:grid md:grid-cols-12 mt-24 mb-500">
