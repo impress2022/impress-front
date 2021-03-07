@@ -10,6 +10,7 @@ import Slider from "../../components/case-study/slider";
 import useWindowSize from "../../hooks/useWindowSize";
 import Square from "../../components/square";
 import SquareGrid from "../../components/common/squareGrid";
+import { useRouter } from 'next/router'
 
 export async function getStaticPaths() {
   // const headers =
@@ -72,6 +73,7 @@ export async function getStaticProps({ params, preview, previewData }) {
 
 const Post = (props) => {
   const page = props.preview ? props.data.acf : props.data[0].acf;
+  const data = props.preview ? props.data : props.data[0];
   const windowSize = useWindowSize();
 
   const pageId = props.preview ? props.data.id : props.data[0].id;
@@ -118,6 +120,7 @@ const Post = (props) => {
   );
 
   const wrapper = useRef(null);
+
   const [customHeight, setCustomHeight] = useState(0);
 
   useEffect(() => {
@@ -137,7 +140,7 @@ const Post = (props) => {
   }, []);
 
   const fluidSlider = page.slider_efects && (
-    <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-400 lg:mb-600 relative">
+    <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-400 lg:mb-400 xl:mb-600 relative">
       <div ref={wrapper} style={{ height: windowSize.width >= 1280 ? customHeight + 'px' : ''}} className="absolute bg-green right-0 top-0 h-full ratio-square-md w-1/4 lg:w-1/2">
         <Square
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"
@@ -203,6 +206,8 @@ const Post = (props) => {
     "mb-500 md:mb-500 lg:mb-700": !fluidSlider,
   });
 
+  console.log(page)
+
   return (
     <>
       <Head>
@@ -211,6 +216,10 @@ const Post = (props) => {
           name="Description"
           content={"ImpressPR - agencja marketingowa. " + page.header_title}
         />
+        <meta property="og:title" content={page.header_title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + 'realizacja/' + data.slug} />
+        <meta property="og:image" content={page.main_image.sizes["twentytwenty-fullscreen"]} />
       </Head>
       <Layout
         menu={props.menu}
@@ -235,6 +244,7 @@ const Post = (props) => {
               </div>
             </div>
           </section>
+          { page.wysiwyg_1 && <section className="wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_1 }}/>}
           <section className="mt-16 md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-0">
             <Text size="h2" custom="mb-20 md:mb-8 lg:mb-20">
               Cele, które postanowiliśmy osiągnąć
@@ -257,11 +267,23 @@ const Post = (props) => {
               ))}
             </div>
           </section>
+          { page.wysiwyg_2 && <section className="wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_2 }}/> }
+          <section className="lg:my-s-mar">
+            {page.galleries &&
+            <div>
+              {page.galleries.map((item, key) =>
+                <Gallery key={key} photos={item.gallery} data={item.gallery_break} title={item.gallery_subtitle} />
+              )}
+            </div>
+            }
+            {/*<Gallery photos={page.gallery} data={page.gallery_break} title={page.gallery_subtitle} />*/}
+          </section>
           {page.gallery.length > 2 && (
             <section className="lg:my-s-mar">
               <Gallery photos={page.gallery} data={page.gallery_break} title={page.gallery_subtitle} />
             </section>
           )}
+          { page.wysiwyg_3 && <section className="wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_3 }}/> }
         </div>
       </Layout>
     </>

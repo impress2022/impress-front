@@ -29,7 +29,7 @@ export async function getStaticProps(context) {
   );
   const dataPosts = await resPosts.json();
 
-  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags", headers );
+  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags?per_page=120", headers );
   const dataTags = await resTags.json();
 
   dataTags.unshift({
@@ -152,6 +152,7 @@ export default function Realizations(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Nasze realizacje."
         />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "nasze-realizacje"} />
       </Head>
       <Layout fluid={grid} squares={squares} menu={props.menu}>
         <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-16 lg:mt-16 xl:mt-8r md:mt-7.5r">

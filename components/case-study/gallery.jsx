@@ -20,7 +20,8 @@ export default function Gallery({ photos, data, title }) {
   }
 
   for (const el of photos) {
-    if (c === middleIndex && data.summary.length > 0) {
+    //&& data.summary.length > 0
+    if (c === middleIndex) {
       if (smallCount % 2 === 1) {
         gallery.push(
           <div
@@ -29,7 +30,10 @@ export default function Gallery({ photos, data, title }) {
           />
         );
       }
-      gallery.push(<GalleryBreak key="gallery-break" data={data} />);
+
+      if (data.summary || (data.sliders && data.sliders.length > 0) || data.challenges ) {
+        gallery.push(<GalleryBreak key="gallery-break" data={data} />);
+      }
     }
 
     if (c === photos.length - 1) {

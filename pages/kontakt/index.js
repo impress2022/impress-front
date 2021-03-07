@@ -69,6 +69,7 @@ export default function Contact(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Kontakt."
         />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "kontakt"} />
       </Head>
       <Layout overflow={true} menu={props.menu} fluid={submit}>
         {thanks && thanks === "true" && (

@@ -5,6 +5,7 @@ export default function ThinArrow({ custom }) {
     <div className={custom} id="thin-arrow">
       <a href="#realizacje">
         <svg
+          className="transform lg:scale-y-90"
           width="24"
           height="93"
           viewBox="0 0 24 93"

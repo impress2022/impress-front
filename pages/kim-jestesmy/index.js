@@ -199,6 +199,7 @@ export default function About(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Kim jesteśmy."
         />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "kim-jestesmy"} />
       </Head>
       <Layout
         titleSection={Hero}

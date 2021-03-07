@@ -38,7 +38,7 @@ export default function LesserSlider({ slides }) {
   }
 
   return (
-    <div className="mt-250 md:mt-44">
+    <div className="my-36 md:mt-44">
       <div className="flex flex-col items-center md:flex-row-reverse md:items-start lg:justify-center"
            onTouchStart={handleStart}
            onTouchMove={handleMove}

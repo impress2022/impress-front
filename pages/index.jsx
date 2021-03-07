@@ -136,7 +136,7 @@ export default function Home(props) {
             </Text>
           </div>
           <HomeHero custom="md:flex-50 lg:flex-none md:col-span-5" />
-          <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:-bottom-8 md:left-0 animate-bounce-slow" />
+          <ThinArrow custom="hidden md:block md:absolute md:-bottom-6r lg:-bottom-4 md:left-0 animate-bounce-slow" />
         </section>
         <section className="md:mb-s-mar">
           <div className="my-20 lg:my-200">

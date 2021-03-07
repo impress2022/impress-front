@@ -43,6 +43,7 @@ export default function Rodo(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. RODO."
         />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "rodo"} />
       </Head>
       <Layout squares={squares} menu={props.menu}>
         <BasicPage content={props.data.acf.content} files={props.data.acf.files}/>

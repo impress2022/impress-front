@@ -8,6 +8,10 @@ export default function GalleryBreak({ data }) {
       <div>
         {data.summary.length > 0 && <Summary text={data.summary} />}
         {data.slider && <LesserSlider slides={data.slider} />}
+        {data.sliders && data.sliders.length > 0 &&
+          data.sliders.map((slider,index) => {
+            return <LesserSlider key={index} slides={slider.slider}/>
+          })}
         {data.challenges && <Challenges challenges={data.challenges} />}
       </div>
     </div>
