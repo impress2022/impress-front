@@ -14,7 +14,7 @@ export default function BasicPage({ content, files }) {
               <div>
                       <Text size="body-xl">Pliki do pobrania</Text>
                       { files.map((item,index) => (
-                          <a key={index} href={item.file.url} download className="group flex items-center my-4" style={{ height: '64px' }}>
+                          <a key={index} href={item.file.url} download className="group flex items-center my-16 md:my-4" style={{ height: '64px' }}>
                               <Image src={item.icon.url} width={64} height={64} alt={item.icon.alt}/>
                               <p className="group-hover:text-green art-transition text-1 leading-6 font-normal font-en-sans" style={{ marginBottom: 0 }}>{item.file.title}</p>
                           </a>
