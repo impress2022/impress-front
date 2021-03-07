@@ -104,7 +104,7 @@ const BlogPost = (props) => {
 
   const dat = parseDate(props.preview ? props.data.date : props.data[0].date);
   const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
-  console.log(data)
+
   return (
     <>
       <Head>
@@ -118,7 +118,7 @@ const BlogPost = (props) => {
         <meta property="og:title" content={data.title.rendered} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + 'post/' + data.slug} />
-        <meta property="og:image" content={page.main_image.sizes["twentytwenty-fullscreen"]} />
+        <meta property="og:image" content={page.main_image ? page.main_image.sizes["twentytwenty-fullscreen"] : ''} />
       </Head>
       <Layout squares={squares} menu={menu}>
         <article

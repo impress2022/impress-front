@@ -206,8 +206,6 @@ const Post = (props) => {
     "mb-500 md:mb-500 lg:mb-700": !fluidSlider,
   });
 
-  console.log(page)
-
   return (
     <>
       <Head>
@@ -219,7 +217,7 @@ const Post = (props) => {
         <meta property="og:title" content={page.header_title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + 'realizacja/' + data.slug} />
-        <meta property="og:image" content={page.main_image.sizes["twentytwenty-fullscreen"]} />
+        <meta property="og:image" content={page.main_image ? page.main_image.sizes["twentytwenty-fullscreen"] : ''} />
       </Head>
       <Layout
         menu={props.menu}
