@@ -87,7 +87,8 @@ export default function Blog(props) {
     return item.id !== props.data.acf.promoted_post[0].ID;
   });
 
-  const d = format(new Date(promoted.post_date), 'dd MMMM yyyy', { locale: pl, });
+  const dat = new Date(promoted.post_date);
+  const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
 
   return (
     <>

@@ -92,7 +92,8 @@ const BlogPost = (props) => {
   const menu = props.menu;
   const windowSize = useWindowSize();
 
-  const d = format(new Date(props.preview ? props.data.date : props.data[0].date), 'dd MMMM yyyy', { locale: pl, });
+  const dat = new Date(props.preview ? props.data.date : props.data[0].date);
+  const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
 
   return (
     <>

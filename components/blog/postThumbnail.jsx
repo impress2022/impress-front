@@ -5,7 +5,8 @@ import {format} from "date-fns";
 import pl from "date-fns/locale/pl";
 
 export default function PostThumbnail({ image }) {
-  const d = format(new Date(image.date), 'dd MMMM yyyy', { locale: pl, });
+  const dat = new Date(image.date);
+  const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
 
   return (
       <article className="group cursor-pointer my-12 lg:my-0">
