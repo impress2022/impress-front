@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import Text from "../typography/text";
-import {format} from "date-fns";
-import pl from "date-fns/locale/pl";
+import moment from "moment";
 
 export default function PostThumbnail({ image }) {
   const dat = new Date(image.date);
-  const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
+  moment.locale('pl')
+  const d = moment(dat).format('LL');
 
   return (
       <article className="group cursor-pointer my-12 lg:my-0">

@@ -7,8 +7,7 @@ import Text from "../../components/typography/text";
 import Social from "../../components/social";
 import useWindowSize from "../../hooks/useWindowSize";
 import Pulse from 'react-reveal/Pulse';
-import {format} from "date-fns";
-import pl from "date-fns/locale/pl";
+import moment from 'moment';
 
 export async function getStaticPaths() {
   const res = await fetch(
@@ -93,7 +92,8 @@ const BlogPost = (props) => {
   const windowSize = useWindowSize();
 
   const dat = new Date(props.preview ? props.data.date : props.data[0].date);
-  const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
+  moment.locale('pl')
+  const d = moment(dat).format('LL');
 
   return (
     <>

@@ -7,8 +7,7 @@ import PostThumbnail from "../../components/blog/postThumbnail";
 import Link from "next/link";
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { format } from 'date-fns'
-import pl from 'date-fns/locale/pl';
+import moment from "moment";
 
 export async function getStaticProps(context) {
   const headers = context.preview ?
@@ -88,7 +87,8 @@ export default function Blog(props) {
   });
 
   const dat = new Date(promoted.post_date);
-  const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
+  moment.locale('pl')
+  const d = moment(dat).format('LL');
 
   return (
     <>
