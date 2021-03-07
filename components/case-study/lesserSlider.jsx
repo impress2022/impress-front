@@ -39,19 +39,19 @@ export default function LesserSlider({ slides }) {
 
   return (
     <div className="mt-250 md:mt-44">
-      <div className="flex flex-col items-center md:flex-row"
+      <div className="flex flex-col items-center md:flex-row-reverse md:items-start lg:justify-center"
            onTouchStart={handleStart}
            onTouchMove={handleMove}
            onTouchEnd={handleEnd}
       >
-        <div className="w-full z-10 transform translate-y-8 md:absolute md:flex-50">
+        <div className="w-full md:w-1/2 lg:w-initial z-10 transform translate-y-8 md:translate-y-0 md:flex-50 lg:flex-initial">
           {slides.map((item, index) => (
             <div
               key={index}
               onTouchStart={handleStart}
               onTouchMove={handleMove}
               onTouchEnd={handleEnd}
-              className="w-full md:w-1/2 lg:w-2/3 md:max-h-initial lg:min-h-80 lg:max-h-full"
+              className="w-full md:max-h-initial lg:min-h-80 lg:max-h-full"
               style={{
                 zIndex: index === currentSlide ? 1000 : 999 + -1 * index,
                 display: index === currentSlide ? 'block' : 'none',
@@ -71,7 +71,7 @@ export default function LesserSlider({ slides }) {
             </div>
           ))}
         </div>
-        <div className="md:flex-50">
+        <div className="w-full md:w-1/2 lg:w-1/3">
           <div className="bg-grey-hover shadow-slider md:shadow-none relative overflow-hidden min-w-full min-h-300 lg:min-h-40">
             <div
               className="min-w-full min-h-300 lg:min-h-40 art-transition"
@@ -85,7 +85,7 @@ export default function LesserSlider({ slides }) {
               {slides.map((item, index) => (
                 <div
                   key={index}
-                  className="absolute top-1/3 md:top-0 md:flex md:h-full md:items-center md:max-w-50 lg:max-w-1/3 lg:px-10 md:pl-16 md:pr-10"
+                  className="absolute top-1/3 md:top-0 md:flex md:h-full md:items-center lg:px-10 md:pl-16 md:pr-10"
                   style={{
                     transform:
                       windowSize.width > 1280

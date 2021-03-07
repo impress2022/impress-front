@@ -7,6 +7,8 @@ import Text from "../../components/typography/text";
 import Social from "../../components/social";
 import useWindowSize from "../../hooks/useWindowSize";
 import Pulse from 'react-reveal/Pulse';
+import {format} from "date-fns";
+import pl from "date-fns/locale/pl";
 
 export async function getStaticPaths() {
   const res = await fetch(
@@ -90,11 +92,7 @@ const BlogPost = (props) => {
   const menu = props.menu;
   const windowSize = useWindowSize();
 
-  const d = new Date(props.preview ? props.data.date : props.data[0].date);
-  const ye = new Intl.DateTimeFormat("pl", { year: "numeric" }).format(d);
-  let mo = new Intl.DateTimeFormat("pl", { month: "long" }).format(d);
-  mo = mo.charAt(0).toUpperCase() + mo.slice(1);
-  const da = new Intl.DateTimeFormat("pl", { day: "2-digit" }).format(d);
+  const d = format(new Date(props.preview ? props.data.date : props.data[0].date), 'dd MMMM yyyy', { locale: pl, });
 
   return (
     <>
@@ -124,10 +122,10 @@ const BlogPost = (props) => {
                 </Text>
                 <time
                   itemProp="datePublished"
-                  dateTime={`${da} ${mo} ${ye}`}
+                  dateTime={d}
                   className="text-0.75 font-bold font-aller opacity-30 mt-6 md:col-span-5"
                 >
-                  {`${da} ${mo} ${ye}`}
+                  {d}
                 </time>
               </div>
             </div>

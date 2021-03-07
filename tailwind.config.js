@@ -216,6 +216,7 @@ module.exports = {
         "700": "700px",
       },
       width: {
+        "initial": "initial",
         "45p": "45%",
         "25": "6.25rem",
         "22": "5.50rem",
@@ -353,6 +354,7 @@ module.exports = {
         desc: "1%",
       },
       flex: {
+        "initial": "initial",
         "100": "1 1 100%",
         "50": "1 1 50%",
         "40": "1 1 40%",

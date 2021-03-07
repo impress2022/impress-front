@@ -7,6 +7,8 @@ import PostThumbnail from "../../components/blog/postThumbnail";
 import Link from "next/link";
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { format } from 'date-fns'
+import pl from 'date-fns/locale/pl';
 
 export async function getStaticProps(context) {
   const headers = context.preview ?
@@ -85,11 +87,7 @@ export default function Blog(props) {
     return item.id !== props.data.acf.promoted_post[0].ID;
   });
 
-  const d = new Date(promoted.post_date);
-  const ye = new Intl.DateTimeFormat("pl", { year: "numeric" }).format(d);
-  let mo = new Intl.DateTimeFormat("pl", { month: "long" }).format(d);
-  mo = mo.charAt(0).toUpperCase() + mo.slice(1);
-  const da = new Intl.DateTimeFormat("pl", { day: "2-digit" }).format(d);
+  const d = format(new Date(promoted.post_date), 'dd MMMM yyyy', { locale: pl, });
 
   return (
     <>
@@ -134,7 +132,7 @@ export default function Blog(props) {
                         size="p"
                         custom="text-0.75 font-bold font-aller opacity-30 mt-4 md:col-span-5"
                       >
-                        {`${da} ${mo} ${ye}`}
+                        {d}
                       </Text>
                       <Text size="body-18" custom="mt-4 md:col-span-5">
                         {promoted.acf.promoted_content
