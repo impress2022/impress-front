@@ -5,7 +5,17 @@ import {format} from "date-fns";
 import pl from "date-fns/locale/pl";
 
 export default function PostThumbnail({ image }) {
-  const dat = new Date(image.date);
+  const parseDate = (input, format) => {
+    format = format || 'yyyy-mm-dd'; // default format
+    var parts = input.match(/(\d+)/g),
+      i = 0, fmt = {};
+    // extract date-part indexes from the format
+    format.replace(/(yyyy|dd|mm)/g, function(part) { fmt[part] = i++; });
+
+    return new Date(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]);
+  }
+
+  const dat = parseDate(image.date);
   const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
 
   return (

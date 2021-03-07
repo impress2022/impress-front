@@ -92,7 +92,17 @@ const BlogPost = (props) => {
   const menu = props.menu;
   const windowSize = useWindowSize();
 
-  const dat = new Date(props.preview ? props.data.date : props.data[0].date);
+  const parseDate = (input, format) => {
+    format = format || 'yyyy-mm-dd'; // default format
+    var parts = input.match(/(\d+)/g),
+      i = 0, fmt = {};
+    // extract date-part indexes from the format
+    format.replace(/(yyyy|dd|mm)/g, function(part) { fmt[part] = i++; });
+
+    return new Date(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]);
+  }
+
+  const dat = parseDate(props.preview ? props.data.date : props.data[0].date);
   const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
 
   return (
