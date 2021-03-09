@@ -277,6 +277,53 @@ body {
     list-style-position: inside;
 }
 
+.wysiwyg img, .wysiwyg figure {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.end-wysiwyg {
+    clear: both;
+}
+
+@media (min-width: 768px) {
+    .wysiwyg img, .wysiwyg figure {
+        width: initial;
+        height: initial;
+        min-width: initial;
+        min-height: initial;
+    }
+
+    /*.wysiwyg figure {*/
+    /*    display: grid;*/
+    /*    grid-template-columns: repeat(3, 1fr);*/
+    /*    grid-template-rows: 1fr;*/
+    /*    grid-column-gap: 0;*/
+    /*    grid-row-gap: 0;*/
+    /*}*/
+
+    .wysiwyg .aligncenter {
+        margin: 0 auto;
+    }
+
+    .wysiwyg .alignright {
+        float: right;
+    }
+
+    .wysiwyg .alignleft {
+        float: left;
+    }
+
+    .wysiwyg .alignnone {
+        clear: both;
+    }
+}
+
 .contact-form ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #E0E0E0;
     opacity: 1; /* Firefox */

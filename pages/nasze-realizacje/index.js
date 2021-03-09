@@ -71,7 +71,6 @@ export default function Realizations(props) {
   const [filter, setFilter] = useState(999);
   const sortingTable = props.data.acf.realizations;
 
-
   if (sortingTable.length > 0) {
     const tempRealizations = realizations
     realizations = []
@@ -91,8 +90,11 @@ export default function Realizations(props) {
   }
 
   if (filter !== 999) {
-    realizations = realizations.filter((item, index) => {
-      return props.dict[index].tags.includes(filter);
+    realizations = realizations.filter((item) => {
+      let id = item.id
+      let tags = props.dict.filter(dictItem => dictItem.id === id)[0].tags
+
+      return tags.includes(filter);
     });
   }
 

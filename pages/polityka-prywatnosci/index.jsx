@@ -46,7 +46,7 @@ export default function Privacy(props) {
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "polityka-prywatnosci"} />
       </Head>
       <Layout squares={squares} menu={props.menu}>
-        <BasicPage content={props.data.acf.content} />
+        <BasicPage content={props.data.acf.content} files={props.data.acf.files}/>
       </Layout>
     </>
   );
