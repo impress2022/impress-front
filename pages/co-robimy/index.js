@@ -104,7 +104,10 @@ export default function Work(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Co robimy."
         />
-        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "co-robimy"} />
+          <meta property="og:title" content="ImPress PR & Marketing | Co robimy" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
+          <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "co-robimy"} />
       </Head>
       <Layout
         titleSection={Hero}

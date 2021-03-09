@@ -154,6 +154,9 @@ export default function Realizations(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Nasze realizacje."
         />
+        <meta property="og:title" content="ImPress PR & Marketing | Nasze realizacje" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "nasze-realizacje"} />
       </Head>
       <Layout fluid={grid} squares={squares} menu={props.menu}>

@@ -110,6 +110,11 @@ export default function Home(props) {
     <>
       <Head>
         <title>ImPress PR & Marketing – social media i reklama w internecie</title>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta property="og:title" content="ImPress PR & Marketing – social media i reklama w internecie" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL} />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
       </Head>
       <Layout fluid={fluid} menu={props.menu}>
         <section className="md:relative mt-20 md:mt-0 mb-12 md:mb-s-mar leading-0.875 md:flex md:justify-between md:items-center">
