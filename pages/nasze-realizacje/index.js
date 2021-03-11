@@ -18,14 +18,14 @@ export async function getStaticProps(context) {
 
   const data = await res.json();
   const realizations = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3", headers
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3&per_page=99", headers
   );
 
   const dataRealizations = await realizations.json();
 
   const resPosts = await fetch(
     process.env.NEXT_PUBLIC_API_URL +
-      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3", headers
+      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3&per_page=99", headers
   );
   const dataPosts = await resPosts.json();
 

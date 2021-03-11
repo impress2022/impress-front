@@ -20,10 +20,11 @@ export default function Gallery({ photos, data, title }) {
   }
 
   let counter = 0
+
   for (const el of photos) {
     counter++;
     //&& data.summary.length > 0
-    if (c === middleIndex) {
+    if (c === middleIndex || photos.length < 2) {
       if (smallCount % 2 === 1) {
         gallery.push(
           <div

@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   //   { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} }
 
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=3"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=3&per_page=99"
   );
   const posts = await res.json();
 
