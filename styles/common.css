@@ -453,6 +453,10 @@ body {
         float: left;
         padding-top: 100%;
     }
+
+    .CookieConsent {
+        margin: 30px;
+    }
 }
 
 .art-transition {
