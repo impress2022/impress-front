@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start"
   },
   "dependencies": {
@@ -22,12 +23,13 @@
     "react-facebook-pixel": "^1.0.4",
     "react-lottie": "^1.2.3",
     "react-reveal": "^1.2.2",
-    "react-scrollama": "https://github.com/wa12rior/react-scrollama-1.git",
+    "react-scrollama": "^2.2.15",
     "swiper": "^6.4.10",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "eslint": "^7.20.0",
+    "next-sitemap": "^1.6.3",
     "patch-package": "^6.3.1",
     "postinstall-postinstall": "^2.1.0",
     "tailwindcss-aspect-ratio": "^3.0.0"

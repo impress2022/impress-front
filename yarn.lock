@@ -97,6 +97,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@corex/deepmerge@^2.5.3":
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.5.6.tgz#a5d26c6a0f4df1f65d17871c94f463d5097e349a"
+  integrity sha512-zvClQyrUGV4Hzr2zWnyD/MS0DrNWJ9jMKFLYA/abmsU4dObMuFXhragGqWpWHW6G/ghJpf09E+JumTo5jSb9rg==
+
 "@eslint/eslintrc@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.0.tgz#99cc0a0584d72f1df38b900fb062ba995f395547"
@@ -1781,6 +1786,11 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
+escape-string-regexp@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
+  integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
 eslint-plugin-react@^7.22.0:
   version "7.22.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.22.0.tgz#3d1c542d1d3169c45421c1215d9470e341707269"
@@ -2971,6 +2981,13 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+matcher@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/matcher/-/matcher-4.0.0.tgz#a42a05a09aaed92e2d241eb91fddac689461ea51"
+  integrity sha512-S6x5wmcDmsDRRU/c2dkccDwQPXoFczc5+HpQ2lON8pnvHlnvHAHj5WlLVvw6n6vNyHuVugYrFohYxbS+pvFpKQ==
+  dependencies:
+    escape-string-regexp "^4.0.0"
+
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -3176,6 +3193,15 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+next-sitemap@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-1.6.3.tgz#d0cebe0d39ea1acf46ca9849b32b2cbdc96ff098"
+  integrity sha512-pnJyKXyQVPR4BeRCZNzoLRWYsUDcDcY/TSF+C5nSfl+gS38v+i14qSnHMWNER5mC1TWGeDn3i83vKwYEn37xfw==
+  dependencies:
+    "@corex/deepmerge" "^2.5.3"
+    matcher "^4.0.0"
+    minimist "^1.2.5"
 
 next-tick@~1.0.0:
   version "1.0.0"
@@ -3982,11 +4008,6 @@ react-facebook-pixel@^1.0.4:
   resolved "https://registry.yarnpkg.com/react-facebook-pixel/-/react-facebook-pixel-1.0.4.tgz#4760b60dc0451e345649d9710152b4b5419cf989"
   integrity sha512-givZY8MS0v/mdbRzvcvouBo/j0TtDiu/93f4gIjJXwDDgwlf6bYUiQvb2qcqjluOOD/hIKUQHNYLNsSOnoEklg==
 
-react-intersection-observer@^8.31.0:
-  version "8.31.0"
-  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.31.0.tgz#0ed21aaf93c4c0475b22b0ccaba6169076d01605"
-  integrity sha512-XraIC/tkrD9JtrmVA7ypEN1QIpKc52mXBH1u/bz/aicRLo8QQEJQAMUTb8mz4B6dqpPwyzgjrr7Ljv/2ACDtqw==
-
 react-is@16.13.1, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -4012,11 +4033,10 @@ react-reveal@^1.2.2:
   dependencies:
     prop-types "^15.5.10"
 
-"react-scrollama@https://github.com/wa12rior/react-scrollama-1.git":
+react-scrollama@^2.2.15:
   version "2.2.15"
-  resolved "https://github.com/wa12rior/react-scrollama-1.git#200b52944149320295ddb34b18af006ccd781a60"
-  dependencies:
-    react-intersection-observer "^8.31.0"
+  resolved "https://registry.yarnpkg.com/react-scrollama/-/react-scrollama-2.2.15.tgz#8a40a19bb09350a7e75ee6f9bb589a3f84eeb9ca"
+  integrity sha512-Rp/8v4AtGIf0eEd6Cli9/uoZ9ufXbVhZfrV1yR5tkapV0CCbgdLBWuVNwBhUXPUxSADltC+CSIFvG/uh2drfqA==
 
 react@17.0.1:
   version "17.0.1"
