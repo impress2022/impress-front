@@ -18,7 +18,7 @@ class BaseDocument extends Document {
               <meta property="og:title" content="ImPress PR & Marketing – social media i reklama w internecie" />
               <meta property="og:type" content="website" />
               <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL} />
-              <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/Logo.svg"} />
+              <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
 
           {/*// <!-- Global site tag (gtag.js) - Google Analytics -->*/}
 

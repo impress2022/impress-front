@@ -1,5 +1,6 @@
 import Nav from "./nav";
 import Footer from "./footer";
+import CookieConsent from "react-cookie-consent";
 
 export default function LayoutFluid({
   children,
@@ -23,6 +24,17 @@ export default function LayoutFluid({
       {fluid && <section>{fluid}</section>}
       {squares && <section className="relative">{squares}</section>}
       <Footer menu={menu} />
+      <CookieConsent
+        location="bottom"
+        buttonText="Sure man!!"
+        cookieName="myAwesomeCookieName2"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        expires={150}
+      >
+        This website uses cookies to enhance the user experience.{" "}
+        <span style={{ fontSize: "10px" }}>This bit of text is smaller :O</span>
+      </CookieConsent>
     </div>
   );
 }
