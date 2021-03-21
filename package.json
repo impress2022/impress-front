@@ -19,6 +19,7 @@
     "postcss": "^8.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-facebook-pixel": "^1.0.4",
     "react-lottie": "^1.2.3",
     "react-reveal": "^1.2.2",
     "react-scrollama": "https://github.com/wa12rior/react-scrollama-1.git",

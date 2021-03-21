@@ -19,6 +19,22 @@ class BaseDocument extends Document {
               <meta property="og:type" content="website" />
               <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL} />
               <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/Logo.svg"} />
+
+          {/*// <!-- Global site tag (gtag.js) - Google Analytics -->*/}
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26111618-1"/>
+          <script>
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag(){dataLayer.push(arguments);}
+
+            gtag('js', new Date());
+
+            gtag('config', 'UA-26111618-1');
+
+          </script>
+
         </Head>
         <body>
           <Main />
