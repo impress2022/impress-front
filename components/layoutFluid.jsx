@@ -1,6 +1,7 @@
 import Nav from "./nav";
 import Footer from "./footer";
 import CookieConsent from "react-cookie-consent";
+import Link from "next/link";
 
 export default function LayoutFluid({
   children,
@@ -28,13 +29,11 @@ export default function LayoutFluid({
         location="none"
         buttonText="Rozumiem i akceptuję"
         cookieName="impress-cookie-policy"
-        style={{ boxShadow: '-10px 10px 0px 0px rgba(0,0,0,0.1)', background: "#202222", fontFamily: 'Encode Sans', position: 'fixed', left: 0, bottom: 0, maxWidth: '590px', padding: '30px', margin: '40px' }}
+        style={{ boxShadow: '-10px 10px 0px 0px rgba(0,0,0,0.1)', background: "#202222", fontFamily: 'Encode Sans', position: 'fixed', left: 0, bottom: 0, maxWidth: '590px', padding: '30px' }}
         buttonStyle={{ background: 'none', color: "#FFF", fontFamily: 'Aller', fontSize: "16px" }}
         expires={93}
       >
-        Korzystając z naszej strony wyrażasz zgodę na wykorzystywanie przez nas plików cookies, w celu poznania twoich preferencji na podstawie zachowań na tej stronie. Szczegóły: <a style={{ fontWeight: 'bold'}}
-                                                                                                                                                                                       href={process.env.NEXT_PUBLIC_FRONT_URL + 'polityka-prywatnosci'}>Polityka prywatności</a>, <a style={{ fontWeight: 'bold'}}
-                                                                                                                                                                                                                                                                                      href={process.env.NEXT_PUBLIC_FRONT_URL + 'rodo'}>RODO</a>.
+        Korzystając z naszej strony wyrażasz zgodę na wykorzystywanie przez nas plików cookies, w celu poznania twoich preferencji na podstawie zachowań na tej stronie. Szczegóły: <Link href='/polityka-prywatnosci'><a style={{ fontWeight: 'bold'}}>Polityka prywatności</a></Link>, <Link href="/rodo"><a style={{ fontWeight: 'bold'}}>RODO</a></Link>.
       </CookieConsent>
     </div>
   );
