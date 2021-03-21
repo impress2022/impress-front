@@ -104,7 +104,7 @@ const BlogPost = (props) => {
 
   const dat = parseDate(props.preview ? props.data.date : props.data[0].date);
   const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
-  const d2 = format(dat, 'YYYY-MM-DD', { locale: pl, });
+  const d2 = format(dat, 'yyyy-mm-dd', { locale: pl, });
 
   return (
     <>
