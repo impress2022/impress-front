@@ -162,8 +162,8 @@ export default function Blog(props) {
           </section>
           <section className="md:col-span-12 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 lg:gap-x-28 lg:gap-y-20 md:mt-24">
             {posts.map((item, index) => (
-                item.acf.main_image && ( <Fade left>
-                 <PostThumbnail key={index} image={item} />
+                item.acf.main_image && ( <Fade key={index} left>
+                 <PostThumbnail image={item} />
               </Fade>)
             ))}
           </section>

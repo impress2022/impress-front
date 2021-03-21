@@ -34,7 +34,7 @@ class BaseDocument extends Document {
             }}
           />
         </Head>
-        <body>
+        <body itemScope itemType="http://schema.org/WebPage">
           <Main />
           <NextScript />
         </body>

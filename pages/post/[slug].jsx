@@ -104,6 +104,7 @@ const BlogPost = (props) => {
 
   const dat = parseDate(props.preview ? props.data.date : props.data[0].date);
   const d = format(dat, 'dd MMMM yyyy', { locale: pl, });
+  const d2 = format(dat, 'YYYY-MM-DD', { locale: pl, });
 
   return (
     <>
@@ -135,8 +136,13 @@ const BlogPost = (props) => {
                 <Text size="h2" custom="md:col-span-5">
                   {data.title.rendered}
                 </Text>
+                <time className="hidden"
+                      itemProp="datePublished"
+                      dateTime={d2}
+                >
+                  {d2}
+                </time>
                 <time
-                  itemProp="datePublished"
                   dateTime={d}
                   className="text-0.75 font-bold font-aller opacity-30 mt-6 md:col-span-5"
                 >
