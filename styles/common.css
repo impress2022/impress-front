@@ -2,10 +2,6 @@ svg, img {
     shape-rendering: geometricPrecision;
 }
 
-img {
-    background: #F0F0F0;
-}
-
 html {
     scroll-behavior: smooth;
 }
