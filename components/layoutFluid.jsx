@@ -25,15 +25,16 @@ export default function LayoutFluid({
       {squares && <section className="relative">{squares}</section>}
       <Footer menu={menu} />
       <CookieConsent
-        location="bottom"
-        buttonText="Sure man!!"
-        cookieName="myAwesomeCookieName2"
-        style={{ background: "#2B373B" }}
-        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
-        expires={150}
+        location="none"
+        buttonText="Rozumiem i akceptuję"
+        cookieName="impress-cookie-policy"
+        style={{ boxShadow: '-10px 10px 0px 0px rgba(0,0,0,0.1)', background: "#202222", fontFamily: 'Encode Sans', position: 'fixed', left: 0, bottom: 0, maxWidth: '590px', padding: '30px', margin: '40px' }}
+        buttonStyle={{ background: 'none', color: "#FFF", fontFamily: 'Aller', fontSize: "16px" }}
+        expires={93}
       >
-        This website uses cookies to enhance the user experience.{" "}
-        <span style={{ fontSize: "10px" }}>This bit of text is smaller :O</span>
+        Korzystając z naszej strony wyrażasz zgodę na wykorzystywanie przez nas plików cookies, w celu poznania twoich preferencji na podstawie zachowań na tej stronie. Szczegóły: <a style={{ fontWeight: 'bold'}}
+                                                                                                                                                                                       href={process.env.NEXT_PUBLIC_FRONT_URL + 'polityka-prywatnosci'}>Polityka prywatności</a>, <a style={{ fontWeight: 'bold'}}
+                                                                                                                                                                                                                                                                                      href={process.env.NEXT_PUBLIC_FRONT_URL + 'rodo'}>RODO</a>.
       </CookieConsent>
     </div>
   );
