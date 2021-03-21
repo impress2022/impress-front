@@ -108,7 +108,10 @@ export default function Blog(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Blog."
         />
-        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "blog"} />
+        <meta property="og:title" content="ImPress PR & Marketing | Blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
+           <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "blog"} />
       </Head>
       <Layout squares={squares} menu={props.menu}>
         <header className="mb-12 md:mb-24 lg:mb-12 xl:mb-36 mt-16 lg:mt-16 xl:mt-8r md:mt-7.5r">

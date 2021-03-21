@@ -18,14 +18,14 @@ export async function getStaticProps(context) {
 
   const data = await res.json();
   const realizations = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3", headers
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?filter[cat]=3&per_page=99", headers
   );
 
   const dataRealizations = await realizations.json();
 
   const resPosts = await fetch(
     process.env.NEXT_PUBLIC_API_URL +
-      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3", headers
+      "/wp/v2/posts?_fields=id,tags&orderby=id&order=asc&filter[cat]=3&per_page=99", headers
   );
   const dataPosts = await resPosts.json();
 
@@ -71,7 +71,6 @@ export default function Realizations(props) {
   const [filter, setFilter] = useState(999);
   const sortingTable = props.data.acf.realizations;
 
-
   if (sortingTable.length > 0) {
     const tempRealizations = realizations
     realizations = []
@@ -91,8 +90,11 @@ export default function Realizations(props) {
   }
 
   if (filter !== 999) {
-    realizations = realizations.filter((item, index) => {
-      return props.dict[index].tags.includes(filter);
+    realizations = realizations.filter((item) => {
+      let id = item.id
+      let tags = props.dict.filter(dictItem => dictItem.id === id)[0].tags
+
+      return tags.includes(filter);
     });
   }
 
@@ -152,6 +154,9 @@ export default function Realizations(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Nasze realizacje."
         />
+        <meta property="og:title" content="ImPress PR & Marketing | Nasze realizacje" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "nasze-realizacje"} />
       </Head>
       <Layout fluid={grid} squares={squares} menu={props.menu}>

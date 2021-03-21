@@ -43,6 +43,9 @@ export default function Rodo(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. RODO."
         />
+        <meta property="og:title" content="ImPress PR & Marketing | RODO" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "rodo"} />
       </Head>
       <Layout squares={squares} menu={props.menu}>

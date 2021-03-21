@@ -199,6 +199,9 @@ export default function About(props) {
           name="Description"
           content="ImpressPR - agencja marketingowa. Kim jesteśmy."
         />
+        <meta property="og:title" content="ImPress PR & Marketing | Kim jesteśmy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "kim-jestesmy"} />
       </Head>
       <Layout

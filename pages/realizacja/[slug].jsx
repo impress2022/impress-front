@@ -1,4 +1,4 @@
-import Layout from "../../components/layout";
+import LayoutFluid from "../../components/layoutFluid";
 import Text from "../../components/typography/text";
 import Image from "next/image";
 import classNames from "classnames";
@@ -10,14 +10,13 @@ import Slider from "../../components/case-study/slider";
 import useWindowSize from "../../hooks/useWindowSize";
 import Square from "../../components/square";
 import SquareGrid from "../../components/common/squareGrid";
-import { useRouter } from 'next/router'
 
 export async function getStaticPaths() {
   // const headers =
   //   { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} }
 
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=3"
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=3&per_page=99"
   );
   const posts = await res.json();
 
@@ -206,6 +205,18 @@ const Post = (props) => {
     "mb-500 md:mb-500 lg:mb-700": !fluidSlider,
   });
 
+  if (page.wysiwyg_1) {
+    page.wysiwyg_1 += '<div class="end-wysiwyg"/>'
+  }
+
+  if (page.wysiwyg_2) {
+    page.wysiwyg_2 += '<div class="end-wysiwyg"/>'
+  }
+
+  if (page.wysiwyg_3) {
+    page.wysiwyg_3 += '<div class="end-wysiwyg"/>'
+  }
+
   return (
     <>
       <Head>
@@ -219,7 +230,7 @@ const Post = (props) => {
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + 'realizacja/' + data.slug} />
         <meta property="og:image" content={page.main_image ? page.main_image.sizes["twentytwenty-fullscreen"] : ''} />
       </Head>
-      <Layout
+      <LayoutFluid
         menu={props.menu}
         titleSection={titleSection}
         fluidPhoto={fluidPhoto}
@@ -228,7 +239,7 @@ const Post = (props) => {
         overflow={false}
       >
         <div className={contClassess}>
-          <section className="md:flex md:justify-between">
+          <section className="md:flex md:justify-between mx-7 md:mx-16 lg:mx-7.5r ">
             <div className="mt-2.625 md:flex-1 md:max-w-sm lg:max-w-690">
               <p className={textHeaderClasses}>{page.company_date}</p>
               <Text size="body-18" custom="md:text-1.5 md:leading-2.625">
@@ -242,8 +253,8 @@ const Post = (props) => {
               </div>
             </div>
           </section>
-          { page.wysiwyg_1 && <section className="wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_1 }}/>}
-          <section className="mt-16 md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-0">
+          { page.wysiwyg_1 && <section className="mx-7 md:mx-0.625 wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_1 }}/>}
+          <section className="mx-7 md:mx-16 lg:mx-7.5r mt-16 md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-0">
             <Text size="h2" custom="mb-20 md:mb-8 lg:mb-20">
               Cele, które postanowiliśmy osiągnąć
             </Text>
@@ -265,8 +276,8 @@ const Post = (props) => {
               ))}
             </div>
           </section>
-          { page.wysiwyg_2 && <section className="wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_2 }}/> }
-          <section className="lg:my-s-mar">
+          { page.wysiwyg_2 && <section className="mx-7 md:mx-0.625 wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_2 }}/> }
+          <section className="mx-7 md:mx-16 lg:mx-7.5r lg:my-s-mar">
             {page.galleries &&
             <div>
               {page.galleries.map((item, key) =>
@@ -277,13 +288,13 @@ const Post = (props) => {
             {/*<Gallery photos={page.gallery} data={page.gallery_break} title={page.gallery_subtitle} />*/}
           </section>
           {page.gallery.length > 2 && (
-            <section className="lg:my-s-mar">
+            <section className="mx-7 md:mx-16 lg:mx-7.5r lg:my-s-mar">
               <Gallery photos={page.gallery} data={page.gallery_break} title={page.gallery_subtitle} />
             </section>
           )}
-          { page.wysiwyg_3 && <section className="wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_3 }}/> }
+          { page.wysiwyg_3 && <section className="mx-7 md:mx-0.625 wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_3 }}/> }
         </div>
-      </Layout>
+      </LayoutFluid>
     </>
   );
 };
