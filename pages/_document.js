@@ -14,6 +14,7 @@ class BaseDocument extends Document {
                 rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
               />
+              <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FRONT_URL + "images/favicon.ico"} />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
               <meta property="og:title" content="ImPress PR & Marketing – social media i reklama w internecie" />
               <meta property="og:type" content="website" />
