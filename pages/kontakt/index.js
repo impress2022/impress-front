@@ -52,7 +52,7 @@ export default function Contact(props) {
     document.querySelectorAll('input')[3].focus();
   });
 
-  const submit = (<div className="form-group text-center md:text-left my-16 mb-32 mx-7 md:mx-16 lg:mx-7.5r">
+  const submit = (<div className="form-group text-center md:text-left my-16 mb-32 mx-4">
     <button
       type="submit"
       className="bg-green art-transition hover:shadow-caseInsetActive hover:bg-green-hover px-16 py-3 font-bold font-aller text-1.125 leading-8 focus:outline-none"
@@ -74,7 +74,7 @@ export default function Contact(props) {
         <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "kontakt"} />
       </Head>
-      <Layout overflow={true} menu={props.menu} fluid={submit}>
+      <Layout overflow={true} menu={props.menu}>
         {thanks && thanks === "true" && (
           <Modal
             header={page.thanks.header}
@@ -196,6 +196,7 @@ export default function Contact(props) {
                 </label>
               </div>
             </div>
+            {submit}
           </form>
         </div>
       </Layout>
