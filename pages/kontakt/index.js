@@ -117,6 +117,11 @@ export default function Contact(props) {
             />
             <input
               type="hidden"
+              name="_email.from"
+              value="impress - zapytanie ofertowe"
+            />
+            <input
+              type="hidden"
               name="_redirect"
               value={process.env.NEXT_PUBLIC_FORM_RETURN_URL}
             />

@@ -7,7 +7,7 @@ class BaseDocument extends Document {
         <Head>
             <meta
                 name="Description"
-                content="Budowanie wizerunku, media społecznościowe, facebook, identyfikacja wizualna, doradztwo.  Agencja marketingowa ★ Nowy Sącz ★ Rynek 13 ☎ 883 969 963"
+                content="Marketing, PR, social media, Facebook, identyfikacja wizualna, grafika, logo, kampanie reklamowe. Sprawdź nas! Zapraszamy ★ Nowy Sącz ★ Rynek 13 ☎ 883 969 963"
             />
               <link rel="preconnect" href="https://res.cloudinary.com" />
               <link
@@ -16,7 +16,7 @@ class BaseDocument extends Document {
               />
               <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FRONT_URL + "images/favicon.ico"} />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-              <meta property="og:title" content="ImPress PR & Marketing – social media i reklama w internecie" />
+              <meta property="og:title" content="ImPress PR & Marketing – robimy to, na czym się znamy" />
               <meta property="og:type" content="website" />
               <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL} />
               <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />

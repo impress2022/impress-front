@@ -109,9 +109,9 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>ImPress PR & Marketing – social media i reklama w internecie</title>
+        <title>ImPress PR & Marketing – robimy to, na czym się znamy</title>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta property="og:title" content="ImPress PR & Marketing – social media i reklama w internecie" />
+        <meta property="og:title" content="ImPress PR & Marketing – robimy to, na czym się znamy" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL} />
         <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
