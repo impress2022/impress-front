@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import FacebookPixel from "../components/facebookPixel";
 
 class BaseDocument extends Document {
   render() {
@@ -34,6 +35,7 @@ class BaseDocument extends Document {
         `,
             }}
           />
+          <FacebookPixel/>
         </Head>
         <body itemScope itemType="http://schema.org/WebPage">
           <Main />
