@@ -20,6 +20,7 @@ class BaseDocument extends Document {
               <meta property="og:type" content="website" />
               <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL} />
               <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
+              <meta name="facebook-domain-verification" content="ry1yauvzwc68xlgreoo495hb48sbgp" />
 
           {/*// <!-- Global site tag (gtag.js) - Google Analytics -->*/}
 
