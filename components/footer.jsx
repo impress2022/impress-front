@@ -90,11 +90,11 @@ export default function Footer({ menu }) {
             </div>
             <div className="mb-10 md:mr-14 lg:mr-20">
               <p className={textHeaderClasses}>Telefon</p>
-              <p className={textClasses}><a href={"tel:" + pd.personal_data_phone}>{pd.personal_data_phone}</a></p>
+              <p className={textClasses}><a onClick={() => { return gtag_report_conversion("tel:" + pd.personal_data_phone); }} href={"tel:" + pd.personal_data_phone}>{pd.personal_data_phone}</a></p>
             </div>
             <div className="mb-10">
               <p className={textHeaderClasses}>Email</p>
-              <p className={textClasses}><a href={"mailto:" + pd.personal_data_mail}>{pd.personal_data_mail}</a></p>
+              <p className={textClasses}><a onClick={() => { return gtag_report_conversion("mailto:" + pd.personal_data_mail); }} href={"mailto:" + pd.personal_data_mail}>{pd.personal_data_mail}</a></p>
             </div>
           </div>
           <div className="md:flex md:w-full pb-24">

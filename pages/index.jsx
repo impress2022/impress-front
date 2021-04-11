@@ -115,6 +115,15 @@ export default function Home(props) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL} />
         <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
+
+        {/*Tag do sledzenia wyswietlen*/}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            gtag('event', 'conversion', {'send_to': 'AW-1011078001/yST-CI7gl4ACEPGmj-ID'});
+        `,
+          }}
+        />
       </Head>
       <Layout fluid={fluid} menu={props.menu}>
         <section className="md:relative mt-20 md:mt-0 mb-12 md:mb-s-mar leading-0.875 md:flex md:justify-between md:items-center">

@@ -8,12 +8,12 @@ export default function Details({ menu }) {
 
   for (const value in menu.personal_data) {
     if (menu.personal_data[value].includes('@')) {
-        descItems.push(<p key={value}><a href={"mailto:" + menu.personal_data[value]}>{menu.personal_data[value]}</a></p>);
+        descItems.push(<p key={value}><a onClick={() => { return gtag_report_conversion("mailto:" + menu.personal_data[value]); }} href={"mailto:" + menu.personal_data[value]}>{menu.personal_data[value]}</a></p>);
         continue;
     }
 
     if (validatePhone(menu.personal_data[value])) {
-      descItems.push(<p key={value}><a href={"tel:" + menu.personal_data[value]}>{menu.personal_data[value]}</a></p>);
+      descItems.push(<p key={value}><a onClick={() => { return gtag_report_conversion("tel:" + menu.personal_data[value]); }} href={"tel:" + menu.personal_data[value]}>{menu.personal_data[value]}</a></p>);
       continue;
     }
 

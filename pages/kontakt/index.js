@@ -73,6 +73,16 @@ export default function Contact(props) {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "kontakt"} />
+
+        { thanks &&
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              gtag('event', 'conversion', {'send_to': 'AW-1011078001/2HRqCNirq4ACEPGmj-ID'});
+          `,
+            }}
+          />
+        }
       </Head>
       <Layout overflow={true} menu={props.menu}>
         {thanks && thanks === "true" && (

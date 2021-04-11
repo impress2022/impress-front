@@ -32,6 +32,15 @@ class BaseDocument extends Document {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-26111618-1');
+            gtag('config', 'AW-1011078001');
+        `,
+            }}
+          />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-1011078001/P5XGCJ6RmIACEPGmj-ID', 'event_callback': callback }); return false; }
         `,
             }}
           />
