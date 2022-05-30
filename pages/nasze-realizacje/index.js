@@ -29,7 +29,7 @@ export async function getStaticProps(context) {
   );
   const dataPosts = await resPosts.json();
 
-  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags?per_page=120", headers );
+  const resTags = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/tags?per_page=100", headers );
   const dataTags = await resTags.json();
 
   dataTags.unshift({
