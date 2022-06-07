@@ -24,8 +24,7 @@ export default function Social(props) {
         rel="nofollow noopener noreferrer"
       >
         <div className={socialClasses}>
-          <Image
-            quality={100}
+          <img
             src={el.social_media_object.social_media_object_icon.url}
             alt={el.social_media_object.social_media_object_icon.alt}
             width={22}
