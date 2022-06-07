@@ -24,14 +24,17 @@ export default function Social(props) {
         rel="nofollow noopener noreferrer"
       >
         <div className={socialClasses}>
-          <Image
-            quality={100}
-            src={el.social_media_object.social_media_object_icon.url}
-            alt={el.social_media_object.social_media_object_icon.alt}
-            width={22}
-            height={22}
-            className="social-icon"
-          />
+          {
+            el.social_media_object.social_media_object_icon.url && <Image
+              quality={100}
+              src={el.social_media_object.social_media_object_icon.url}
+              alt={el.social_media_object.social_media_object_icon.alt}
+              width={22}
+              height={22}
+              className="social-icon"
+            />
+          }
+
         </div>
       </a>
     );
