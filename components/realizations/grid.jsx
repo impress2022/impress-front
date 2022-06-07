@@ -18,7 +18,7 @@ export default function Grid(props) {
   }
 
   let thumbnailClassess = classNames({
-    "h-full md:flex md:flex-row md:flex-wrap md:justify-between": true,
+    "realizations-wrapper h-full md:flex md:flex-row md:flex-wrap md:justify-between": true,
   });
 
   return (

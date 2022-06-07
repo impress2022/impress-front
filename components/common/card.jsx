@@ -61,7 +61,7 @@ export default function Card({ title, elements, lottie, color }) {
         ))}
       </div>
       <div
-        className="w-full flex justify-end opacity-0 transition-opacity duration-200 ease-linear"
+        className="w-full flex justify-end opacity-0 art-transition"
         style={{
           opacity: isLottiePlaying ? "100" : "0",
         }}

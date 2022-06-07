@@ -17,8 +17,8 @@ export default function Summary({ text }) {
       </Square>
       <div className="hidden md:block"></div>
       <Text
-        size="body-large"
-        custom="my-10 md:col-span-8 md:text-1.75 md:leading-3r lg:my-150"
+        size="p"
+        custom="text-1.5 leading-12 font-normal font-en-sans my-12 md:mx-2 md:col-span-8 md:text-1.75 md:leading-3r lg:my-150"
       >
         {text}
       </Text>

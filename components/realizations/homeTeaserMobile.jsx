@@ -2,7 +2,8 @@ import Image from "next/image";
 import Hashtag from "../common/hashtag";
 import Text from "../typography/text";
 import Link from "next/link";
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
 
 export default function HomeTeaserMobile(props) {
   const el = props.element.acf;
@@ -19,15 +20,35 @@ export default function HomeTeaserMobile(props) {
     c++;
   }
 
+  const windowSize = useWindowSize();
+  const wrapper = useRef(null);
+  const [customHeight, setCustomHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        setCustomHeight(wrapper.current.offsetWidth)
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
-    <div className="md:flex md:flex-row-reverse md:mb-36 md:justify-between lg:justify-around">
-      <div className="">
-        <div className="shadow-caseInset h-320 w-320 md:h-400 md:w-400 lg:h-438 lg:w-438 relative">
-          <Link href={"/realizacja/" + el.post_name}>
+    <div className="flex flex-col items-center md:flex-row-reverse md:mb-36 md:justify-between lg:justify-around">
+      <div className="w-full flex-100 md:flex-50" ref={wrapper}>
+        <div className="hover:shadow-caseInsetActiveMobile md:hover:shadow-caseInsetHover art-transition w-full lg:h-438 lg:w-438 relative"
+           style={{ height: customHeight + 'px'}}
+        >
+          <Link href={"/realizacja/" + props.element.post_name}>
             <a className="block-important">
               <Image
-                quality={100}
                 src={el.teaser.teaser_photo.sizes["post-thumbnail"]}
+                alt={el.teaser.teaser_photo.alt}
                 layout="fill"
                 objectFit="cover"
                 className="block-important"

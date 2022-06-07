@@ -5,17 +5,22 @@ import classNames from "classnames";
 import Social from "./social";
 import Details from "./kontakt/details";
 import NavMenu from "./navMenu";
+import Image from "next/image";
+import useWindowSize from "../hooks/useWindowSize";
 
-function Nav() {
+function Nav({ menu }) {
   const [menuToggle, setMenuToggle] = useState(false);
   const [menuHide, setMenuHide] = useState(false);
   const scrollOffsetY = useRef(0);
 
+  const windowSize = useWindowSize();
+
   let menuClasses = classNames({
-    "transition-all duration-500 ease-in-out z-50 nav-wrapper bg-white fixed h-screen top-0 w-screen pt-24 md:pt-28 lg:pt-36 flex": true,
+    "art-transition z-50 nav-wrapper bg-white fixed top-0 bottom-0 w-screen pt-24 md:pt-28 lg:pt-36 flex overflow-y-scroll md:overflow-y-visible": true,
     "left-full": !menuToggle,
     // "transform translate-x-full": !menuToggle,
-    "left-7 md:left-2/4 lg:left-l58": menuToggle,
+    "md:left-2/4 lg:left-l58": menuToggle && windowSize.width >= 768,
+    "left-0": menuToggle && windowSize.width < 768,
   });
 
   let leftBarClasses = classNames({
@@ -53,24 +58,24 @@ function Nav() {
 
   return (
     <>
-      <div className={menuClasses}>
+      <div className={menuClasses} style={{ height: '100vh' }}>
         <Hamburger
           menuToggle={menuToggle}
           setMenuToggle={setMenuToggle}
-          custom="fixed right-6 md:right-57px top-26px md:right-3.75 lg:right-20 lg:top-9 z-60"
+          custom="fixed right-6 top-26px md:right-3.75 lg:right-15 lg:top-9 z-60"
           active={!menuToggle}
         />
         <div className={leftBarClasses} />
         <div className="social-media mx-8 md:mx-12 lg:mx-28">
-          <Social />
+          <Social menu={menu} />
         </div>
         <div className="navigation flex flex-col justify-between">
-          <NavMenu />
-          <Details />
+          <NavMenu menu={menu} />
+          <Details menu={menu} />
         </div>
       </div>
       <div
-        className="sticky bg-white top-0 z-40 transition-transform ease-in h-20 lg:h-nav px-7 md:px-15"
+        className="sticky bg-white top-0 z-40 art-transition h-20 lg:h-nav px-7 md:px-15"
         style={{
           transform: menuHide ? "translateY(-100px)" : "translateY(0)",
         }}
@@ -79,7 +84,12 @@ function Nav() {
           <div className="flex justify-between items-center h-full">
             <Link href="/">
               <a>
-                <img src="/images/Logo.svg" alt="Impress" />
+                <Image
+                  src="/images/Logo.svg"
+                  alt="Impress"
+                  width={146}
+                  height={30}
+                />
               </a>
             </Link>
             <Hamburger

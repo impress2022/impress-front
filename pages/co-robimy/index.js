@@ -1,13 +1,22 @@
 import Layout from "../../components/layout";
 import SubpageHero from "../../components/common/SubpageHero";
-import SubpageHeroDesc from "../../components/common/SubpageHeroDesc";
+import SubpageHeroDescCoRobimy from "../../components/common/SubpageHeroDescCoRobimy";
 import SquareGrid from "../../components/common/squareGrid";
 import Text from "../../components/typography/text";
 import Activity from "../../components/co-robimy/activity";
+import Head from "next/head";
 
-export async function getServerSideProps(context) {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/9");
+export async function getStaticProps(context) {
+  const headers = context.preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
+
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/9", headers);
   const data = await res.json();
+
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
+  );
+  const menu = await resMenu.json();
 
   if (!data) {
     return {
@@ -20,6 +29,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
       notFound: false,
     },
   };
@@ -39,7 +49,8 @@ export default function Work(props) {
     />
   );
   const HeroDesc = (
-    <SubpageHeroDesc
+    <SubpageHeroDescCoRobimy
+      color='blue'
       data={{
         desc: page.subpage_lesser_desc,
         b_desc: page.subpage_bigger_desc,
@@ -56,12 +67,12 @@ export default function Work(props) {
       <div className="cursor-pointer">
         <Text
           size="h3"
-          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 z-10"
+          custom="absolute w-64 md:w-500 left-10 md:left-8 lg:left-1/2 top-10 md:top-16 lg:top-24 z-10 footer-square-text"
         >
-          Zobacz, co dotychczas zrobiliśmy
+          Zobacz co dotychczas zrobiliśmy
         </Text>
         <svg
-          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 z-10 animate-bounce-slow-diag"
+          className="absolute left-10 md:left-8 lg:left-1/2 top-44 md:top-32 lg:top-44 footer-square-arrow z-10 animate-bounce-slow-diag"
           width="34"
           height="34"
           viewBox="0 0 34 34"
@@ -86,13 +97,31 @@ export default function Work(props) {
   );
 
   return (
-    <Layout titleSection={Hero} fluidPhoto={HeroDesc} squares={squares}>
-      {/*md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12*/}
-      <section className="mb-400 lg:mb-700 md:flex md:flex-wrap md:justify-between">
-        {page.activities.map((item, index) => (
-          <Activity key={index} activity={item} />
-        ))}
-      </section>
-    </Layout>
+    <>
+      <Head>
+        <title>Co robimy | ImPress PR & Marketing</title>
+        <meta
+          name="Description"
+          content="ImpressPR - agencja marketingowa. Co robimy."
+        />
+          <meta property="og:title" content="ImPress PR & Marketing | Co robimy" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content={process.env.NEXT_PUBLIC_FRONT_URL + "images/logo-thumb.jpg"} />
+          <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + "co-robimy"} />
+      </Head>
+      <Layout
+        titleSection={Hero}
+        fluidPhoto={HeroDesc}
+        squares={squares}
+        menu={props.menu}
+      >
+        {/*md:grid md:grid-cols-2 md:grid-rows-2 md:gap-12*/}
+        <section className="mb-300 lg:mb-600 co-robimy-section md:flex md:flex-wrap md:justify-between">
+          {page.activities.map((item, index) => (
+            <Activity key={index} activity={item} />
+          ))}
+        </section>
+      </Layout>
+    </>
   );
 }

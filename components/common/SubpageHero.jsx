@@ -1,29 +1,54 @@
 import Text from "../typography/text";
 import Image from "next/image";
 import useWindowSize from "../../hooks/useWindowSize";
+import { useRef, useEffect, useState } from "react";
+import classNames from "classnames";
 
-export default function SubpageHero({ data }) {
+export default function SubpageHero({ data, isImage }) {
   const windowSize = useWindowSize();
+  const wrapper = useRef(null);
+  const [customHeight, setCustomHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        setCustomHeight(wrapper.current.offsetWidth)
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
+  const textClasses = classNames({
+    "mb-8 md:w-1/2 lg:w-full lg:col-span-5": true,
+})
+
   return (
-    <header className="hero-section-header mt-7.5r md:flex md:items-center lg:grid lg:grid-cols-12">
-      <div className="mb-8 lg:mb-36 md:col-span-7 lg:col-span-6 xl:col-span-5 md:mr-12">
+    <header className="hero-section-header mt-16 md:flex md:items-end lg:grid lg:grid-cols-12">
+      <div className={textClasses}>
         <p className="max-w-90 tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller">
           {data.subtitle}
         </p>
-        <Text size="h2">{data.title}</Text>
+        <Text size="p" custom="text-2.25 lg:text-2.875 leading-3r font-light lg:leading-4r font-aller">{data.title}</Text>
       </div>
-      <div className="lg:absolute lg:right-0 h-320 md:min-h-40 lg:h-l-320">
-        <div className="block-important shadow-dark md:shadow-dark-wide lg:col-span-5 xl:col-span-7 z-10 relative h-full md:min-w-1/3 lg:min-w-42">
-          <Image
-            quality={100}
-            src={data.photo.sizes["post-thumbnail"]}
-            layout="fill"
-            objectFit="cover"
-            alt={data.photo.alt}
-          />
+      <div className="md:h-full ratio-square-md md:absolute md:right-0 md:bottom-0 lg:top-0 lg:max-w-700 md:transform md:translate-y-44 lg:translate-y-0 md:w-1/2" ref={wrapper} style={{ height: customHeight + 'px'}}>
+        <div className="h-320 w-full lg:col-span-5 z-10 relative" style={{ height: customHeight + 'px'}}>
+          { data.photo &&
+            <Image
+              quality={100}
+              src={data.photo.sizes["post-thumbnail"]}
+              layout="fill"
+              objectFit="cover"
+              alt={data.photo.alt}
+            />
+          }
         </div>
-        {data.lesser_photo && windowSize.width >= 1280 && (
-          <div className="relative lg:w-3/8 lg:h-320 lg:float-right lg:mt-16 block-important shadow-dark md:shadow-dark-wide">
+        {data.lesser_photo && windowSize.width >= 768 && (
+          <div className="relative h-x7 w-x7 md:transform md:-translate-x-full">
             <Image
               quality={100}
               src={data.lesser_photo.sizes["medium"]}

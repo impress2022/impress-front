@@ -1,29 +1,55 @@
-import Layout from "../../components/layout";
+import LayoutFluid from "../../components/layoutFluid";
 import Text from "../../components/typography/text";
 import Image from "next/image";
 import classNames from "classnames";
 import Goal from "../../components/case-study/goal";
 import Head from "next/head";
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Gallery from "../../components/case-study/gallery";
 import Slider from "../../components/case-study/slider";
 import useWindowSize from "../../hooks/useWindowSize";
 import Square from "../../components/square";
 import SquareGrid from "../../components/common/squareGrid";
 
-export async function getServerSideProps(context) {
-  const { slug } = context.query;
+export async function getStaticPaths() {
+  // const headers =
+  //   { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} }
+
   const res = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${slug}`
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/posts?_fields=slug&filter[cat]=3&per_page=99"
   );
+  const posts = await res.json();
+
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params, preview, previewData }) {
+  const headers = preview ?
+    { headers: { 'Authorization': `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`} } : {}
+  // const { slug } = context.query;
+  const res = await fetch(
+    previewData ?
+      process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts/${previewData.id}` :
+      process.env.NEXT_PUBLIC_API_URL + `/wp/v2/posts?slug=${params.slug}`, headers
+  );
+
   const data = await res.json();
 
   const allPostsIds = await fetch(
     process.env.NEXT_PUBLIC_API_URL +
-      `/wp/v2/posts?_fields=id,title,slug&orderby=id&order=asc&filter[cat]=3`
+      `/wp/v2/posts?_fields=id,title,slug&orderby=id&order=asc&filter[cat]=3`, headers
   );
 
   const allPostsIdsData = await allPostsIds.json();
+
+  const resMenu = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "/wp/v2/pages/105", headers
+  );
+  const menu = await resMenu.json();
 
   if (!data) {
     return {
@@ -36,6 +62,8 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: data,
+      menu: menu.acf,
+      preview: !!preview,
       posts: allPostsIdsData,
       notFound: false,
     },
@@ -43,10 +71,11 @@ export async function getServerSideProps(context) {
 }
 
 const Post = (props) => {
-  const page = props.data[0].acf;
+  const page = props.preview ? props.data.acf : props.data[0].acf;
+  const data = props.preview ? props.data : props.data[0];
   const windowSize = useWindowSize();
 
-  const pageId = props.data[0].id;
+  const pageId = props.preview ? props.data.id : props.data[0].id;
   let index = props.posts.findIndex((el) => el.id === pageId);
   const nextPage =
     props.posts[index === props.posts.length - 1 ? 0 : index + 1];
@@ -62,12 +91,12 @@ const Post = (props) => {
   });
 
   let textHeaderClasses = classNames({
-    "tracking-widest md:text-0.5 font-bold uppercase mb-8 font-aller": true,
+    "tracking-widest md:text-0.875 font-bold uppercase mb-8 font-aller": true,
   });
 
   const titleSection = (
-    <div className="mt-7.5r lg:mt-24 mb-2.625 md:mb-24 lg:mb-8r">
-      <Text size="h2" custom="mb-8">
+    <div className="mt-16 lg:mt-24 mb-2.625 md:mb-2.625">
+      <Text size="h2" custom="mb-4">
         {page.header_title}
       </Text>
       <Text size="body-18" custom="md:text-1.5 md:leading-2.625">
@@ -89,9 +118,29 @@ const Post = (props) => {
     </div>
   );
 
+  const wrapper = useRef(null);
+
+  const [customHeight, setCustomHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      function handleResize() {
+        if (wrapper.current) {
+          setCustomHeight(wrapper.current.offsetWidth)
+        }
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      handleResize();
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   const fluidSlider = page.slider_efects && (
-    <section className="pl-8 md:pl-16 lg:pl-24 mt-7.5r md:mt-8r mb-500 md:mb-500 xl:mb-700 xl:my-s-mar relative">
-      <div className="absolute bg-green right-0 top-0 h-full w-1/4 md:w-1/3 lg:w-1/2">
+    <section className="pl-8 md:pl-16 mt-32 lg:pl-24 mb-400 lg:mb-400 xl:mb-600 relative">
+      <div ref={wrapper} style={{ height: windowSize.width >= 1280 ? customHeight + 'px' : ''}} className="absolute bg-green right-0 top-0 h-full ratio-square-md w-1/4 lg:w-1/2">
         <Square
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"
           color="blue"
@@ -99,13 +148,13 @@ const Post = (props) => {
         />
       </div>
       <div className="mb-16 lg:mb-24">
-        {windowSize.width < 768 && (
-          <Text size="h2">
+        {windowSize.width < 1280 && (
+          <Text size="h2" custom="relative z-30">
             Efekty, które <br /> zaowocowały
           </Text>
         )}
-        {windowSize.width >= 768 && (
-          <Text size="h2">Efekty, które zaowocowały</Text>
+        {windowSize.width >= 1280 && (
+          <Text size="h2" custom="relative z-30">Efekty, które zaowocowały</Text>
         )}
       </div>
       <Slider data={page.slider_efects} />
@@ -153,22 +202,44 @@ const Post = (props) => {
   );
 
   let contClassess = classNames({
-    "mb-500 md:mb-500 xl:mb-700": !fluidSlider,
+    "mb-500 md:mb-500 lg:mb-700": !fluidSlider,
   });
+
+  if (page.wysiwyg_1) {
+    page.wysiwyg_1 += '<div class="end-wysiwyg"/>'
+  }
+
+  if (page.wysiwyg_2) {
+    page.wysiwyg_2 += '<div class="end-wysiwyg"/>'
+  }
+
+  if (page.wysiwyg_3) {
+    page.wysiwyg_3 += '<div class="end-wysiwyg"/>'
+  }
 
   return (
     <>
       <Head>
-        <title>{page.header_title} - Impress</title>
+        <title>{page.header_title} | ImPress PR & Marketing</title>
+        <meta
+          name="Description"
+          content={"ImpressPR - agencja marketingowa. " + page.header_title}
+        />
+        <meta property="og:title" content={page.header_title} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_FRONT_URL + 'realizacja/' + data.slug} />
+        <meta property="og:image" content={page.main_image ? page.main_image.sizes["twentytwenty-fullscreen"] : ''} />
       </Head>
-      <Layout
+      <LayoutFluid
+        menu={props.menu}
         titleSection={titleSection}
         fluidPhoto={fluidPhoto}
         fluid={fluidSlider}
         squares={squares}
+        overflow={false}
       >
         <div className={contClassess}>
-          <section className="md:flex">
+          <section className="md:flex md:justify-between mx-7 md:mx-16 lg:mx-7.5r ">
             <div className="mt-2.625 md:flex-1 md:max-w-sm lg:max-w-690">
               <p className={textHeaderClasses}>{page.company_date}</p>
               <Text size="body-18" custom="md:text-1.5 md:leading-2.625">
@@ -182,11 +253,12 @@ const Post = (props) => {
               </div>
             </div>
           </section>
-          <section className="mt-7.5r md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 xl:mb-0">
+          { page.wysiwyg_1 && <section className="mx-7 md:mx-0.625 wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_1 }}/>}
+          <section className="mx-7 md:mx-16 lg:mx-7.5r mt-16 md:mt-150 lg:mt-s-mar mb-5.625 md:mb-150 lg:mb-0">
             <Text size="h2" custom="mb-20 md:mb-8 lg:mb-20">
               Cele, które postanowiliśmy osiągnąć
             </Text>
-            <div className="md:grid md:grid-cols-12">
+            <div className="md:grid md:grid-cols-12 md:gap-x-12">
               {page.goals.map((el, index) => (
                 <div
                   key={index}
@@ -204,13 +276,25 @@ const Post = (props) => {
               ))}
             </div>
           </section>
+          { page.wysiwyg_2 && <section className="mx-7 md:mx-0.625 wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_2 }}/> }
+          <section className="mx-7 md:mx-16 lg:mx-7.5r lg:my-s-mar">
+            {page.galleries &&
+            <div>
+              {page.galleries.map((item, key) =>
+                <Gallery key={key} photos={item.gallery} data={item.gallery_break} title={item.gallery_subtitle} />
+              )}
+            </div>
+            }
+            {/*<Gallery photos={page.gallery} data={page.gallery_break} title={page.gallery_subtitle} />*/}
+          </section>
           {page.gallery.length > 2 && (
-            <section className="xl:my-s-mar">
-              <Gallery photos={page.gallery} data={page.gallery_break} />
+            <section className="mx-7 md:mx-16 lg:mx-7.5r lg:my-s-mar">
+              <Gallery photos={page.gallery} data={page.gallery_break} title={page.gallery_subtitle} />
             </section>
           )}
+          { page.wysiwyg_3 && <section className="mx-7 md:mx-0.625 wysiwyg my-16" dangerouslySetInnerHTML={{ __html: page.wysiwyg_3 }}/> }
         </div>
-      </Layout>
+      </LayoutFluid>
     </>
   );
 };

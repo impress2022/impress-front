@@ -3,7 +3,7 @@ import Square from "../square";
 
 export default function Challenges({ challenges }) {
   return (
-    <div className="w-full my-7.5r md:my-80 md:mt-44 lg:flex lg:flex-row-reverse lg:items-center lg:justify-end lg:mt-700 lg:mb-500">
+    <div className="w-full my-7.5r md:my-80 md:mt-44 lg:flex lg:flex-row-reverse lg:items-center lg:justify-end lg:mt-200 lg:mb-300">
       <div className="mb-10 md:mb-7.5r lg:ml-24">
         <Text size="h2">
           <span className="text-1.75 md:hidden">
@@ -19,7 +19,7 @@ export default function Challenges({ challenges }) {
           </div>
         </Text>
       </div>
-      <div className="bg-green md:relative shadow-challenges md:shadow-none flex flex-col py-12 md:py-24 md:w-1/2 md:mx-16 lg:w-600">
+      <div className="bg-green md:relative shadow-challenges md:shadow-none md:transform md:translate-x-3 lg:translate-x-14 flex flex-col py-12 md:py-24 md:w-1/2 md:mx-16 lg:w-600">
         <Square
           color="grey"
           sizeClasses="md:w-x1 md:h-x1 lg:w-x2 lg:h-x2"

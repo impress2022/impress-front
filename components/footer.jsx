@@ -1,16 +1,14 @@
 import Arrow from "./arrow";
 import Link from "next/link";
 import Social from "./social";
-import { useMenu } from "../hooks/useMenu";
 import classNames from "classnames";
 import LogoFooter from "./logoFooter";
 
-export default function Footer() {
-  const menu = useMenu();
+export default function Footer({ menu }) {
   let pd = menu.personal_data;
 
   let textClasses = classNames({
-    "leading-8 text-lg text-white": true,
+    "footer-menu-text-larger leading-8 text-lg text-white": true,
   });
 
   let textHeaderClasses = classNames({
@@ -18,7 +16,7 @@ export default function Footer() {
   });
 
   let linksClasses = classNames({
-    "text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey hover:text-white transition-color duration-200 ease-linear": true,
+    "footer-menu-text text-0.75 cursor-pointer text-white leading-4.5 font-extralight font-inter text-lighter-grey hover:text-white transition-color duration-200 ease-out": true,
   });
 
   let navItems = [];
@@ -45,7 +43,7 @@ export default function Footer() {
     c++;
     navSecondaryItems.push(
       <li
-        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center hover:text-white transition-color duration-200 ease-linear"
+        className="mb-4 md:mb-0 md:ml-4 lg:ml-5 md:flex md:items-center hover:text-white transition-color duration-200 ease-out"
         key={c}
       >
         <Link href={"/" + value.footer_navigation_link[0].post_name}>
@@ -56,17 +54,22 @@ export default function Footer() {
   }
 
   return (
-    <footer>
+    <footer
+      className="site-footer"
+      role="contentinfo"
+      itemScope
+      itemType="http://schema.org/WPFooter"
+    >
       <div className="w-screen bg-grey">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-8 md:grid-cols-12 py-36">
+        <div className="mx-7 md:mx-16 lg:mx-7.5r">
+          <div className="grid grid-cols-8 md:grid-cols-12 pt-16 pb-8 md:py-24 lg:py-36">
             <Arrow link="/kontakt" />
-            <div className="md:hidden"></div>
+            <div className="md:hidden" />
             <div className="col-span-5 h-20 md:h-25 lg:ml-12 flex flex-col justify-center">
-              <p className="text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
+              <p className="footer-arrow-text text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
                 Masz pomysł?
               </p>
-              <p className="text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
+              <p className="footer-arrow-text text-white leading-7 text-1.375 md:text-3 md:leading-4r font-bold font-aller">
                 Porozmawiajmy
               </p>
             </div>
@@ -87,23 +90,26 @@ export default function Footer() {
             </div>
             <div className="mb-10 md:mr-14 lg:mr-20">
               <p className={textHeaderClasses}>Telefon</p>
-              <p className={textClasses}>{pd.personal_data_phone}</p>
+              <p className={textClasses}><a onClick={() => { return gtag_report_conversion("tel:" + pd.personal_data_phone); }} href={"tel:" + pd.personal_data_phone}>{pd.personal_data_phone}</a></p>
             </div>
             <div className="mb-10">
               <p className={textHeaderClasses}>Email</p>
-              <p className={textClasses}>{pd.personal_data_mail}</p>
+              <p className={textClasses}><a onClick={() => { return gtag_report_conversion("mailto:" + pd.personal_data_mail); }} href={"mailto:" + pd.personal_data_mail}>{pd.personal_data_mail}</a></p>
             </div>
           </div>
           <div className="md:flex md:w-full pb-24">
             <div className="mb-10 md:mb-0 md:mr-4 lg:mr-12">
-              <Social flex={true} />
+              <Social menu={menu} flex={true} />
             </div>
             <div className="flex flex-row justify-between md:w-full">
               <ul className="md:flex lg:min-w-387">{navItems}</ul>
-              <div className="hidden md:h-full md:w-px md:block md:bg-lighter-grey md:flex md:md:items-center"></div>
+              <div className="hidden md:h-full md:w-px md:block md:bg-lighter-grey md:flex md:md:items-center" />
               <div className="text-right flex flex-col justify-between md:flex-row lg:w-full">
                 <ul className="md:flex">{navSecondaryItems}</ul>
-                <p className="text-0.75 leading-4.5 mb-4 md:mb-0 text-light-grey font-inter font-extralight md:ml-4 lg:ml-auto md:flex md:items-center">
+                <p
+                  itemProp="copyrightYear"
+                  className="text-0.75 leading-4.5 mb-4 md:mb-0 text-light-grey font-inter font-extralight md:ml-4 lg:ml-auto md:flex md:items-center"
+                >
                   {footerCopy}
                 </p>
               </div>
