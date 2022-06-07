@@ -3,6 +3,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 module.exports = withBundleAnalyzer({
   images: {
-    domains: [process.env.DOMAIN],
+    domains: [
+      process.env.DOMAIN,
+      'kkhwmfs.cluster030.hosting.ovh.net'
+    ],
   },
 });
