@@ -51,7 +51,7 @@ export default function LesserSlider({ slides }) {
     }
   }
 
-  return (
+  return slides && (
     <div className="my-36 md:mt-44">
       <div className="flex flex-col items-center md:flex-row-reverse md:items-start lg:justify-center ms-touch.slider">
         <div className="w-full md:w-1/2 lg:w-initial z-10 transform translate-y-8 md:translate-y-0 md:flex-50 lg:flex-initial">
