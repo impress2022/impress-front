@@ -17,7 +17,7 @@ export default function Thumbnail(props) {
           <a>
             <div className="group flex flex-col items-center md:block cursor-pointer">
               <div className="block-important realization-picture w-320 h-320 md:w-405 md:h-405 group-hover:shadow-caseInsetActiveMobile lg:group-hover:shadow-caseInsetActive transform group-hover:translate-x-2.5 group-hover:-translate-y-2.5 md:w-320 md:h-320 xl:w-400 xl:h-400 art-transition">
-                {photo &&
+                {photo && (
                   <Image
                     quality={100}
                     src={photo.url}
@@ -25,7 +25,7 @@ export default function Thumbnail(props) {
                     layout="fill"
                     objectFit="cover"
                   />
-                }
+                )}
               </div>
               <Text size="h3" custom="mt-5 group-hover:mt-5 w-320 lg:w-400">
                 {props.realization.title.rendered}
