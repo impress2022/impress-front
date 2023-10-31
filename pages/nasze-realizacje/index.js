@@ -82,26 +82,29 @@ export default function Realizations(props) {
   const [filter, setFilter] = useState(999);
   const sortingTable = props.data.acf.realizations;
 
+  const customSort = (a, b) => {
+    const idA = sortingTable.indexOf(a.id);
+    const idB = sortingTable.indexOf(b.id);
+
+    // If both IDs are in sortingOrder, sort based on their position
+    if (idA !== -1 && idB !== -1) {
+      return idA - idB;
+    }
+
+    // If only one ID is in sortingOrder, prioritize the one present
+    if (idA !== -1) {
+      return -1;
+    }
+    if (idB !== -1) {
+      return 1;
+    }
+
+    // If both IDs are not in sortingOrder, maintain their original order
+    return 0;
+  };
+
   if (sortingTable.length > 0) {
-    const tempRealizations = realizations;
-    realizations = [];
-
-    sortingTable.forEach((item) => {
-      const realization = tempRealizations.filter((obj) => {
-        return obj.id === item;
-      })[0];
-
-      if (realization) {
-        realizations.push();
-      }
-    });
-
-    let restOfRealizations;
-    restOfRealizations = tempRealizations.filter((item) => {
-      return !realizations.includes(item);
-    });
-
-    realizations = [...realizations, ...restOfRealizations];
+    realizations = realizations.sort(customSort);
   }
 
   if (filter !== 999) {
